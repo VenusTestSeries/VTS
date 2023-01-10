@@ -1,6 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import store from "store";
+import "styles/globals.scss";
+import { Provider } from "react-redux";
+import { AppPropsWithLayout } from "typings/pages";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const perpage = Component.perpage ?? ((page) => page);
+  return (
+    <Provider store={store}>{perpage(<Component {...pageProps} />)}</Provider>
+  );
 }
+
+export default App;

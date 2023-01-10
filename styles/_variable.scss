@@ -1,0 +1,225 @@
+:root {
+  --ui-color-primary-dark-blue: rgb(10, 132, 255);
+  --ui-color-primary-dark-brown: rgb(172, 142, 104);
+  --ui-color-primary-dark-cyan: rgb(100, 210, 255);
+  --ui-color-primary-dark-green: rgb(48, 209, 88);
+  --ui-color-primary-dark-indigo: rgb(94, 92, 230);
+  --ui-color-primary-dark-mint: rgb(102, 212, 207);
+  --ui-color-primary-dark-orange: rgb(255, 159, 10);
+  --ui-color-primary-dark-pink: rgb(255, 55, 95);
+  --ui-color-primary-dark-purple: rgb(191, 90, 242);
+  --ui-color-primary-dark-red: rgb(255, 69, 58);
+  --ui-color-primary-dark-teal: rgb(64, 200, 224);
+  --ui-color-primary-dark-yellow: rgb(255, 214, 10);
+  // #_twitter_COLOR
+  --ui-color-primary-carolina-blue: rgb(29, 155, 240);
+  --ui-color-primary-cyber-yellow: rgb(255, 212, 0);
+  --ui-color-primary-flickr-pink: rgb(249, 24, 128);
+  --ui-color-primary-slate-blue: rgb(120, 86, 255);
+  --ui-color-primary-heat-wave: rgb(255, 122, 0);
+  --ui-color-primary-sea-green: rgb(0, 186, 124);
+
+  --face: "Inter Regular", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  --ui-black-alpha-1: rgba(0, 0, 0, 0.1);
+  --ui-black-alpha-2: rgba(0, 0, 0, 0.2);
+  --ui-black-alpha-3: rgba(0, 0, 0, 0.3);
+  --ui-black-alpha-4: rgba(0, 0, 0, 0.4);
+  --ui-black-alpha-5: rgba(0, 0, 0, 0.5);
+  --ui-black-alpha-6: rgba(0, 0, 0, 0.6);
+  --ui-black-alpha-7: rgba(0, 0, 0, 0.7);
+  --ui-black-alpha-8: rgba(0, 0, 0, 0.8);
+  --ui-black-alpha-9: rgba(0, 0, 0, 0.9);
+  --ui-black-alpha-10: rgba(0, 0, 0, 1);
+
+  --dock-background: rgba(83, 83, 83, 0.251);
+  --dock-border-color: rgba(255, 255, 255, 0.18);
+  --dock-border: 1px solid var(--dock-border-color);
+
+  --button-color: var(--ui-color-primary);
+
+  --button-background: var(--ui-black-alpha-4);
+  --button-outline-color: var(--ui-outline-color);
+  // Accent
+  --ui-accent-color: #3f51b5;
+  /* TRANSPARENT BACKGROUNDS */
+  --ui-transparent-alpha: rgba(83, 83, 83, 0.251);
+  --ui-transparent-beta: rgba(83, 83, 83, 0.351);
+  /* COLORS */
+  --ui-color-primary: #ffffff;
+  --ui-color-secondry: #f5f5f5;
+  --ui-color-tertiary: #e8e8e8;
+  --ui-color-tetra: #dcdcdc;
+  --ui-color-quinary: #c8c8c8;
+  --ui-color-senary: #b8b8b8;
+  --ui-color-septenary: #a9a9a9;
+  --ui-color-octonary: #a0a0a0;
+
+  --ui-color-primary-black: rgb(0, 0, 0);
+  --ui-primary-color: rgb(241, 241, 241);
+  --ui-secondry-color: rgb(238, 238, 238);
+  /* BACKGROUNDS */
+  // --ui-primary-background: rgb(9, 9, 9);
+  // --ui-secondry-background: rgb(28, 28, 31);
+  // --ui-tertiary-background: rgb(46, 46, 48);
+  // --ui-tetra-background: rgb(69, 69, 69);
+  --ui-primary-background: rgb(9, 9, 9);
+  --ui-secondry-background: rgb(20, 20, 20);
+  --ui-tertiary-background: rgb(32, 32, 32);
+  --ui-tetra-background: rgb(48, 48, 48);
+  --ui-quinary-background: rgb(56, 56, 56);
+  --ui-senary-background: rgb(64, 64, 64);
+  --ui-septenary-background: rgb(72, 72, 72);
+  --ui-octonary-background: rgb(72, 72, 72);
+  /* FOR ACCENT */
+  --ui-accent-color: rgb(52, 199, 89);
+  /* FOR BODY */
+  --ui-app-primary-background: rgb(9, 9, 9);
+  /* FOR DIV */
+  --ui-app-secondry-background: rgb(28, 28, 31);
+  /* FOR BUTTON */
+  --ui-app-tertiary-background: rgb(46, 46, 48);
+  /* FOR HOVER */
+  --ui-app-tetra-background: rgb(69, 69, 69);
+  --ui-app-accent-color: var(--ui-accent-color);
+  /* FOR FOOTER */
+  --ui-footer-border-color: var(--dock-border-color);
+  --ui-footer-primary-background: var(--ui-secondry-background);
+}
+
+// Dark Mode Color
+// [data-theme="light"] {
+//   --ui-primary-color: ##111111;
+//   --ui-secondry-color: #444444;
+//   --ui-primary-background: #efefef; // For Body
+//   --ui-secondry-background: #fafafa; // For Div
+//   --ui-tertiary-background: #efefef; // For Button
+//   --ui-tetra-background: #dddddd; // For Hover
+//   --ui-accent-color: #34c759;
+// }
+
+// #090909 Body
+// #1c1c1e Div
+// #2e2e30
+
+// // Accent Colors from Twitter
+
+// [data-color="carolina-blue"] {
+//   --ui-accent-color: #1d9bf0ff;
+// }
+// [data-color="cyber-yellow"] {
+//   --ui-accent-color: #ffd400ff;
+// }
+// [data-color="flickr-pink"] {
+//   --ui-accent-color: #f91880ff;
+// }
+// [data-color="slate-blue"] {
+//   --ui-accent-color: #7856ffff;
+// }
+// [data-color="heat-wave"] {
+//   --ui-accent-color: #ff7a00ff;
+// }
+// [data-color="sea-green"] {
+//   --ui-accent-color: #00ba7cff;
+// }
+
+// Accent Colors from Apple
+
+// [data-color="Bluesystem"] {
+//   --ui-accent-color: rgb(0, 122, 255);
+// }
+// [data-color="Greensystem"] {
+//   --ui-accent-color: rgb(52, 199, 89);
+// }
+// [data-color="Indigosystem"] {
+//   --ui-accent-color: rgb(88, 86, 214);
+// }
+// [data-color="Orangesystem"] {
+//   --ui-accent-color: rgb(255, 149, 0);
+// }
+// [data-color="Pinksystem"] {
+//   --ui-accent-color: rgb(255, 45, 85);
+// }
+// [data-color="Purplesystem"] {
+//   --ui-accent-color: rgb(175, 82, 222);
+// }
+// [data-color="Redsystem"] {
+//   --ui-accent-color: rgb(255, 59, 48);
+// }
+// [data-color="Tealsystem"] {
+//   --ui-accent-color: rgb(90, 200, 250);
+// }
+// [data-color="Yellow"] {
+//   --ui-accent-color: rgb(255, 204, 0);
+// }
+
+// --ui-border-color: rgba(255, 255, 255, 0.18);
+// --ui-outline-color: rgba(255, 255, 255, 0.36);
+// --ui-transparent-3: rgba(83, 83, 83, 0.451);
+// --ui-transparent-4: rgba(83, 83, 83, 0.551);
+// --ui-transparent-5: rgba(83, 83, 83, 0.651);
+// --ui-transparent-6: rgba(83, 83, 83, 0.751);
+// --ui-transparent-7: rgba(83, 83, 83, 0.851);
+// --ui-transparent-8: rgba(83, 83, 83, 0.951);
+// --ui-transparent-9: rgba(83, 83, 83, 1);
+// --ui-outline: 2px solid var(--ui-outline-color);
+// --ui-border: 1px solid var(--ui-border-color);
+
+// --ui-primary-background:rgba(83, 83, 83, 0.251);
+// Varible for Dock
+// --dock-blur: blur(15px);
+// --dock-color: rgb(255, 255, 255);
+// Variable from dropdown
+// --dropdown-hover: #323232;
+// --dropdown-background: #000000;
+// For Button
+// --button-hover: var(--ui-black-alpha-2);
+/*  
+
+1 →  color-alpha
+2 →  color-beta
+3 →  color-gamma
+4 →  color-psi
+5 →  color-omega
+
+1  → ui-primary 
+2  → ui-secondary 
+3  → ui-tertiary 
+4  → ui-quaternary 
+5  → ui-quinary 
+6  → ui-senary 
+7  → ui-septenary 
+8  → ui-octonary 
+9  → ui-nonary
+10 → ui-denary
+
+THIS NAMING CONVECTION COMES FROM CHEMISTRY 😎
+
+#	PREFIX
+1  → ui-meth  
+2  → ui-eth 
+3  → ui-prop 
+4  → ui-but 
+5  → ui-penta 
+6  → ui-hexa 
+7  → ui-hept 
+8  → ui-oct 
+9  → ui-non 
+10 → ui-deca 
+*/
+// #_ios_Color
+// --ui-color-primary-blue: rgb(0, 122, 255);
+// --ui-color-primary-brown: rgb(162, 132, 94);
+// --ui-color-primary-cyan: rgb(50, 173, 230);
+// --ui-color-primary-green: rgb(52, 199, 89);
+// --ui-color-primary-indigo: rgb(88, 86, 214);
+// --ui-color-primary-mint: rgb(0, 199, 190);
+// --ui-color-primary-orange: rgb(255, 149, 0);
+// --ui-color-primary-pink: rgb(255, 45, 85);
+// --ui-color-primary-purple: rgb(175, 82, 222);
+// --ui-color-primary-red: rgb(255, 59, 48);
+// --ui-color-primary-teal: rgb(48, 176, 199);
+// --ui-color-primary-yellow: rgb(255, 204, 0);
+// #_ios_Dark_Color
