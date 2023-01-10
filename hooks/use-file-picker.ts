@@ -1,6 +1,6 @@
 
-import toBase64 from "lib/base64";
 import React from "react";
+import toBase64 from "lib/base64";
 
 type CEvent = React.ChangeEvent<HTMLInputElement>
 
