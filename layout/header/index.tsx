@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import css from "styles/header.module.scss";
+import Image from "next/image";
+import css from "../../layout/css/header.module.scss";
 import useOnClickOutside from "hooks/useclick";
-import CircleDotted from "lib/icons/CircleDotted";
 import Add from "lib/icons/Add";
 import useNavbar from "store/hooks/use-navbar";
 import SearchIcon from "lib/icons/SearchIcon";
@@ -20,36 +20,62 @@ const Header = () => {
 
   const containerRef = useOnClickOutside(() => toggleNavbar(false));
   return (
-    <header className="midheader">
-      <div className="logo">Logo</div>
-      <div className="headersearchbar">
-        <input type="text" placeholder="Search for anything" />
-        <button>
-          <SearchIcon color="#000"></SearchIcon>
-        </button>
+    <header className={css.midheader}>
+      <div className={css.logowithnav}>
+        <div className={css.logo}>Logo</div>
+
+        <div className={css.navlink}>
+          <ul>
+            <li>
+              <a href="#">menu1</a>
+            </li>
+            <li>
+              <a href="#">menu2</a>
+            </li>
+            <li>
+              <a href="#">menu3</a>
+            </li>
+            <li>
+              <a href="#">menu3</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="navlink">
-        <ul>
-          <li>
-            <a href="#">Link</a>
-          </li>
-          <li>
-            <a href="#">Link</a>
-          </li>
-          <li>
-            <a href="#">Link</a>
-          </li>
-        </ul>
-      </div>
-      <div className="siteaction">
-        <ul>
-          <li>
-            <a href="#">Login</a>
-          </li>
-          <li>
-            <a href="#">Sign Up</a>
-          </li>
-        </ul>
+      <div className={css.searchwithaction}>
+        <div className={css.headersearchbar}>
+          <input type="text" placeholder="Search for anything" />
+          <button>
+            <SearchIcon color="#000"></SearchIcon>
+          </button>
+        </div>
+        <div className={css.siteaction}>
+          <ul>
+            <li>
+              <a href="#">
+                <Image
+                  src="/svg/user.svg"
+                  alt="Login"
+                  width={40}
+                  height={40}
+                  className={css.linkicon}
+                />
+                <span>Login</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <Image
+                  src="/svg/hart.svg"
+                  alt="Login"
+                  width={40}
+                  height={40}
+                  className={css.linkicon}
+                />
+                <span>Wishlist</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 

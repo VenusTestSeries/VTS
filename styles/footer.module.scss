@@ -1,4 +1,4 @@
-@import "styles/mixin";
+// @import "styles/mixin";
 
 .container {
   display: flex;
@@ -84,14 +84,14 @@ Bottom
   }
 }
 
-@include mediaQuery(20px, 425px) {
-  .container {
-    padding: 1rem;
-  }
-  .bottom .wraper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column-reverse;
-  }
-}
+// @include mediaQuery(20px, 425px) {
+//   .container {
+//     padding: 1rem;
+//   }
+//   .bottom .wraper {
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     flex-direction: column-reverse;
+//   }
+// }
