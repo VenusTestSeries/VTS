@@ -1,0 +1,79 @@
+// FOR LOGIN
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputs {
+  display: flex;
+  background: #e5e5e5;
+  flex-direction: column;
+}
+
+.inputs .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 40px 58px;
+  justify-content: space-between;
+  img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+  }
+
+  a {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #20dc49;
+  }
+}
+// FOR MESSAGE
+.inputs .message {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 6px;
+  h1 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: #000000;
+  }
+}
+
+.inputs .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/images/linkedin-sales-solutions.png");
+}
