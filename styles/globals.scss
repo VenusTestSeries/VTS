@@ -1,24 +1,91 @@
-:root{
---venus-primary: "#181a2a",
---venus-secondary: "#67cba0",
---venus-accent: "#7b92b2",
---venus-neutral: "#4b6bfb",
---venus-base: "#fff",
---venus-base-night :"#1d283a",
---venus-neutral-night :"#f471b5",
---venus-accent-night :"#828df8",
---venus-secondary-night :"#3abff8",
---venus-primary-night :"#0e1525"
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --venus-primary: #181a2a;
+  --venus-secondary: #67cba0;
+  --venus-accent: #7b92b2;
+  --venus-neutral: #4b6bfb;
+  --venus-base: #fff;
+  //   --venus-base-night: #1d283a;
+  //   --venus-neutral-night: #f471b5;
+  //   --venus-accent-night: #828df8;
+  //   --venus-secondary-night: #3abff8;
+  //   --venus-primary-night: #0e1525;
 }
 
-* {
-    margin: 0;
-    padding: 0px;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100%;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
 }
 
- 
+::selection {
+  color: #0d1117;
+  background: #9e9e9e;
+}
+
+button,
+input,
+select {
+  outline: none;
+  border: none;
+  padding: 0.4rem;
+  font-family: var(--face);
+}
+
+option {
+  font-family: var(--face);
+}
+
+i {
+  display: grid;
+  place-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+body,
+html {
+  scrollbar-color: dark;
+  &::-webkit-scrollbar {
+    appearance: none;
+    scrollbar-width: thin;
+    width: 12px;
+    scrollbar-color: rgba(199, 204, 203, 0.25) #212525;
+  }
+  &::-webkit-scrollbar-track {
+    background: #212525;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 204, 203, 0.25);
+    border-radius: 20px;
+    border: 3px solid #212525;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(199, 204, 203, 0.375);
+    border-width: 2px;
+  }
+}

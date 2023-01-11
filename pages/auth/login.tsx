@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Input from "components/inputs";
-import css from "styles/auth.module.scss";
-import Button from "components/button";
 import Link from "next/link";
+import css from "styles/auth.module.scss";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 
@@ -32,9 +30,9 @@ const Login = () => {
           </div>
           <div className={css["login-form"]}>
             <form onSubmit={onSubmit}>
-              <Input label="Email or Username" type={"text"} />
-              <Input label="Password" type={"password"} />
-              <Button>Login</Button>
+              <input placeholder="Email" type={"text"} />
+              <input placeholder="Password" type={"password"} />
+              <button>Login</button>
             </form>
           </div>
         </div>
