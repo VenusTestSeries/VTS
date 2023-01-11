@@ -1,4 +1,5 @@
 @import "./variable";
+@import "./custom";
 
 html {
   tab-size: 4;
@@ -25,14 +26,15 @@ body {
   font-size: 16px;
   line-height: 1.4;
   font-weight: 400;
-  // background-color: #0d1117;
+  background-color: #fff;
 }
 
 html,
 body {
   height: fit-content;
   font-family: var(--face);
-  background: var(--ui-primary-background);
+  // background: var(--ui-primary-background);
+  background: #fff;
 }
 *,
 *::before,

@@ -5,6 +5,7 @@ import useOnClickOutside from "hooks/useclick";
 import CircleDotted from "lib/icons/CircleDotted";
 import Add from "lib/icons/Add";
 import useNavbar from "store/hooks/use-navbar";
+import SearchIcon from "lib/icons/SearchIcon";
 
 interface HeaderProps {
   state: boolean;
@@ -19,24 +20,57 @@ const Header = () => {
 
   const containerRef = useOnClickOutside(() => toggleNavbar(false));
   return (
-    <header ref={containerRef} className={css["container"]}>
-      <section className={css["backdrop"]}>
-        <div className={css["menubar"]}>
-          <div className={css["navbutton"]}>
-            <Link href="/">
-              <button aria-label="go to home" className={css["logo"]}>
-                <CircleDotted />
-              </button>
-            </Link>
-            <MenuBar
-              dispatch={() => toggleNavbar(!navBarState.isNav)}
-              state={navBarState.isNav}
-            />
-          </div>
-        </div>
-        <NavigationBar state={navBarState.isNav} />
-      </section>
+    <header className="midheader">
+      <div className="logo">Logo</div>
+      <div className="headersearchbar">
+        <input type="text" placeholder="Search for anything" />
+        <button>
+          <SearchIcon color="#000"></SearchIcon>
+        </button>
+      </div>
+      <div className="navlink">
+        <ul>
+          <li>
+            <a href="#">Link</a>
+          </li>
+          <li>
+            <a href="#">Link</a>
+          </li>
+          <li>
+            <a href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+      <div className="siteaction">
+        <ul>
+          <li>
+            <a href="#">Login</a>
+          </li>
+          <li>
+            <a href="#">Sign Up</a>
+          </li>
+        </ul>
+      </div>
     </header>
+
+    // <header ref={containerRef} className={css["container"]}>
+    //   <section className={css["backdrop"]}>
+    //     <div className={css["menubar"]}>
+    //       <div className={css["navbutton"]}>
+    //         <Link href="/">
+    //           <button aria-label="go to home" className={css["logo"]}>
+    //             <CircleDotted />
+    //           </button>
+    //         </Link>
+    //         <MenuBar
+    //           dispatch={() => toggleNavbar(!navBarState.isNav)}
+    //           state={navBarState.isNav}
+    //         />
+    //       </div>
+    //     </div>
+    //     <NavigationBar state={navBarState.isNav} />
+    //   </section>
+    // </header>
   );
 };
 
