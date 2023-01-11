@@ -25,6 +25,11 @@
     .navlink {
       ul {
         display: flex;
+        li {
+          a {
+            position: relative;
+          }
+        }
       }
     }
   }
@@ -32,6 +37,7 @@
   .searchwithaction {
     display: flex;
     align-items: center;
+    gap: 50px;
     .headersearchbar {
       position: relative;
     }
