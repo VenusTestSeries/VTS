@@ -122,7 +122,7 @@
             position: relative;
 
             .login {
-              display: none;
+              display: grid;
               position: absolute;
               width: 270px;
 
@@ -151,25 +151,21 @@
                 cursor: pointer;
                 font-weight: 700;
               }
-            }
-            &:hover {
-              .login {
-                display: block;
-                &::before {
-                  top: -30px;
-                  border: 11px solid #5e4444;
-                  content: " ";
-                  position: absolute;
-                  z-index: 2;
-                  margin: 0 auto;
-                  left: 0;
-                  right: -21px;
-                  width: 23px;
-                  height: 25px;
-                  border-color: rgb(255 255 255 / 0%);
-                  border-bottom-color: var(--venus-color3-color);
-                  border-width: 15px;
-                }
+
+              &::before {
+                top: -30px;
+                border: 11px solid #5e4444;
+                content: " ";
+                position: absolute;
+                z-index: 2;
+                margin: 0 auto;
+                left: 0;
+                right: -21px;
+                width: 23px;
+                height: 25px;
+                border-color: rgb(255 255 255 / 0%);
+                border-bottom-color: var(--venus-primary-color);
+                border-width: 15px;
               }
             }
           }

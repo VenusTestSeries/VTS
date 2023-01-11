@@ -8,6 +8,7 @@ import useNavbar from "store/hooks/use-navbar";
 import SearchIcon from "lib/icons/SearchIcon";
 import UserIcon from "lib/icons/UserIcon";
 import HeartOutlineIcon from "lib/icons/HeartOutlineIcon";
+import { useRouter } from "next/router";
 
 interface HeaderProps {
   state: boolean;
@@ -21,6 +22,13 @@ const Header = () => {
   const { navBarState, toggleNavbar } = useNavbar();
 
   const containerRef = useOnClickOutside(() => toggleNavbar(false));
+
+  const { push } = useRouter();
+
+  const [userModel, setUserModel] = React.useState(false);
+
+  const userModelRef = useOnClickOutside(() => setUserModel(false));
+
   return (
     <header className={css.midheader}>
       <div className={css.logowithnav}>
@@ -58,16 +66,20 @@ const Header = () => {
         </div>
         <div className={css.siteaction}>
           <ul>
-            <li className={css.loginlink}>
-              <a href="#">
+            <li ref={userModelRef} className={css.loginlink}>
+              <a onClick={() => setUserModel(!userModel)}>
                 <UserIcon />
-                <span>Login</span>
+                <span>Profile</span>
               </a>
-              <div className={css.login}>
-                <h4> Welcome</h4>
-                <p>To access account and manage orders</p>
-                <button>LOGIN / SIGNUP</button>
-              </div>
+              {userModel && (
+                <div className={css.login}>
+                  <h4> Welcome</h4>
+                  <p>To access account and manage orders</p>
+                  <button onClick={() => push("/auth/login")}>
+                    LOGIN / SIGNUP
+                  </button>
+                </div>
+              )}
             </li>
 
             <li>
