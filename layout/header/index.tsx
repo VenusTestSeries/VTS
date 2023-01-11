@@ -38,6 +38,12 @@ const Header = () => {
             <li>
               <a href="#">menu3</a>
             </li>
+            <li>
+              <a href="#">menu3</a>
+            </li>
+            <li>
+              <a href="#">menu3</a>
+            </li>
           </ul>
         </div>
       </div>
