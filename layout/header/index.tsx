@@ -6,6 +6,8 @@ import useOnClickOutside from "hooks/useclick";
 import Add from "lib/icons/Add";
 import useNavbar from "store/hooks/use-navbar";
 import SearchIcon from "lib/icons/SearchIcon";
+import UserIcon from "lib/icons/UserIcon";
+import HeartOutlineIcon from "lib/icons/HeartOutlineIcon";
 
 interface HeaderProps {
   state: boolean;
@@ -56,27 +58,21 @@ const Header = () => {
         </div>
         <div className={css.siteaction}>
           <ul>
-            <li>
+            <li className={css.loginlink}>
               <a href="#">
-                <Image
-                  src="/svg/user.svg"
-                  alt="Login"
-                  width={40}
-                  height={40}
-                  className={css.linkicon}
-                />
+                <UserIcon />
                 <span>Login</span>
               </a>
+              <div className={css.login}>
+                <h4> Welcome</h4>
+                <p>To access account and manage orders</p>
+                <button>LOGIN / SIGNUP</button>
+              </div>
             </li>
+
             <li>
               <a href="#">
-                <Image
-                  src="/svg/hart.svg"
-                  alt="Login"
-                  width={40}
-                  height={40}
-                  className={css.linkicon}
-                />
+                <HeartOutlineIcon />
                 <span>Wishlist</span>
               </a>
             </li>

@@ -1,16 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
+  --venus-white: #fff;
   --venus-primary: #181a2a;
   --venus-secondary: #67cba0;
   --venus-accent: #7b92b2;
   --venus-neutral: #4b6bfb;
   --venus-base: #fff;
+  --venus-color3: #3abff8;
   //   --venus-base-night: #1d283a;
   //   --venus-neutral-night: #f471b5;
   //   --venus-accent-night: #828df8;
   //   --venus-secondary-night: #3abff8;
   //   --venus-primary-night: #0e1525;
+
+  --venus-primary-color: var(--venus-primary);
+  --venus-color3-color: var(--venus-color3);
+  --venus-white-color: var(--venus-white);
 }
 
 *,
