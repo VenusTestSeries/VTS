@@ -1,3 +1,4 @@
+import poppins from "font/poppins";
 import PerPageLayout from "layout/perpage";
 
 function Home() {

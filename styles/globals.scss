@@ -8,13 +8,17 @@
 --venus-neutral-night :"#f471b5",
 --venus-accent-night :"#828df8",
 --venus-secondary-night :"#3abff8",
---venus-primary-night :"#0e1525",
+--venus-primary-night :"#0e1525"
 }
 
 * {
     margin: 0;
     padding: 0px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
  
