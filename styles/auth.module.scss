@@ -29,19 +29,17 @@
     width: 40px;
     object-fit: cover;
   }
-
   p {
-    font-weight: 300;
+    font-weight: 500;
     font-size: 14px;
     line-height: 14px;
     color: #000000;
   }
-
   a {
-    margin-left: 10px;
+    margin-left: 6px;
     font-size: 14px;
     line-height: 14px;
-    color: #20dc49;
+    color: var(--venus-accent);
   }
 }
 // FOR MESSAGE
@@ -66,10 +64,30 @@
   }
 }
 
+// LOGIN FORM
+
 .inputs .login-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  form {
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 1rem;
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #d9d9d9;
+    }
+    button {
+      padding: 1rem;
+      border-radius: 10px;
+      background: var(--venus-accent);
+    }
+  }
 }
 .image {
   background-size: cover;
