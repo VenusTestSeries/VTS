@@ -66,10 +66,17 @@
   }
 }
 
+// LOGIN FORM
+
 .inputs .login-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .image {
   background-size: cover;

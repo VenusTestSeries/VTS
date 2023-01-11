@@ -30,11 +30,13 @@ const Login = () => {
             <h1>Welcome Back</h1>
             <p>Login into your account</p>
           </div>
-          <form onSubmit={onSubmit} className={css["login-form"]}>
-            <Input label="Email or Username" type={"text"} />
-            <Input label="Password" type={"password"} />
-            <Button>Login</Button>
-          </form>
+          <div className={css["login-form"]}>
+            <form onSubmit={onSubmit}>
+              <Input label="Email or Username" type={"text"} />
+              <Input label="Password" type={"password"} />
+              <Button>Login</Button>
+            </form>
+          </div>
         </div>
         <div className={css["image"]}></div>
       </div>
