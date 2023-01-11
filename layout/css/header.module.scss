@@ -18,16 +18,19 @@
   .logowithnav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     .logo {
       font-size: 30px;
     }
     .navlink {
       ul {
         display: flex;
+        gap: 15px;
+        list-style: none;
         li {
           a {
             position: relative;
+            text-decoration: none;
           }
         }
       }
@@ -40,6 +43,37 @@
     gap: 50px;
     .headersearchbar {
       position: relative;
+      width: 500px;
+      input {
+        position: relative;
+        width: 100%;
+        /* flex: 1; */
+        height: 50px;
+        flex-grow: 1;
+        border: 1px solid #1c1d1f;
+        border-radius: 9999px;
+        background-color: #f7f9fa;
+        padding: 5px 40px 5px 25px;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: #000000;
+        top: 50%;
+        transform: translate(-20px, -50%);
+        cursor: pointer;
+      }
     }
     .siteaction {
       ul {
@@ -50,6 +84,7 @@
           a {
             display: flex;
             flex-wrap: wrap;
+            text-decoration: none;
             .linkicon {
               position: relative;
             }

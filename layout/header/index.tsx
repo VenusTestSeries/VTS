@@ -51,7 +51,7 @@ const Header = () => {
         <div className={css.headersearchbar}>
           <input type="text" placeholder="Search for anything" />
           <button>
-            <SearchIcon color="#000"></SearchIcon>
+            <SearchIcon color="#e6e6e6"></SearchIcon>
           </button>
         </div>
         <div className={css.siteaction}>
