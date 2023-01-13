@@ -1,12 +1,12 @@
 .midheader {
   top: 0;
-  position: fixed;
+  position: sticky;
   right: 0;
   left: 0;
   z-index: 10;
-  -webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
-  background-color: #fff;
+  background: var(--night-var-primary);
+
   /* list-style: none; */
   padding-right: 70px;
   padding-left: 70px;
@@ -21,39 +21,7 @@
     gap: 50px;
     .logo {
       font-size: 30px;
-    }
-    .navlink {
-      ul {
-        display: flex;
-        gap: 15px;
-        list-style: none;
-        li {
-          a {
-            position: relative;
-            text-decoration: none;
-            color: var(--venus-primary-color);
-            padding-bottom: 30px;
-            text-transform: capitalize;
-            &::after {
-              position: absolute;
-              content: "";
-              width: 0%;
-              height: 3px;
-              background-color: var(--venus-color3-color);
-              bottom: 0;
-              display: block;
-              border-radius: 5px;
-              transition: 1s all;
-            }
-            &:hover {
-              &::after {
-                width: 100%;
-                transition: 1s all;
-              }
-            }
-          }
-        }
-      }
+      color: var(--night-var-gray);
     }
   }
 
@@ -61,44 +29,44 @@
     display: flex;
     align-items: center;
     gap: 50px;
-    .headersearchbar {
-      position: relative;
-      width: 500px;
-      input {
-        position: relative;
-        width: 100%;
-        /* flex: 1; */
-        height: 50px;
-        flex-grow: 1;
-        border: 1px solid #1c1d1f;
-        border-radius: 9999px;
-        background-color: #f7f9fa;
-        padding: 5px 40px 5px 25px;
-        box-sizing: border-box;
-        font-size: 15px;
-      }
-      button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background: var(--venus-primary-color);
-        top: 50%;
-        transform: translate(-6px, -50%);
-        cursor: pointer;
-      }
-    }
+    // .headersearchbar {
+    //   position: relative;
+    //   width: 500px;
+    //   input {
+    //     position: relative;
+    //     width: 100%;
+    //     /* flex: 1; */
+    //     height: 50px;
+    //     flex-grow: 1;
+    //     border: 1px solid #1c1d1f;
+    //     border-radius: 9999px;
+    //     background-color: #f7f9fa;
+    //     padding: 5px 40px 5px 25px;
+    //     box-sizing: border-box;
+    //     font-size: 15px;
+    //   }
+    //   button {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     border-radius: 50%;
+    //     width: 40px;
+    //     height: 40px;
+    //     padding: 10px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     border: none;
+    //     background: var(--venus-primary-color);
+    //     top: 50%;
+    //     transform: translate(-6px, -50%);
+    //     cursor: pointer;
+    //   }
+    // }
     .siteaction {
       ul {
         display: flex;
-        gap: 50px;
+        gap: 10px;
         list-style: none;
         li {
           a {
@@ -113,7 +81,7 @@
             span {
               display: block;
               width: 100%;
-              color: var(--venus-primary-color);
+              color: var(--night-var-gray);
               font-size: 12px;
             }
           }
@@ -166,6 +134,39 @@
                 border-color: rgb(255 255 255 / 0%);
                 border-bottom-color: var(--venus-primary-color);
                 border-width: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .navlink {
+      ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        li {
+          a {
+            position: relative;
+            text-decoration: none;
+            color: var(--night-var-gray);
+            padding-bottom: 25px;
+            text-transform: capitalize;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 0%;
+              height: 3px;
+              background-color: var(--venus-color3-color);
+              bottom: 0;
+              display: block;
+              border-radius: 5px;
+              transition: 1s all;
+            }
+            &:hover {
+              &::after {
+                width: 100%;
+                transition: 1s all;
               }
             }
           }

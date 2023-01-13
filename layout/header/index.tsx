@@ -9,6 +9,7 @@ import SearchIcon from "lib/icons/SearchIcon";
 import UserIcon from "lib/icons/UserIcon";
 import HeartOutlineIcon from "lib/icons/HeartOutlineIcon";
 import { useRouter } from "next/router";
+import BagIcom from "lib/icons/BagIcom";
 
 interface HeaderProps {
   state: boolean;
@@ -33,7 +34,8 @@ const Header = () => {
     <header className={css.midheader}>
       <div className={css.logowithnav}>
         <div className={css.logo}>Logo</div>
-
+      </div>
+      <div className={css.searchwithaction}>
         <div className={css.navlink}>
           <ul>
             <li>
@@ -56,19 +58,11 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className={css.searchwithaction}>
-        <div className={css.headersearchbar}>
-          <input type="text" placeholder="Search for anything" />
-          <button>
-            <SearchIcon color="#e6e6e6"></SearchIcon>
-          </button>
-        </div>
         <div className={css.siteaction}>
           <ul>
             <li ref={userModelRef} className={css.loginlink}>
               <a onClick={() => setUserModel(!userModel)}>
-                <UserIcon />
+                <UserIcon color="#b3c5ef" />
                 <span>Profile</span>
               </a>
               {userModel && (
@@ -84,33 +78,20 @@ const Header = () => {
 
             <li>
               <a href="#">
-                <HeartOutlineIcon />
+                <HeartOutlineIcon color="#b3c5ef" />
                 <span>Wishlist</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BagIcom color="#b3c5ef" />
+                <span>Bag</span>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </header>
-
-    // <header ref={containerRef} className={css["container"]}>
-    //   <section className={css["backdrop"]}>
-    //     <div className={css["menubar"]}>
-    //       <div className={css["navbutton"]}>
-    //         <Link href="/">
-    //           <button aria-label="go to home" className={css["logo"]}>
-    //             <CircleDotted />
-    //           </button>
-    //         </Link>
-    //         <MenuBar
-    //           dispatch={() => toggleNavbar(!navBarState.isNav)}
-    //           state={navBarState.isNav}
-    //         />
-    //       </div>
-    //     </div>
-    //     <NavigationBar state={navBarState.isNav} />
-    //   </section>
-    // </header>
   );
 };
 
