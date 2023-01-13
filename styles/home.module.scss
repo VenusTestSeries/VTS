@@ -105,3 +105,22 @@
     margin-top: 20px;
   }
 }
+
+.section1 {
+  .image {
+    img {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  .contentbox {
+    h2 {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    p {
+      position: relative;
+    }
+  }
+}

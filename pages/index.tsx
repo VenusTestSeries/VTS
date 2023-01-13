@@ -189,6 +189,50 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="">
+        <div className="container">
+          <h2 className="text_center heading2 text_skyblue">Our Partner</h2>
+          <div className="row"></div>
+        </div>
+      </section>
+
+      <section className={`${style.section1} pt-50 pb-50`}>
+        <div className="container">
+          <div className="row">
+            <div className="vts-7">
+              <div className={style.image}>
+                <img
+                  src="/images/a7799e23-e213-4262-bbed-52bf91a9e866.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="vts-5">
+              <div className={style.contentbox}>
+                <h2 className="  heading2 text_skyblue">
+                  What is Lorem Ipsum?
+                </h2>
+                <p className="font_size16 font-w500 text_primary">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s <br />
+                  <br />
+                  when an unknown printer took a galley of type and scrambled it
+                  to make a type specimen book. It has survived not only five
+                  centuries, but also the leap into electronic typesetting,
+                  remaining essentially unchanged.
+                  <br />
+                  <br /> It was popularised in the 1960s with the release of
+                  Letraset sheets containing Lorem Ipsum passages, and more
+                  recently with desktop publishing software like Aldus PageMaker
+                  including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
