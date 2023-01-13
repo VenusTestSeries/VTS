@@ -1,16 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import Button from "components/button";
-import poppins from "font/poppins";
 import PerPageLayout from "layout/perpage";
+import React from "react";
 import style from "../styles/home.module.scss";
-import Image from "next/image";
 
 function Home() {
   return (
-    <div
-      style={{
-        height: "100vh",
-      }}
-    >
+    <React.Fragment>
       <section className={style.banersection}>
         <div className="container">
           <div className="row">
@@ -20,7 +17,6 @@ function Home() {
                 <h2>What is Your Name</h2>
                 <div className={style.bannerform}>
                   <input type="text" placeholder="TYPE YOUR NAME...." />
-
                   <div className="buttonaction row">
                     <div className="vts-8">
                       <Button theme="secondry">continue</Button>
@@ -38,13 +34,11 @@ function Home() {
                 width={500}
                 height={333}
                 alt=""
-                align="right"
               />
             </div>
           </div>
         </div>
       </section>
-
       <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>
@@ -93,7 +87,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section className={`${style.awardsection} pt-50 pb-50`}>
         <div className="container">
           <h2 className="text_center heading2 text_skyblue">
@@ -189,7 +182,7 @@ function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </React.Fragment>
   );
 }
 
