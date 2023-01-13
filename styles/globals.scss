@@ -43,7 +43,7 @@
   --venus-var-skyblue: var(--venus-skyblue);
   --night-var-primary: var(--night-primary);
   --night-var-primary2: var(--night-primary2);
-  --night-var-color5: var(night-color5);
+  --night-var-color5: var(--night-color5);
 }
 
 *,
@@ -405,4 +405,39 @@ html {
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+}
+
+.text_center {
+  text-align: center;
+}
+.text_right {
+  text-align: right;
+}
+.text_left {
+  text-align: left;
+}
+.text_justfiy {
+  text-align: justify;
+}
+
+.heading2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 44px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
 }

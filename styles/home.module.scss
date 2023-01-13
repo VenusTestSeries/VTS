@@ -1,6 +1,6 @@
 .banersection {
   position: relative;
-  background: #0f1729;
+  background: var(--night-var-color5);
   height: 500px;
   display: flex;
   align-items: center;
@@ -38,5 +38,70 @@
 }
 
 .boxdesign1 {
-  background: #0f1729;
+  position: relative;
+  background: var(--night-var-color5);
+  box-shadow: 7px 7px 6px 2px #e7e7e7;
+  border-radius: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  padding-top: 120px;
+  margin-top: 150px;
+  .image {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    /* margin-bottom: 26px; */
+    top: -140px;
+    img {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      top: 0;
+      margin-top: 0;
+    }
+  }
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+    color: #3abff8;
+    margin-bottom: 30px;
+    /* padding-top: 171px; */
+  }
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.awardsection {
+  background: var(--night-var-color5);
+  .boxdesign2 {
+    background: #ffffff;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 34px 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--night-var-color5);
+    }
+  }
+  .callbtn {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }
