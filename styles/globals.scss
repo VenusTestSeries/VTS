@@ -254,6 +254,17 @@ html {
   max-width: 100%;
 }
 
+// display
+.d-flex {
+  display: flex;
+}
+.justfiy_content_center {
+  justify-content: center;
+}
+.align_items_center {
+  align-items: center;
+}
+
 // font size
 .font_size12 {
   font-size: 12px;
@@ -433,6 +444,13 @@ html {
 
 .pb-50 {
   padding-bottom: 50px;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+.pr-0 {
+  padding-right: 0px;
 }
 .mt-50 {
   margin-top: 50px;
