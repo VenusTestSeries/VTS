@@ -3,14 +3,16 @@ import Button from "components/button";
 import GridItems from "components/onboarding/grid";
 // ICONS
 import PerPageLayout from "layout/perpage";
-import BankIcon from "lib/icons/BankIcon";
-import GlobeIcon from "lib/icons/GlobeIcon";
-import NurseIcon from "lib/icons/NurseIcon";
-import RailIcon from "lib/icons/RailIcon";
-import AddCircleOutline from "lib/icons/AddCircleOutline";
+
 import css from "styles/onboarding.module.scss";
+import { useRouter } from "next/router";
+import Options from "constant/index";
 
 const OnBoarding = () => {
+  const router = useRouter();
+
+  const [selected, setSelected] = React.useState("SSC");
+
   return (
     <div className={css["container"]}>
       <div>
@@ -24,11 +26,16 @@ const OnBoarding = () => {
         </div>
         <GridItems
           items={Options}
-          value={""}
-          onSelect={(value) => console.log(value)}
+          value={selected}
+          onSelect={(value) => setSelected(value)}
         />
         <div className="mt-50 ">
-          <Button theme="secondry">Continue</Button>
+          <Button
+            theme="secondry"
+            onClick={() => router.push(`/onboarding/${selected.toLowerCase()}`)}
+          >
+            Continue
+          </Button>
         </div>
       </div>
     </div>
@@ -37,30 +44,3 @@ const OnBoarding = () => {
 export default OnBoarding;
 
 OnBoarding.perpage = PerPageLayout;
-
-const Options = [
-  {
-    title: "SSC",
-    icon: <GlobeIcon fill="#fff" />,
-  },
-  {
-    title: "Railway",
-    icon: <RailIcon fill="#fff" />,
-  },
-  {
-    title: "Bank",
-    icon: <BankIcon fill="#fff" />,
-  },
-  {
-    title: "Defence",
-    icon: <NurseIcon fill="#fff" />,
-  },
-  {
-    title: "CA",
-    icon: <GlobeIcon fill="#fff" />,
-  },
-  {
-    title: "Other",
-    icon: <AddCircleOutline fill="#fff" />,
-  },
-];

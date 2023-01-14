@@ -12,8 +12,8 @@ interface GridItemsProps {
   onSelect: (value: string) => void;
 }
 
-const GridItems = ({ items, onSelect }: GridItemsProps) => {
-  const [selected, setSelected] = React.useState("");
+const GridItems = ({ value, items, onSelect }: GridItemsProps) => {
+  const [selected, setSelected] = React.useState(value);
 
   React.useEffect(() => {
     if (onSelect) {

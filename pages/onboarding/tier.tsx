@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "components/button";
-import GridItems from "components/onboarding/grid";
 // ICONS
 import PerPageLayout from "layout/perpage";
 import BankIcon from "lib/icons/BankIcon";
 import GlobeIcon from "lib/icons/GlobeIcon";
 import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
-import AddCircleOutline from "lib/icons/AddCircleOutline";
 import css from "styles/onboarding.module.scss";
 
 const OnBoarding3 = () => {
