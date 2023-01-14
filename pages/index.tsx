@@ -1,44 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import Button from "components/button";
 import PerPageLayout from "layout/perpage";
-import React from "react";
-import style from "../styles/home.module.scss";
+import style from "styles/home.module.scss";
+import HeroSection from "components/home/hero";
 
 function Home() {
   return (
     <React.Fragment>
-      <section className={style.banersection}>
-        <div className="container">
-          <div className="row">
-            <div className="vts-5">
-              <div className="bannercontent">
-                <h1>The best way to learn to code</h1>
-                <h2>What is Your Name</h2>
-                <div className={style.bannerform}>
-                  <input type="text" placeholder="TYPE YOUR NAME...." />
-                  <div className="buttonaction row">
-                    <div className="vts-8">
-                      <Button theme="secondry">continue</Button>
-                    </div>
-                    <div className="vts-4">
-                      <Button theme="primary">Skip</Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="vts-7">
-              <img
-                src="/images/bannerimage.png"
-                width={500}
-                height={333}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
       <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>
