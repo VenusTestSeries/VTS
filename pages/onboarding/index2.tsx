@@ -10,15 +10,15 @@ import RailIcon from "lib/icons/RailIcon";
 import AddCircleOutline from "lib/icons/AddCircleOutline";
 import css from "styles/onboarding.module.scss";
 
-const OnBoarding = () => {
+const OnBoarding2 = () => {
   return (
     <div className={css["container"]}>
       <div>
         <div className={css["details"]}>
-          <h1 className="text_center">Welcome To VTS</h1>
+          <h1 className="text_center">Welcome To SSC</h1>
           <p className="text_center">You are preparing for</p>
         </div>
-        <div className={css["progreescount"]}>0/7</div>
+        <div className={css["progreescount"]}>1/7</div>
         <div className={css["progrees"]}>
           <div className={css["loading"]}></div>
         </div>
@@ -34,33 +34,29 @@ const OnBoarding = () => {
     </div>
   );
 };
-export default OnBoarding;
+export default OnBoarding2;
 
-OnBoarding.perpage = PerPageLayout;
+OnBoarding2.perpage = PerPageLayout;
 
 const Options = [
   {
-    title: "SSC",
+    title: "CGL",
     icon: <GlobeIcon fill="#fff" />,
   },
   {
-    title: "Railway",
+    title: "CHSL",
     icon: <RailIcon fill="#fff" />,
   },
   {
-    title: "Bank",
+    title: "MTS ",
     icon: <BankIcon fill="#fff" />,
   },
   {
-    title: "Defence",
+    title: "CPO ",
     icon: <NurseIcon fill="#fff" />,
   },
   {
-    title: "CA",
+    title: "   Other",
     icon: <GlobeIcon fill="#fff" />,
-  },
-  {
-    title: "Other",
-    icon: <AddCircleOutline fill="#fff" />,
   },
 ];

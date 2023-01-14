@@ -583,16 +583,88 @@ function Home() {
         </div>
       </section>
 
-      <section className="getinquery pt-50 pb-50 ">
+      <section className="getinquery bg_primary pt-50 pb-50 ">
         <div className="container">
-          <div className="row">
-            <div className="vts-6">
-              <div className="getinquerybox">
+          <h2 className="text_center  heading2 text_graydark mb-50">
+            Get Inquiry
+          </h2>
+
+          <div className="row justfiy_content_center">
+            <div className="vts-8 ">
+              <div className={style.getinquerybox}>
                 <div className="row">
                   <div className="vts-6">
-                    <div className="inputbox">
-                      <label htmlFor=""></label>
+                    <div className={style.inputbox}>
+                      <label htmlFor="Frist Name"></label>
+                      <input
+                        type="text"
+                        id="frist name"
+                        placeholder="frist name"
+                      />
                     </div>
+                  </div>
+                  <div className="vts-6">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Last Name"></label>
+                      <input
+                        type="text"
+                        id="Last name"
+                        placeholder="Last name"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="vts-6">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Company "></label>
+                      <input type="text" id="Company " placeholder="Company" />
+                    </div>
+                  </div>
+                  <div className="vts-6">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Job Title"></label>
+                      <input
+                        type="text"
+                        id="Job Title"
+                        placeholder="Job Title"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="vts-12">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Email Addres "></label>
+                      <input
+                        type="text"
+                        id="Email Addres "
+                        placeholder="Email Addres"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="vts-6">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Phone Number "></label>
+                      <input
+                        type="text"
+                        id="Phone Number "
+                        placeholder="Phone Number"
+                      />
+                    </div>
+                  </div>
+                  <div className="vts-6">
+                    <div className={style.inputbox}>
+                      <label htmlFor="Country"></label>
+                      <input type="text" id="Country" placeholder="Country" />
+                    </div>
+                  </div>
+                </div>
+                <div className="row justfiy_content_center">
+                  <div className="vts-6">
+                    <Button theme="secondry">BUY NOW</Button>
                   </div>
                 </div>
               </div>
