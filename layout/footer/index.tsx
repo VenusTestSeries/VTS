@@ -18,18 +18,19 @@ const Footer = () => {
         <div className={css.wraper}>
           <div className={css.text}>
             <p>
-              &copy;{new Date().getFullYear()} {`icanpost`}
+              © 2023 VTS
+              {/* ;{new Date().getFullYear()} {`icanpost`} */}
             </p>
-            <Link href="legal/terms">Terms</Link>
-            <Link href="legal/privacy">Privacy</Link>
+            {/* <Link href="legal/terms">Terms</Link>
+            <Link href="legal/privacy">Privacy</Link> */}
           </div>
-          <div className={css.text}>
+          {/* <div className={css.text}>
             <select>
               <option value="auto">Auto</option>
               <option value="dark">Dark Mode</option>
               <option value="light">Light Mode</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </section>
     </footer>

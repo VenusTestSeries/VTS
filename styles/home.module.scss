@@ -436,3 +436,21 @@ ul.problembox li.bottomround h5 {
 .pricetable .callbtn {
   margin: 0 60px;
 }
+
+// contact us
+.getinquerybox {
+  .inputbox {
+    input {
+      border-bottom: 2px solid var(--night-var-gray);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      width: 100%;
+      height: 49px;
+      background: transparent;
+      color: var(--night-var-gray);
+      margin-bottom: 30px;
+      text-transform: capitalize;
+    }
+  }
+}
