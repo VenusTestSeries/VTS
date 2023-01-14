@@ -432,7 +432,7 @@ function Home() {
       <section className={`${style.testimonialsone} pt-50 pb-50`}>
         <div className="container">
           <h2 className="text_center heading2 text_graydark mb-50">
-            How we solv
+            How we solve
           </h2>
 
           <div className="row justfiy_content_center">
@@ -579,6 +579,24 @@ function Home() {
 
                 <div className={style.callbtn}>
                   <Button theme="secondry">BUY NOW</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="getinquery pt-50 pb-50 ">
+        <div className="container">
+          <div className="row">
+            <div className="vts-6">
+              <div className="getinquerybox">
+                <div className="row">
+                  <div className="vts-6">
+                    <div className="inputbox">
+                      <label htmlFor=""></label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
