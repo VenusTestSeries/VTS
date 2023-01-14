@@ -1,10 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
+import StarIcon from "lib/icons/star";
 import Button from "components/button";
-import poppins from "font/poppins";
 import PerPageLayout from "layout/perpage";
 import style from "../styles/home.module.scss";
-import Image from "next/image";
-import ImageSlider from "components/slider";
-import StarIcon from "lib/icons/star";
 
 function Home() {
   return (
@@ -36,7 +35,6 @@ function Home() {
                 width={500}
                 height={333}
                 alt=""
-                align="right"
               />
             </div>
           </div>
@@ -60,7 +58,6 @@ function Home() {
                 </p>
               </div>
             </div>
-
             <div className="vts-4">
               <div className={style.boxdesign1}>
                 <div className={style.image}>
