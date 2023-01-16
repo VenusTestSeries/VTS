@@ -19,6 +19,7 @@ const GridItems = ({ value, items, onSelect }: GridItemsProps) => {
     if (onSelect) {
       onSelect(selected);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
     <div className={css["grid"]}>

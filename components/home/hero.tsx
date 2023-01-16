@@ -150,6 +150,7 @@ const HeroSection = () => {
       default:
         return null;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     contentArray,
     counter,
