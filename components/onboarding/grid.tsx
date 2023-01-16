@@ -12,13 +12,14 @@ interface GridItemsProps {
   onSelect: (value: string) => void;
 }
 
-const GridItems = ({ items, onSelect }: GridItemsProps) => {
-  const [selected, setSelected] = React.useState("");
+const GridItems = ({ value, items, onSelect }: GridItemsProps) => {
+  const [selected, setSelected] = React.useState(value);
 
   React.useEffect(() => {
     if (onSelect) {
       onSelect(selected);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
     <div className={css["grid"]}>

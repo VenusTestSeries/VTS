@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "components/button";
-import GridItems from "components/onboarding/grid";
 // ICONS
 import PerPageLayout from "layout/perpage";
 import BankIcon from "lib/icons/BankIcon";
 import GlobeIcon from "lib/icons/GlobeIcon";
 import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
-import AddCircleOutline from "lib/icons/AddCircleOutline";
 import css from "styles/onboarding.module.scss";
 
 const OnBoarding3 = () => {
@@ -26,30 +24,14 @@ const OnBoarding3 = () => {
           <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
 
           <ul className={css["list"]}>
-            <li>
-              <div className={css["pass"]}>Tier-1 </div>
-              Preliminary
-            </li>
-            <li>
-              <div className={css["pass"]}>Tier-2 </div>
-              Preliminary
-            </li>
-            <li>
-              <div className={css["pass"]}>Tier-3</div>
-              Preliminary
-            </li>
-            <li>
-              <div className={css["pass"]}>Tier-3 </div>
-              Preliminary
-            </li>
-            <li>
-              <div className={css["pass"]}>Tier-4 </div>
-              Preliminary
-            </li>
-            <li>
-              <div className={css["pass"]}>Tier-5 </div>
-              Preliminary
-            </li>
+            {Array.from(Array(40).keys()).map((_, i) => {
+              return (
+                <li key={i}>
+                  <div className={css["pass"]}>Tier-{i} </div>
+                  Preliminary
+                </li>
+              );
+            })}
           </ul>
         </div>
 

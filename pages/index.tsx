@@ -1,15 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
+import StarIcon from "lib/icons/star";
 import Button from "components/button";
-import poppins from "font/poppins";
 import PerPageLayout from "layout/perpage";
 import style from "../styles/home.module.scss";
-import Image from "next/image";
-import ImageSlider from "components/slider";
-import StarIcon from "lib/icons/star";
+import TestimonialSlider from "components/slider/testimonial";
+import HeroSection from "components/home/hero";
 
 function Home() {
   return (
     <div>
-      <section className={style.banersection}>
+      {/* <section className={style.banersection}>
         <div className="container">
           <div className="row">
             <div className="vts-5">
@@ -36,12 +37,13 @@ function Home() {
                 width={500}
                 height={333}
                 alt=""
-                align="right"
               />
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <HeroSection />
 
       <section className="pt-50 pb-50">
         <div className="container">
@@ -60,7 +62,6 @@ function Home() {
                 </p>
               </div>
             </div>
-
             <div className="vts-4">
               <div className={style.boxdesign1}>
                 <div className={style.image}>
@@ -242,116 +243,361 @@ function Home() {
             consectetur, adipisci velit
           </p>
 
-          <div className="row mt-50">
-            <div className="vts-4">
-              <div className={style.testimonialbox}>
-                <div className={style.image}>
-                  <img src="/images/avtar.png" alt="" />
-                </div>
-                <div className={style.name}>
-                  <h4>Lorem Ipsum</h4>
-                  <h5>Where does it come from?</h5>
-                </div>
-                <div className={style.review}>
-                  <ul>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                  </ul>
-                </div>
-                <div className={style.content}>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using
-                </div>
-              </div>
-            </div>
-            <div className="vts-4">
-              <div className={style.testimonialbox}>
-                <div className={style.image}>
-                  <img src="/images/avtar.png" alt="" />
-                </div>
-                <div className={style.name}>
-                  <h4>Lorem Ipsum</h4>
-                  <h5>Where does it come from?</h5>
-                </div>
-                <div className={style.review}>
-                  <ul>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                  </ul>
-                </div>
-                <div className={style.content}>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using
-                </div>
-              </div>
-            </div>
-            <div className="vts-4">
-              <div className={style.testimonialbox}>
-                <div className={style.image}>
-                  <img src="/images/avtar.png" alt="" />
-                </div>
-                <div className={style.name}>
-                  <h4>Lorem Ipsum</h4>
-                  <h5>Where does it come from?</h5>
-                </div>
-                <div className={style.review}>
-                  <ul>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                    <li>
-                      <StarIcon></StarIcon>
-                    </li>
-                  </ul>
-                </div>
-                <div className={style.content}>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using
-                </div>
-              </div>
-            </div>
-          </div>
+          <TestimonialSlider
+            items={[
+              {
+                element: (
+                  <div className="row mt-50">
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                element: (
+                  <div className="row mt-50">
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                element: (
+                  <div className="row mt-50">
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                    <div className="vts-4">
+                      <div className={style.testimonialbox}>
+                        <div className={style.image}>
+                          <img src="/images/avtar.png" alt="" />
+                        </div>
+                        <div className={style.name}>
+                          <h4>Lorem Ipsum</h4>
+                          <h5>Where does it come from?</h5>
+                        </div>
+                        <div className={style.review}>
+                          <ul>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                            <li>
+                              <StarIcon></StarIcon>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className={style.content}>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
           <div className="container mt-50">
             <div className="row justfiy_content_center">
               <div className="vts-3">
@@ -435,34 +681,109 @@ function Home() {
             How we solve
           </h2>
 
-          <div className="row justfiy_content_center">
-            <div className="vts-10">
-              <div className={style.testimonialsoneslider}>
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy. Various versions have evolved over the years,
-                  sometimes by accident, sometimes on purpose (injected humour
-                  and the like).
-                </p>
-                <div className={style.imagewithtext}>
-                  <div className={style.image}>
-                    <img src="/images/avtar.png" alt="" />
+          <TestimonialSlider
+            items={[
+              {
+                element: (
+                  <div className="row justfiy_content_center">
+                    <div className="vts-10">
+                      <div className={style.testimonialsoneslider}>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using 'Content here, content
+                          here', making it look like readable English. Many
+                          desktop publishing packages and web page editors now
+                          use Lorem Ipsum as their default model text, and a
+                          search for 'lorem ipsum' will uncover many web sites
+                          still in their infancy. Various versions have evolved
+                          over the years, sometimes by accident, sometimes on
+                          purpose (injected humour and the like).
+                        </p>
+                        <div className={style.imagewithtext}>
+                          <div className={style.image}>
+                            <img src="/images/avtar.png" alt="" />
+                          </div>
+                          <div className={style.name}>
+                            <h4>Lorem Ipsum</h4>
+                            <h5>CTO</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className={style.name}>
-                    <h4>Lorem Ipsum</h4>
-                    <h5>CTO</h5>
+                ),
+              },
+              {
+                element: (
+                  <div className="row justfiy_content_center">
+                    <div className="vts-10">
+                      <div className={style.testimonialsoneslider}>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using 'Content here, content
+                          here', making it look like readable English. Many
+                          desktop publishing packages and web page editors now
+                          use Lorem Ipsum as their default model text, and a
+                          search for 'lorem ipsum' will uncover many web sites
+                          still in their infancy. Various versions have evolved
+                          over the years, sometimes by accident, sometimes on
+                          purpose (injected humour and the like).
+                        </p>
+                        <div className={style.imagewithtext}>
+                          <div className={style.image}>
+                            <img src="/images/avtar.png" alt="" />
+                          </div>
+                          <div className={style.name}>
+                            <h4>Lorem Ipsum</h4>
+                            <h5>CTO</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                ),
+              },
+              {
+                element: (
+                  <div className="row justfiy_content_center">
+                    <div className="vts-10">
+                      <div className={style.testimonialsoneslider}>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout. The point of using Lorem Ipsum
+                          is that it has a more-or-less normal distribution of
+                          letters, as opposed to using 'Content here, content
+                          here', making it look like readable English. Many
+                          desktop publishing packages and web page editors now
+                          use Lorem Ipsum as their default model text, and a
+                          search for 'lorem ipsum' will uncover many web sites
+                          still in their infancy. Various versions have evolved
+                          over the years, sometimes by accident, sometimes on
+                          purpose (injected humour and the like).
+                        </p>
+                        <div className={style.imagewithtext}>
+                          <div className={style.image}>
+                            <img src="/images/avtar.png" alt="" />
+                          </div>
+                          <div className={style.name}>
+                            <h4>Lorem Ipsum</h4>
+                            <h5>CTO</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
         </div>
         <div className="container">
           <div className="row justfiy_content_center">
