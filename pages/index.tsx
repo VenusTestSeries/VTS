@@ -43,6 +43,49 @@ function Home() {
         </div>
       </section> */}
       <HeroSection />
+
+      <section className={style.productbox1}>
+        <div className="row">
+          <div className={`${style.contentbox} bg_secondary vts-6`}>
+            <h2>Test Series </h2>
+            <p className="mt-50">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an
+            </p>
+          </div>
+          <div className={`${style.bg_image1} vts-6`}></div>
+        </div>
+      </section>
+
+      <section className={style.productbox1}>
+        <div className="row">
+          <div className={`${style.bg_image1} vts-6`}></div>
+          <div className={`${style.contentbox}  bg_primary vts-6`}>
+            <h2>Study Material </h2>
+            <p className="mt-50">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={style.productbox1}>
+        <div className="row">
+          <div className={`${style.contentbox} bg_secondary vts-6`}>
+            <h2>Playground </h2>
+            <p className="mt-50">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an
+            </p>
+          </div>
+          <div className={`${style.bg_image1} vts-6`}></div>
+        </div>
+      </section>
+
       <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>
@@ -99,10 +142,8 @@ function Home() {
           <div className="row mt-50">
             <div className="vts-4">
               <div className={style.boxdesign2}>
-                <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div>
                 <div className={style.text}>
+                  <div className={style.bigtext}>1</div>
                   <p>
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
@@ -112,12 +153,15 @@ function Home() {
             </div>
 
             <div className="vts-4">
-              <div className={style.boxdesign2}>
-                <div className={style.image}>
+              <div className={`${style.boxdesign2} bg_night-var-color5`}>
+                {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
-                </div>
+                </div> */}
                 <div className={style.text}>
-                  <p>
+                  <div className={`${style.bigtext} text_night_var_gray`}>
+                    2
+                  </div>
+                  <p className="text_night_var_gray">
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
                   </p>
@@ -127,10 +171,11 @@ function Home() {
 
             <div className="vts-4">
               <div className={style.boxdesign2}>
-                <div className={style.image}>
+                {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
-                </div>
+                </div> */}
                 <div className={style.text}>
+                  <div className={style.bigtext}>3</div>
                   <p>
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
@@ -140,12 +185,15 @@ function Home() {
             </div>
 
             <div className="vts-4">
-              <div className={style.boxdesign2}>
-                <div className={style.image}>
+              <div className={`${style.boxdesign2} bg_night-var-color5`}>
+                {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
-                </div>
+                </div> */}
                 <div className={style.text}>
-                  <p>
+                  <div className={`${style.bigtext} text_night_var_gray`}>
+                    4
+                  </div>
+                  <p className="text_night_var_gray">
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
                   </p>
@@ -154,10 +202,11 @@ function Home() {
             </div>
             <div className="vts-4">
               <div className={style.boxdesign2}>
-                <div className={style.image}>
+                {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
-                </div>
+                </div> */}
                 <div className={style.text}>
+                  <div className={style.bigtext}>5</div>
                   <p>
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
@@ -167,12 +216,15 @@ function Home() {
             </div>
 
             <div className="vts-4">
-              <div className={style.boxdesign2}>
-                <div className={style.image}>
+              <div className={`${style.boxdesign2} bg_night-var-color5`}>
+                {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
-                </div>
+                </div> */}
                 <div className={style.text}>
-                  <p>
+                  <div className={`${style.bigtext} text_night_var_gray`}>
+                    6
+                  </div>
+                  <p className="text_night_var_gray">
                     The Questions of The most Test Series platform are
                     irrelevant either Too Difficult or Too Easy{" "}
                   </p>

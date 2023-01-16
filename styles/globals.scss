@@ -155,6 +155,10 @@ html {
 .text_primary {
   color: var(--night-primary);
 }
+.text_night_var_gray {
+  color: var(--night-var-gray) !important;
+}
+
 // background color
 .bg_white {
   background: var(--venus-white);
@@ -186,6 +190,9 @@ html {
 
 .bg_primary {
   background: var(--night-primary);
+}
+.bg_night-var-color5 {
+  background: var(--night-var-color5) !important;
 }
 
 .container,
