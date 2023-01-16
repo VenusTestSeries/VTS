@@ -42,9 +42,7 @@ function Home() {
           </div>
         </div>
       </section> */}
-
       <HeroSection />
-
       <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>

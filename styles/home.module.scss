@@ -33,6 +33,11 @@
         color: var(--venus-var-white);
       }
     }
+
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
   &:before {
     content: "";
