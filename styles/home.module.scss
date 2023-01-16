@@ -26,6 +26,11 @@
       color: var(--night-var-gray);
       margin-bottom: 50px;
     }
+
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
   &:before {
     content: "";

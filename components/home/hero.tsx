@@ -4,6 +4,8 @@ import Button from "components/button";
 import style from "styles/home.module.scss";
 import Options from "constant";
 import { useRouter } from "next/router";
+import ArrowRight from "lib/icons/ArrowRight";
+import ArrowLeft from "lib/icons/ArrowLeft";
 
 const GenderArray = [
   {
@@ -84,6 +86,12 @@ const HeroSection = () => {
     },
     [contentArray.length, counter, router, state.course]
   );
+
+  const onPrevious = React.useCallback(() => {
+    if (counter > 0) {
+      setCounter((i) => i - 1);
+    }
+  }, [counter]);
 
   console.log(state);
   console.log(counter);
@@ -173,13 +181,22 @@ const HeroSection = () => {
             <form className={style.bannerform} onSubmit={onSubmit}>
               {RenderComponent}
               <div className="buttonaction row">
-                <div className="vts-8">
+                <div className="vts-2">
+                  <Button theme="secondry" type="button" onClick={onPrevious}>
+                    <ArrowLeft />
+                  </Button>
+                </div>
+                <div className="vts-2">
                   <Button theme="secondry" type="submit">
-                    continue
+                    <ArrowRight />
                   </Button>
                 </div>
                 <div className="vts-4">
-                  <Button type="button" theme="primary">
+                  <Button
+                    type="button"
+                    theme="primary"
+                    onClick={() => router.push("/onboarding/welcome")}
+                  >
                     Skip
                   </Button>
                 </div>
