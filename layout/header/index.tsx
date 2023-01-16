@@ -32,63 +32,67 @@ const Header = () => {
 
   return (
     <header className={css.midheader}>
-      <div className={css.logowithnav}>
-        <div className={css.logo}>Logo</div>
-      </div>
-      <div className={css.searchwithaction}>
-        <div className={css.navlink}>
-          <ul>
-            <li>
-              <a href="#">menu1</a>
-            </li>
-            <li>
-              <a href="#">menu2</a>
-            </li>
-            <li>
-              <a href="#">menu3</a>
-            </li>
-            <li>
-              <a href="#">menu3</a>
-            </li>
-            <li>
-              <a href="#">menu3</a>
-            </li>
-            <li>
-              <a href="#">menu3</a>
-            </li>
-          </ul>
-        </div>
-        <div className={css.siteaction}>
-          <ul>
-            <li ref={userModelRef} className={css.loginlink}>
-              <a onClick={() => setUserModel(!userModel)}>
-                <UserIcon color="#b3c5ef" />
-                <span>Profile</span>
-              </a>
-              {userModel && (
-                <div className={css.login}>
-                  <h4> Welcome</h4>
-                  <p>To access account and manage orders</p>
-                  <button onClick={() => push("/auth/login")}>
-                    LOGIN / SIGNUP
-                  </button>
-                </div>
-              )}
-            </li>
+      <div className="container">
+        <div className="d-flex justify-content-spacebetween">
+          <div className={css.logowithnav}>
+            <div className={css.logo}>Logo</div>
+          </div>
+          <div className={css.searchwithaction}>
+            <div className={css.navlink}>
+              <ul>
+                <li>
+                  <a href="#">menu1</a>
+                </li>
+                <li>
+                  <a href="#">menu2</a>
+                </li>
+                <li>
+                  <a href="#">menu3</a>
+                </li>
+                <li>
+                  <a href="#">menu3</a>
+                </li>
+                <li>
+                  <a href="#">menu3</a>
+                </li>
+                <li>
+                  <a href="#">menu3</a>
+                </li>
+              </ul>
+            </div>
+            <div className={css.siteaction}>
+              <ul>
+                <li ref={userModelRef} className={css.loginlink}>
+                  <a onClick={() => setUserModel(!userModel)}>
+                    <UserIcon color="#b3c5ef" />
+                    <span>Profile</span>
+                  </a>
+                  {userModel && (
+                    <div className={css.login}>
+                      <h4> Welcome</h4>
+                      <p>To access account and manage orders</p>
+                      <button onClick={() => push("/auth/login")}>
+                        LOGIN / SIGNUP
+                      </button>
+                    </div>
+                  )}
+                </li>
 
-            <li>
-              <a href="#">
-                <HeartOutlineIcon color="#b3c5ef" />
-                <span>Wishlist</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <BagIcom color="#b3c5ef" />
-                <span>Bag</span>
-              </a>
-            </li>
-          </ul>
+                <li>
+                  <a href="#">
+                    <HeartOutlineIcon color="#b3c5ef" />
+                    <span>Wishlist</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <BagIcom color="#b3c5ef" />
+                    <span>Bag</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>
