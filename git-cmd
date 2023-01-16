@@ -2,3 +2,5 @@ git add .
 git commit -m ""
 git pull
 git push 
+
+git add . && git commit -m "changes" && git pull && git push 

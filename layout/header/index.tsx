@@ -10,6 +10,7 @@ import UserIcon from "lib/icons/UserIcon";
 import HeartOutlineIcon from "lib/icons/HeartOutlineIcon";
 import { useRouter } from "next/router";
 import BagIcom from "lib/icons/BagIcom";
+import NavBar from "constant/nav-bar";
 
 interface HeaderProps {
   state: boolean;
@@ -40,7 +41,12 @@ const Header = () => {
           <div className={css.searchwithaction}>
             <div className={css.navlink}>
               <ul>
-                <li>
+                {NavBar.map((item, index) => (
+                  <li key={index}>
+                    <a href="#">{item.title}</a>
+                  </li>
+                ))}
+                {/* <li>
                   <a href="#">menu1</a>
                 </li>
                 <li>
@@ -57,7 +63,7 @@ const Header = () => {
                 </li>
                 <li>
                   <a href="#">menu3</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className={css.siteaction}>
