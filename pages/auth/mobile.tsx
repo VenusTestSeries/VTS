@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import css from "styles/auth.module.scss";
+import axios from "axios";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 
@@ -25,6 +26,14 @@ const LoginWithMobile = () => {
     [state]
   );
 
+  const AuthWithGoogle = () => {
+    try {
+      window.open("http://localhost:5000/auth/google", "_self");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={css["container"]}>
       <div className={css["grid"]}>
@@ -47,10 +56,14 @@ const LoginWithMobile = () => {
 
             <div className={css["social"]}>
               <div className={css["icons"]}>
-                <Link href={"/"} className={css["item"]}>
+                <a
+                  onClick={AuthWithGoogle}
+                  // href={"http://localhost:5000/google"}
+                  className={css["item"]}
+                >
                   <img src="/svg/google.svg" alt="google" />
                   <p>Google</p>
-                </Link>
+                </a>
                 <Link href={"/"} className={css["item"]}>
                   <img src="/svg/facebook.svg" alt="google" />
                   <p>Facebook</p>
@@ -90,3 +103,8 @@ const LoginWithMobile = () => {
   );
 };
 export default LoginWithMobile;
+
+// axios({
+//   method: "GET",
+//   url: "http://localhost:5000/google",
+// });

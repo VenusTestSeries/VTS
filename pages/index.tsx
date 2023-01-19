@@ -86,7 +86,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="pt-50 pb-50">
+      {/* <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>
           <div className="row">
@@ -132,7 +132,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className={`${style.awardsection} pt-50 pb-50`}>
         <div className="container">
