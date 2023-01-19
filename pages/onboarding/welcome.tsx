@@ -11,7 +11,7 @@ import Options from "constant/index";
 const OnBoarding = () => {
   const router = useRouter();
 
-  const [selected, setSelected] = React.useState("SSC");
+  // const [selected, setSelected] = React.useState("SSC");
 
   return (
     <div className={css["container"]}>
@@ -26,17 +26,19 @@ const OnBoarding = () => {
         </div>
         <GridItems
           items={Options}
-          value={selected}
-          onSelect={(value) => setSelected(value)}
+          value={""}
+          onSelect={(value) =>
+            router.push(`/onboarding/${value.toLowerCase()}`)
+          }
         />
-        <div className="mt-50 ">
+        {/* <div className="mt-50 ">
           <Button
             theme="secondry"
             onClick={() => router.push(`/onboarding/${selected.toLowerCase()}`)}
           >
             Continue
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

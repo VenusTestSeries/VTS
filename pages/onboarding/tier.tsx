@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "components/button";
+import GridItems from "components/onboarding/grid";
 // ICONS
 import PerPageLayout from "layout/perpage";
 import BankIcon from "lib/icons/BankIcon";
@@ -7,144 +8,61 @@ import GlobeIcon from "lib/icons/GlobeIcon";
 import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
+import { useRouter } from "next/router";
 
-const OnBoarding3 = () => {
+const BoardingPage = () => {
+  const { push } = useRouter();
+
   return (
-    <section className="bg_primary pt-50 pb-50">
-      <div className="container">
-        <div>
-          <div className={css["qutbox"]}>
-            <div className={css["heading"]}>
-              <h4>SSC CGl </h4>
-
-              <a href="#">VIEW MORE</a>
-            </div>
-            <div className={css["subheading"]}>
-              Become an inspector in Customs, Income tax, CBI
-            </div>
-            <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-
-            <ul className={css["list"]}>
-              {Array.from(Array(40).keys()).map((_, i) => {
-                return (
-                  <li key={i}>
-                    <div className={css["pass"]}>Tier-{i} </div>
-                    Preliminary
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className={css["qutbox"]}>
-            <div className={css["heading"]}>
-              <h4>SSC CGl </h4>
-
-              <a href="#">VIEW MORE</a>
-            </div>
-            <div className={css["subheading"]}>
-              Become an inspector in Customs, Income tax, CBI
-            </div>
-            <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-
-            <ul className={css["list"]}>
-              <li>
-                <div className={css["pass"]}>Tier-1 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-2 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-3</div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-3 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-4 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-5 </div>
-                Preliminary
-              </li>
-            </ul>
-          </div>
-
-          <div className={css["qutbox"]}>
-            <div className={css["heading"]}>
-              <h4>SSC CGl </h4>
-
-              <a href="#">VIEW MORE</a>
-            </div>
-            <div className={css["subheading"]}>
-              Become an inspector in Customs, Income tax, CBI
-            </div>
-            <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-
-            <ul className={css["list"]}>
-              <li>
-                <div className={css["pass"]}>Tier-1 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-2 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-3</div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-3 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-4 </div>
-                Preliminary
-              </li>
-              <li>
-                <div className={css["pass"]}>Tier-5 </div>
-                Preliminary
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-50 ">
-            <Button theme="secondry">Continue</Button>
-          </div>
+    <div className={css["container"]}>
+      <div>
+        <div className={css["details"]}>
+          <h1 className="text_center">Welcome To SSC</h1>
+          <p className="text_center">You are preparing for</p>
         </div>
+        <div className={css["progreescount"]}>1/7</div>
+        <div className={css["progrees"]}>
+          <div className={css["loading"]}></div>
+        </div>
+        <GridItems
+          items={Options}
+          value={""}
+          onSelect={(value) => push("/onboarding/levels")}
+        />
+        {/* <div className="mt-50 ">
+          <Button theme="secondry" onClick={() => push("/onboarding/tier")}>
+            Continue
+          </Button>
+        </div> */}
       </div>
-    </section>
+    </div>
   );
 };
-export default OnBoarding3;
+export default BoardingPage;
 
-OnBoarding3.perpage = PerPageLayout;
+BoardingPage.perpage = PerPageLayout;
+
+// tier one + tier two + math + english + prev years
 
 const Options = [
   {
-    title: "CGL",
+    title: "Tier one",
     icon: <GlobeIcon fill="#fff" />,
   },
   {
-    title: "CHSL",
+    title: "Tier two",
     icon: <RailIcon fill="#fff" />,
   },
   {
-    title: "MTS ",
+    title: "Math ",
     icon: <BankIcon fill="#fff" />,
   },
   {
-    title: "CPO ",
+    title: "English ",
     icon: <NurseIcon fill="#fff" />,
   },
   {
-    title: "   Other",
+    title: "Previous Years",
     icon: <GlobeIcon fill="#fff" />,
   },
 ];

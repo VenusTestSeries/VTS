@@ -15,12 +15,13 @@ interface GridItemsProps {
 const GridItems = ({ value, items, onSelect }: GridItemsProps) => {
   const [selected, setSelected] = React.useState(value);
 
-  React.useEffect(() => {
-    if (onSelect) {
-      onSelect(selected);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selected]);
+  const _onSelect = React.useCallback(
+    (value: string) => {
+      onSelect(value);
+      setSelected(value);
+    },
+    [onSelect]
+  );
   return (
     <div className={css["grid"]}>
       {items.map((item, index) => {
@@ -30,7 +31,7 @@ const GridItems = ({ value, items, onSelect }: GridItemsProps) => {
             className={`${css["items"]} ${
               selected === item.title ? css["active"] : ""
             }`}
-            onClick={() => setSelected(item.title)}
+            onClick={() => _onSelect(item.title)}
           >
             <span>{item.icon}</span>
             {item.title}

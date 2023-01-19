@@ -27,13 +27,13 @@ const BoardingPage = () => {
         <GridItems
           items={Options}
           value={""}
-          onSelect={(value) => console.log(value)}
+          onSelect={(value) => push("/onboarding/tier")}
         />
-        <div className="mt-50 ">
+        {/* <div className="mt-50 ">
           <Button theme="secondry" onClick={() => push("/onboarding/tier")}>
             Continue
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -308,6 +308,10 @@ function Home() {
           </p>
 
           <TestimonialSlider
+            options={{
+              autoplay: true,
+              interval: 2000,
+            }}
             items={[
               {
                 element: (

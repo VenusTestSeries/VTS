@@ -1,3 +1,5 @@
+
+//  Test Series + Study material + playground  + ask + get hired
 const NavBar = [
     {
         title: 'Home',
@@ -10,7 +12,17 @@ const NavBar = [
         ]
     },
     {
-        title: 'Study Room',
+        title: 'Test Series',
+        link: '',
+        subMenu: [
+            {
+                title: 'Home 1',
+                link: '',
+            }
+        ]
+    },
+    {
+        title: 'Study Material',
         link: '',
         subMenu: [
             {
@@ -50,7 +62,18 @@ const NavBar = [
         ]
     },
     {
-        title: 'Compete ( Gamification Feature )',
+        // title: 'Compete ( Gamification Feature )',
+        title: 'Playground',
+        link: '',
+    },
+    {
+        // title: 'Compete ( Gamification Feature )',
+        title: 'Ask',
+        link: '',
+    },
+    {
+        // title: 'Compete ( Gamification Feature )',
+        title: 'Get hired',
         link: '',
     },
 
