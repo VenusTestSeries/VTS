@@ -6,7 +6,8 @@
   left: 0;
   z-index: 10;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 32%);
-  background: var(--night-var-primary);
+  background: var(--night-var-color5);
+  //background: var(--night-var-primary);
   /* list-style: none; */
   display: flex;
   justify-content: space-between;
@@ -21,6 +22,7 @@
     .logo {
       font-size: 30px;
       color: var(--night-var-gray);
+      line-height: 0;
     }
   }
 
