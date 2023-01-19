@@ -6,83 +6,97 @@ import PerPageLayout from "layout/perpage";
 import style from "../styles/home.module.scss";
 import TestimonialSlider from "components/slider/testimonial";
 import HeroSection from "components/home/hero";
+import Link from "next/link";
+import Image from "next/image";
+import ArrowRight from "lib/icons/ArrowRight";
+import Briefcaseline from "lib/icons/Briefcaseline";
+import CheckmarkICloud from "lib/icons/CheckmarkICloud";
+import Checkfill from "lib/icons/Checkfill";
+import Flashlightline from "lib/icons/Flashlightline";
 
 function Home() {
   return (
     <div>
-      {/* <section className={style.banersection}>
-        <div className="container">
-          <div className="row">
-            <div className="vts-5">
-              <div className="bannercontent">
-                <h1>The best way to learn to code</h1>
-                <h2>What is Your Name</h2>
-                <div className={style.bannerform}>
-                  <input type="text" placeholder="TYPE YOUR NAME...." />
+      <HeroSection />
 
-                  <div className="buttonaction row">
-                    <div className="vts-8">
-                      <Button theme="secondry">continue</Button>
-                    </div>
-                    <div className="vts-4">
-                      <Button theme="primary">Skip</Button>
-                    </div>
-                  </div>
-                </div>
+      <section className={`${style.productbox1} pt-50 pb-50`}>
+        <div className="container">
+          <div className={`${style.rowsection} row`}>
+            <div className={`${style.contentbox}  vts-6`}>
+              <h2>Test Series </h2>
+              <p>
+                Identify bottlenecks and developer friction, improve flow
+                efficiency and deployment, and build healthy development
+                patterns.
+              </p>
+              <div className={`${style.buttonsection}  button`}>
+                <Link href="#">
+                  {" "}
+                  Learn more <ArrowRight />{" "}
+                </Link>
               </div>
             </div>
-            <div className="vts-7">
-              <img
-                src="/images/bannerimage.png"
-                width={500}
-                height={333}
-                alt=""
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/increase-delivery.webp"
+                height={335}
+                width={545}
+                alt="Test Series"
               />
             </div>
           </div>
         </div>
-      </section> */}
-      <HeroSection />
-
-      <section className={style.productbox1}>
-        <div className="row">
-          <div className={`${style.contentbox} bg_secondary vts-6`}>
-            <h2>Test Series </h2>
-            <p className="mt-50">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an
-            </p>
-          </div>
-          <div className={`${style.bg_image1} vts-6`}></div>
-        </div>
-      </section>
-
-      <section className={style.productbox1}>
-        <div className="row">
-          <div className={`${style.bg_image1} vts-6`}></div>
-          <div className={`${style.contentbox}  bg_primary vts-6`}>
-            <h2>Study Material </h2>
-            <p className="mt-50">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an
-            </p>
+        <div className="container">
+          <div className={`${style.rowsection} row`}>
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/build-thriving-team.webp"
+                height={335}
+                width={545}
+                alt="Test Series"
+              />
+            </div>
+            <div className={`${style.contentbox}  vts-6`}>
+              <h2>Study Material </h2>
+              <p>
+                Identify bottlenecks and developer friction, improve flow
+                efficiency and deployment, and build healthy development
+                patterns.
+              </p>
+              <div className={`${style.buttonsection}  button`}>
+                <Link href="#">
+                  {" "}
+                  Learn more <ArrowRight />{" "}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className={style.productbox1}>
-        <div className="row">
-          <div className={`${style.contentbox} bg_secondary vts-6`}>
-            <h2>Playground </h2>
-            <p className="mt-50">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an
-            </p>
+        <div className="container">
+          <div className={`${style.rowsection} row`}>
+            <div className={`${style.contentbox}  vts-6`}>
+              <h2>Playground</h2>
+              <p>
+                Identify bottlenecks and developer friction, improve flow
+                efficiency and deployment, and build healthy development
+                patterns.
+              </p>
+              <div className={`${style.buttonsection}  button`}>
+                <Link href="#">
+                  {" "}
+                  Learn more <ArrowRight />{" "}
+                </Link>
+              </div>
+            </div>
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/say-goodbye-to-wasted-efforts.png"
+                height={335}
+                width={545}
+                alt="Test Series"
+              />
+            </div>
           </div>
-          <div className={`${style.bg_image1} vts-6`}></div>
         </div>
       </section>
 
@@ -287,7 +301,7 @@ function Home() {
 
       <section className={`${style.testimonialsection} pt-50 pb-50`}>
         <div className="container">
-          <h2 className="text_center  heading2 text_primary">Testimonials</h2>
+          <h2 className="text_center  heading2 text_graydark">Testimonials</h2>
           <p className="font_size18 text_center font-w600 text_skyblue">
             Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit
@@ -885,7 +899,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="pt-50 pb-50">
+      <section className={`${style.pricetablesection}  pt-50 pb-50`}>
         <div className="container">
           <h2 className="text_center  heading2 text_primary mb-50">
             Price Table
@@ -893,64 +907,126 @@ function Home() {
           <div className="row">
             <div className="vts-4">
               <div className={style.pricetable}>
-                <div className={style.price}>
-                  <div className={style.plan}>BASIC </div>
-                  <div className={style.amount}>Rs.29</div>
+                <div className={style.imagewithtext}>
+                  <div className={style.image}>
+                    <Briefcaseline />
+                  </div>
+                  <div className={style.text}>Lite</div>
                 </div>
-                <div className={style.content}>
-                  <ul>
-                    <li>31 full user</li>
-                    <li>1000 Email Previews</li>
-                    <li>5 Contacts per Clints</li>
-                    <li>5 Coffee Cips</li>
-                  </ul>
+                <div className={style.sug}>Perfect to get Startes</div>
+
+                <div className={style.price}>
+                  <div className={style.plan}>
+                    <span>$</span> 11{" "}
+                  </div>
+                  <div className={style.amount}> per seat/month</div>
                 </div>
 
-                <div className={style.callbtn}>
-                  <Button theme="secondry">BUY NOW</Button>
+                <Button theme="secondry">Try 7 days for free</Button>
+
+                <div className={style.content}>
+                  <h4> Lite Includes:</h4>
+                  <ul>
+                    <li>
+                      <Checkfill /> 31 full user
+                    </li>
+                    <li>
+                      <Checkfill /> 1000 Email Previews
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Contacts per Clints
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Coffee Cips
+                    </li>
+                  </ul>
                 </div>
+              </div>
+              <div className={style.callbtn}>
+                <Link href="index">See All Features</Link>
               </div>
             </div>
 
             <div className="vts-4">
               <div className={style.pricetable}>
-                <div className={style.price}>
-                  <div className={style.plan}>BASIC </div>
-                  <div className={style.amount}>Rs.29</div>
+                <div className={style.imagewithtext}>
+                  <div className={style.image}>
+                    <Briefcaseline />
+                  </div>
+                  <div className={style.text}>Pro</div>
                 </div>
-                <div className={style.content}>
-                  <ul>
-                    <li>31 full user</li>
-                    <li>1000 Email Previews</li>
-                    <li>5 Contacts per Clints</li>
-                    <li>5 Coffee Cips</li>
-                  </ul>
+                <div className={style.sug}>Toolset for hard players</div>
+
+                <div className={style.price}>
+                  <div className={style.plan}>
+                    <span>$</span> 19{" "}
+                  </div>
+                  <div className={style.amount}> per seat/month</div>
                 </div>
 
-                <div className={style.callbtn}>
-                  <Button theme="secondry">BUY NOW</Button>
+                <Button theme="secondry">Set Started</Button>
+
+                <div className={style.content}>
+                  <h4>Everything in lite, plus:</h4>
+                  <ul>
+                    <li>
+                      <Checkfill /> 31 full user
+                    </li>
+                    <li>
+                      <Checkfill /> 1000 Email Previews
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Contacts per Clints
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Coffee Cips
+                    </li>
+                  </ul>
                 </div>
               </div>
+              <div className={style.callbtn}>
+                <Link href="index">See All Features</Link>
+              </div>
             </div>
-
             <div className="vts-4">
               <div className={style.pricetable}>
-                <div className={style.price}>
-                  <div className={style.plan}>BASIC </div>
-                  <div className={style.amount}>Rs.29</div>
+                <div className={style.imagewithtext}>
+                  <div className={style.image}>
+                    <Flashlightline />
+                  </div>
+                  <div className={style.text}>Ultimate</div>
                 </div>
-                <div className={style.content}>
-                  <ul>
-                    <li>31 full user</li>
-                    <li>1000 Email Previews</li>
-                    <li>5 Contacts per Clints</li>
-                    <li>5 Coffee Cips</li>
-                  </ul>
+                <div className={style.sug}>Best for professionals</div>
+
+                <div className={style.price}>
+                  <div className={style.plan}>
+                    <span>$</span> 35{" "}
+                  </div>
+                  <div className={style.amount}> per seat/month</div>
                 </div>
 
-                <div className={style.callbtn}>
-                  <Button theme="secondry">BUY NOW</Button>
+                <Button theme="secondry">Set Started</Button>
+
+                <div className={style.content}>
+                  <h4> Everything in lite, plus:</h4>
+                  <ul>
+                    <li>
+                      <Checkfill /> 31 full user
+                    </li>
+                    <li>
+                      <Checkfill /> 1000 Email Previews
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Contacts per Clints
+                    </li>
+                    <li>
+                      <Checkfill /> 5 Coffee Cips
+                    </li>
+                  </ul>
                 </div>
+              </div>
+              <div className={style.callbtn}>
+                <Link href="index">See All Features</Link>
               </div>
             </div>
           </div>

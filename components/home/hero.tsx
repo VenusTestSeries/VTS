@@ -205,10 +205,11 @@ const HeroSection = () => {
           </div>
           <div className="vts-7">
             <img
-              src="/images/bannerimage.png"
-              width={500}
-              height={333}
+              src="/images/33.png"
+              width={400}
+              height={385}
               alt="bannerimage"
+              className={style.bannerimage}
             />
           </div>
         </div>

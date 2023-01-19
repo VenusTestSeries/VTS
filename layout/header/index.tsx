@@ -36,7 +36,14 @@ const Header = () => {
       <div className="container">
         <div className="d-flex justify-content-spacebetween">
           <div className={css.logowithnav}>
-            <div className={css.logo}>Logo</div>
+            <div className={css.logo}>
+              <Image
+                src="./svg/1_Logo-4.svg"
+                height={51}
+                width={300}
+                alt="Logo"
+              />
+            </div>
           </div>
           <div className={css.searchwithaction}>
             <div className={css.navlink}>
