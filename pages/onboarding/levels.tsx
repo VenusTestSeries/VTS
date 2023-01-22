@@ -64,9 +64,9 @@ const OnBoarding3 = () => {
             </ul>
           </div>
 
-          <div className="mt-50 ">
+          {/* <div className="mt-50 ">
             <Button theme="secondry">Continue</Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
