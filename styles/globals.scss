@@ -507,3 +507,462 @@ html {
 .mb-50 {
   margin-bottom: 50px;
 }
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.bg_red {
+  background-color: #c0392b !important;
+  border-color: #c0392b !important;
+  color: #fff !important;
+}
+.bg_green {
+  background-color: #1f9c54 !important;
+  border-color: #1f9c54 !important;
+  color: #fff !important;
+}
+.bg_warrning {
+  border-color: #ffd03b !important;
+  background-color: #ffd03b !important;
+  color: #fff !important;
+}
+.bg_white2 {
+  border-color: #000 !important;
+  background-color: #ffffff !important;
+  color: #000 !important;
+}
+
+// ------------------------------
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #1d283a;
+  color: #fff;
+  padding: 10px 0px;
+  align-items: center;
+}
+
+.header .leftbox {
+  padding-left: 16px;
+}
+
+.header .leftbox ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+.header .leftbox ul li.icon {
+  line-height: 0;
+}
+
+.header .leftbox ul li.text .text1 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.header .leftbox ul li.text .text2 {
+  font-weight: 100;
+}
+
+.inline-feedback {
+  display: flex;
+  background: #0f1729;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  gap: 15px;
+}
+
+.inline-feedback .inline-feedbacktext {
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.inline-feedback ul {
+  display: flex;
+  list-style: none;
+  line-height: 0;
+}
+
+.header .rightbox .box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.analy a {
+  background: #0f1729;
+  color: #fff;
+  padding: 20px 30px;
+}
+
+.timer {
+  background: #fff;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.inline-feedback ul li {
+  line-height: 0px;
+  margin-top: 3px;
+}
+.inline-feedback ul li svg {
+  width: 20px;
+  height: 20px;
+}
+
+// mid-----------------------
+
+.seriebox {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62px;
+  bottom: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+// left secton
+// top header
+
+.seriebox {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62px;
+  bottom: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.seriebox .leftsection {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-right: 300px;
+  z-index: 1;
+}
+
+.seriebox .rightsection {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  border-left: 1px solid #ddd;
+  background: #fff;
+  z-index: 41;
+}
+
+.actual_exam_ui_top {
+  background: #ececec;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.actual_exam_ui_top .left {
+  display: flex;
+  gap: 15px;
+}
+
+.actual_exam_ui_top .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.actual_exam_ui_top .left .button a {
+  background: #0f1729;
+  padding: 2px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+// ------------------------
+// mainboxtop
+
+.mainboxtop {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 16px;
+  border-bottom: 1px solid #ececec;
+}
+
+.mainboxtop .left {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.mainboxtop .left .outtimging {
+  display: flex;
+  gap: 5px;
+}
+
+.mainboxtop .right {
+  display: flex;
+  gap: 5px;
+}
+
+.mainboxtop .left .outtimging .marking span {
+  padding: 0;
+}
+
+.mainboxtop .right a {
+  font-size: 15px;
+}
+
+// Userandfillter
+
+.userandfillter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 10px;
+  font-size: 15px;
+  text-transform: capitalize;
+  background: #3abff8;
+  color: #1d283a;
+  border-bottom: 2px solid #1c8ab9;
+}
+
+.userandfillter ul.user {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 5px;
+}
+
+.userandfillter ul.user li.image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1d283a;
+}
+
+.userandfillter ul.user li.image svg {
+  fill: #ececec;
+  width: 20px;
+}
+
+.userandfillter .fillter {
+  display: flex;
+  align-items: center;
+}
+
+// results Box
+
+ul.results {
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+  gap: 10px;
+  border-bottom: 1px solid #ececec;
+}
+
+ul.results li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+ul.results span {
+  padding: 0 5px;
+  font-size: 10px;
+  border: 1px solid;
+}
+
+.heading {
+  background: #1d283a;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 300;
+}
+// Qarbox
+ul.Qarbox {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+  /* margin-top: 15px; */
+  padding: 20px 20px;
+}
+
+ul.Qarbox li {
+  border: 1px solid #000;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionbtnresult {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #ececec;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+}
+
+.actionbtnresult button {
+  flex: 1;
+  width: 100%;
+}
+
+.actionbtnresult div {
+  width: 100%;
+}
+
+/* label */
+.que_option label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin: 12px 0;
+
+  cursor: pointer;
+  position: relative;
+}
+
+/* input */
+.que_option input {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* .design */
+.que_option .design {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  margin-right: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.que_option .design::before,
+.que_option .design::after {
+  content: "";
+  display: block;
+
+  width: inherit;
+  height: inherit;
+
+  border-radius: inherit;
+
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.que_option .design:before {
+  background: #000;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.que_option .design::after {
+  background: #000;
+  opacity: 0.4;
+  transition: 0.6s;
+}
+
+/* .text */
+.que_option .text {
+  color: var(--other);
+  font-weight: bold;
+}
+
+/* checked state */
+.que_option input:checked + .design::before {
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+/* other states */
+.que_option input:hover + .design,
+.que_option input:focus + .design {
+  border: 1px solid #000;
+}
+
+.que_option input:hover + .design:before,
+.que_option input:focus + .design:before {
+  background: #000;
+}
+
+.que_option input:hover ~ .text {
+  color: #000;
+}
+
+.que_option input:focus + .design::after,
+.que_option input:active + .design::after {
+  opacity: 0.1;
+  transform: scale(2.6);
+}
+
+.detailed_question {
+  /* position: absolute; */
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: -13px;
+  overflow-y: auto;
+  padding: 10px 16px;
+}
+
+.detailed_questionfooter {
+  display: flex;
+  justify-content: space-between;
+  background: #ececec;
+  padding: 10px 16px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.detailed_questionfooter button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
