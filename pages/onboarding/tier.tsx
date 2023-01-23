@@ -46,11 +46,11 @@ BoardingPage.perpage = PerPageLayout;
 
 const Options = [
   {
-    title: "Tier one",
+    title: "Tier-I",
     icon: <GlobeIcon fill="#fff" />,
   },
   {
-    title: "Tier two",
+    title: "Tier-II",
     icon: <RailIcon fill="#fff" />,
   },
   {

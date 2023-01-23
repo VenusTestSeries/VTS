@@ -9,8 +9,8 @@ const Callback = () => {
     try {
       const url = "/api/google/success";
       const { data } = await axios({
+        url: url,
         method: "GET",
-        url,
         withCredentials: true,
       });
       console.log(data);

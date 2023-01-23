@@ -9,13 +9,43 @@ import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
 
 const OnBoarding3 = () => {
+  const [selected, setSelected] = React.useState("Easy");
+  const levelData = [
+    {
+      name: "Easy",
+    },
+    {
+      name: "Intermediate",
+    },
+    {
+      name: "Hard",
+    },
+  ];
+
+  const RenderList = React.useMemo(() => {
+    switch (selected) {
+      case "Easy":
+        return Array.from(Array(5).keys());
+      case "Intermediate":
+        return Array.from(Array(8).keys());
+      case "Hard":
+        return Array.from(Array(13).keys());
+      default:
+        return [];
+    }
+  }, [selected]);
+
   return (
     <section className="bg_primary pt-50 pb-50">
       <div className="container">
         <div>
           <div className={css["qutbox"]}>
             <div className={css["heading"]}>
-              <h4>Easy</h4>
+              {levelData.map((item, index) => (
+                <h4 key={index} onClick={() => setSelected(item.name)}>
+                  {item.name}
+                </h4>
+              ))}
               <a href="#">VIEW MORE</a>
             </div>
             <div className={css["subheading"]}>
@@ -23,7 +53,7 @@ const OnBoarding3 = () => {
             </div>
             <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
             <ul className={css["list"]}>
-              {Array.from(Array(10).keys()).map((_, i) => {
+              {RenderList.map((_, i) => {
                 return (
                   <li key={i}>
                     <div className={css["pass"]}>Tier-{i} </div>
@@ -34,9 +64,9 @@ const OnBoarding3 = () => {
             </ul>
           </div>
 
-          <div className="mt-50 ">
+          {/* <div className="mt-50 ">
             <Button theme="secondry">Continue</Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -1,0 +1,25 @@
+
+import { IncomingMessage, ServerResponse } from "http"
+import http from "http-proxy"
+
+
+const customProxy = http.createProxyServer()
+
+export const config = {
+    api: {
+        bodyParser: false,
+        externalResolver: true,
+    }
+}
+
+const Proxy = (req: IncomingMessage, res: ServerResponse) => {
+    customProxy.web(req, res,
+        {
+            changeOrigin: true,
+            target: process.env.NEXT_PUBLIC_API_URL,
+
+        }
+    )
+}
+
+export default Proxy

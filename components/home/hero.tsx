@@ -30,6 +30,8 @@ const HeroSection = () => {
     age: "",
     gender: "",
     course: "",
+    email: "",
+    phone: "",
   });
 
   const updateState = React.useCallback(
@@ -47,7 +49,7 @@ const HeroSection = () => {
       {
         id: 0,
         value: "name",
-        question: "What is your name?",
+        question: "I Am... ",
       },
       {
         id: 1,
@@ -57,10 +59,20 @@ const HeroSection = () => {
       {
         id: 2,
         value: "gender",
-        question: "What is your gender?",
+        question: "I Am...",
       },
       {
         id: 3,
+        value: "email",
+        question: "Send me study material on...",
+      },
+      {
+        id: 4,
+        value: "phone",
+        question: "Inform my test rank...",
+      },
+      {
+        id: 5,
         value: "course",
         question: "Which type of course you want to learn?",
       },
@@ -76,7 +88,7 @@ const HeroSection = () => {
       if (counter < contentArray.length - 1) {
         setCounter((i) => i + 1);
       }
-      if (counter === 3) {
+      if (counter === 5) {
         if (state.course === "SSC") {
           router.push("/onboarding/ssc");
         } else {
@@ -93,7 +105,7 @@ const HeroSection = () => {
     }
   }, [counter]);
 
-  console.log(state);
+  // console.log(state);
   console.log(counter);
   const RenderComponent = React.useMemo(() => {
     const count = contentArray.find((item) => item.id === counter);
@@ -114,6 +126,26 @@ const HeroSection = () => {
             placeholder="TYPE YOUR AGE...."
             onChange={(e) => updateState("age", e.target.value)}
             value={state.age}
+          />
+        );
+      case "email":
+        return (
+          <input
+            type="email"
+            placeholder="Enter your email...."
+            onChange={(e) => updateState("email", e.target.value)}
+            value={state.email}
+            required
+          />
+        );
+      case "phone":
+        return (
+          <input
+            type="number"
+            placeholder="Enter your phone number...."
+            onChange={(e) => updateState("phone", e.target.value)}
+            value={state.phone}
+            required
           />
         );
       case "gender":
@@ -166,6 +198,8 @@ const HeroSection = () => {
     state.course,
     state.gender,
     state.name,
+    state.email,
+    state.phone,
   ]);
 
   return (
@@ -183,12 +217,12 @@ const HeroSection = () => {
               <div className="buttonaction row">
                 <div className="vts-2">
                   <Button theme="secondry" type="button" onClick={onPrevious}>
-                    <ArrowLeft />
+                    <ArrowLeft fill="#b3c5ef" size={20} />
                   </Button>
                 </div>
                 <div className="vts-2">
                   <Button theme="secondry" type="submit">
-                    <ArrowRight />
+                    <ArrowRight fill="#b3c5ef" size={20} />
                   </Button>
                 </div>
                 <div className="vts-4">

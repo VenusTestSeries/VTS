@@ -100,7 +100,7 @@ function Home() {
         </div>
       </section>
 
-      {/* <section className="pt-50 pb-50">
+      <section className="pt-50 pb-50">
         <div className="container">
           <h2 className="text_center heading2">Why VTS</h2>
           <div className="row">
@@ -109,7 +109,7 @@ function Home() {
                 <div className={style.image}>
                   <img src="/svg/popular.svg" alt="" />
                 </div>
-                <h3>It s Popular</h3>
+                <h3>Quality Test Series</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -122,7 +122,7 @@ function Home() {
                 <div className={style.image}>
                   <img src="/svg/popular.svg" alt="" />
                 </div>
-                <h3>It s Popular</h3>
+                <h3>Quality Study Material</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -136,7 +136,7 @@ function Home() {
                 <div className={style.image}>
                   <img src="/svg/popular.svg" alt="" />
                 </div>
-                <h3>It s Popular</h3>
+                <h3>Quality Support From Team</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -146,7 +146,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className={`${style.awardsection} pt-50 pb-50`}>
         <div className="container">
