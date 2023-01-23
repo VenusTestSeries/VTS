@@ -15,7 +15,7 @@ const OnBoarding = () => {
 
   return (
     <div className={css["container"]}>
-      <div>
+      <div className={css["prooutbox"]}>
         <div className={css["details"]}>
           <h1 className="text_center">Welcome To VTS</h1>
           <p className="text_center">You are preparing for</p>
