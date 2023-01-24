@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import css from "styles/auth.module.scss";
+import SocialLogin from "components/social-login";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 
@@ -29,20 +30,7 @@ const Login = () => {
               <h1>Welcome Back</h1>
               <p>Login into your account</p>
             </div>
-
-            <div className={css["social"]}>
-              <div className={css["icons"]}>
-                <Link href={"/"} className={css["item"]}>
-                  <img src="/svg/google.svg" alt="google" />
-                  <p>Google</p>
-                </Link>
-                <Link href={"/"} className={css["item"]}>
-                  <img src="/svg/facebook.svg" alt="google" />
-                  <p>Facebook</p>
-                </Link>
-              </div>
-            </div>
-
+            <SocialLogin />
             <div className={css["line"]}>
               <p>Or continue with</p>
             </div>
