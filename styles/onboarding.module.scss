@@ -1,12 +1,15 @@
 // CONTAINER
 
 .container {
-  display: grid;
-  place-content: center;
+  display: flex;
+  /* place-content: center; */
   background: #1d283a;
-  min-height: 100vh;
-
+  min-height: 700px;
   padding: 50px;
+  justify-content: center;
+}
+.prooutbox {
+  width: 410px;
 }
 
 .details {
@@ -75,11 +78,11 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   .items {
-    padding: 33px;
+    padding: 26px 33px;
     border-radius: 15px;
     font-weight: 500;
-    font-size: 25px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 28px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -90,8 +93,11 @@
     border: 2px solid transparent;
     transition: all 150ms ease-in-out;
     background: #0f1729;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
+    height: 96px;
   }
 
   .items.active {

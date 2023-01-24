@@ -154,7 +154,7 @@ function Home() {
             The problems every governemt job aspirant faces
           </h2>
           <div className="row mt-50">
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={style.boxdesign2}>
                 <div className={style.text}>
                   <div className={style.bigtext}>1</div>
@@ -166,7 +166,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={`${style.boxdesign2} bg_night-var-color5`}>
                 {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
@@ -183,7 +183,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={style.boxdesign2}>
                 {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
@@ -198,7 +198,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={`${style.boxdesign2} bg_night-var-color5`}>
                 {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
@@ -214,7 +214,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={style.boxdesign2}>
                 {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
@@ -229,7 +229,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="vts-4">
+            <div className="vts-6">
               <div className={`${style.boxdesign2} bg_night-var-color5`}>
                 {/* <div className={style.image}>
                   <img src="/svg/winner1.svg" alt="" />
