@@ -9,6 +9,9 @@ import FilterFill from "lib/icons/FilterFill";
 import User2 from "lib/icons/User2";
 import Button from "components/button";
 import Input from "components/inputs";
+import EmotionUnhappy from "lib/icons/EmotionUnhappy";
+import Save from "lib/icons/Save";
+import Report from "lib/icons/Report";
 
 /**
  * Test Series Interface
@@ -93,6 +96,9 @@ const TestSeries = () => {
                 <div className="tp-ques-number">Question No. 1</div>
                 <span className="currentQuestion badge bg_red">Incorrect</span>
                 <div className="outtimging font_size_small">
+                  <div style={{ lineHeight: "0px" }}>
+                    <EmotionUnhappy width={14} color="#c0392b" />
+                  </div>{" "}
                   You <span>00:38</span>
                   <div className="outtimging font_size_small">
                     Avg: <span>00:21</span>{" "}
@@ -105,10 +111,17 @@ const TestSeries = () => {
               </div>
               <div className="right">
                 <div className="save">
-                  <Link href="#">Save</Link>
+                  <Link href="#">
+                    <Save width={12} />
+                    Save
+                  </Link>
                 </div>
                 <div className="Report">
-                  <Link href="#">Report</Link>
+                  <Link href="#">
+                    {" "}
+                    <Report width={12} />
+                    Report
+                  </Link>
                 </div>
               </div>
             </div>
@@ -121,25 +134,22 @@ const TestSeries = () => {
                   by the parliament in the year ______.
                 </div>
 
-                <div className="que_option">
-                  <label>
-                    <input type="radio" name="light" checked />
-                    <span className="design"></span>
-                    <span className="text">Option 1</span>
-                  </label>
+                <ul className="que_option">
+                  <li>
+                    <input id="1" type="radio" name="light" checked />
+                    <label htmlFor="1"> Option 1</label>
+                  </li>
 
-                  <label>
-                    <input type="radio" name="light" />
-                    <span className="design"></span>
-                    <span className="text">Option 2</span>
-                  </label>
+                  <li>
+                    <input id="2" type="radio" name="light" />
+                    <label htmlFor="2"> Option 2</label>
+                  </li>
 
-                  <label>
-                    <input type="radio" name="light" />
-                    <span className="design"></span>
-                    <span className="text">Option 3</span>
-                  </label>
-                </div>
+                  <li>
+                    <input id="3" type="radio" name="light" />
+                    <label htmlFor="3"> Option 3</label>
+                  </li>
+                </ul>
               </div>
             </div>
             <div className="detailed_questionfooter">
@@ -158,7 +168,7 @@ const TestSeries = () => {
                 <li className="name">Bablu</li>
               </ul>
               <div className="fillter">
-                <FilterFill />
+                <FilterFill width={14} />
                 fillter
               </div>
             </div>
