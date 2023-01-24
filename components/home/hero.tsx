@@ -49,7 +49,7 @@ const HeroSection = () => {
       {
         id: 0,
         value: "name",
-        question: "I Am... ",
+        question: "Hello friends, I Am... ",
       },
       {
         id: 1,
@@ -69,7 +69,7 @@ const HeroSection = () => {
       {
         id: 4,
         value: "phone",
-        question: "Inform my test rank...",
+        question: "Inform my test rank on...",
       },
       {
         id: 5,
@@ -114,7 +114,7 @@ const HeroSection = () => {
         return (
           <input
             type="text"
-            placeholder="TYPE YOUR NAME...."
+            placeholder="TYPE YOUR NAME..."
             onChange={(e) => updateState("name", e.target.value)}
             value={state.name}
           />
@@ -216,13 +216,34 @@ const HeroSection = () => {
               {RenderComponent}
               <div className="buttonaction row">
                 <div className="vts-2">
-                  <Button theme="secondry" type="button" onClick={onPrevious}>
-                    <ArrowLeft fill="#b3c5ef" size={20} />
+                  <Button
+                    theme="secondry"
+                    type="button"
+                    onClick={onPrevious}
+                    style={{
+                      flex: "unset",
+                      height: "50px",
+                      minWidth: "50px",
+                      background: "var(--night-base)",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <ArrowLeft fill="#b3c5ef" size={22} />
                   </Button>
                 </div>
                 <div className="vts-2">
-                  <Button theme="secondry" type="submit">
-                    <ArrowRight fill="#b3c5ef" size={20} />
+                  <Button
+                    theme="secondry"
+                    type="submit"
+                    style={{
+                      flex: "unset",
+                      height: "50px",
+                      minWidth: "50px",
+                      background: "var(--night-base)",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <ArrowRight fill="#b3c5ef" size={22} />
                   </Button>
                 </div>
                 <div className="vts-4">

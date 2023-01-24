@@ -22,15 +22,15 @@
     input {
       border-bottom: 1px solid #ffffff;
       font-weight: 300;
-      font-size: 25px;
+      font-size: 24px;
       line-height: 25px;
       width: 100%;
-
       background: transparent;
       color: var(--venus-var-white);
       margin-bottom: 50px;
       &::placeholder {
         color: var(--venus-var-white);
+        opacity: 0.5;
       }
     }
 

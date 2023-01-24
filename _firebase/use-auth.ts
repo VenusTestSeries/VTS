@@ -3,6 +3,7 @@ import authentication from "_firebase/config";
 import {
     signInWithPhoneNumber,
     PhoneAuthProvider,
+    signInWithCredential,
 } from "firebase/auth";
 import _win from "constant/_win";
 import generateRecaptcha from "_firebase/recaptcha";
@@ -74,7 +75,7 @@ const usePhoneAuth = () => {
                         console.log({ user });
                         alert(JSON.stringify(user, null, 2))
                         console.log({ credential });
-                        // await signInWithCredential(authentication, credential);
+                        await signInWithCredential(authentication, credential);
                     })
                     .catch((error: any) => {
                         console.log(error);
@@ -83,7 +84,6 @@ const usePhoneAuth = () => {
             }
         }
     }, [inputState.otp]);
-
 
     return {
         inputState,
