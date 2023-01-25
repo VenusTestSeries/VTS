@@ -155,93 +155,10 @@ function Home() {
           </h2>
           <div className="row mt-50">
             <div className="vts-6">
-              <div className={style.boxdesign2}>
-                <div className={style.text}>
-                  <div className={style.bigtext}>1</div>
-                  <p>
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="vts-6">
-              <div className={`${style.boxdesign2} bg_night-var-color5`}>
-                {/* <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div> */}
-                <div className={style.text}>
-                  <div className={`${style.bigtext} text_night_var_gray`}>
-                    2
-                  </div>
-                  <p className="text_night_var_gray">
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="vts-6">
-              <div className={style.boxdesign2}>
-                {/* <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div> */}
-                <div className={style.text}>
-                  <div className={style.bigtext}>3</div>
-                  <p>
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="vts-6">
-              <div className={`${style.boxdesign2} bg_night-var-color5`}>
-                {/* <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div> */}
-                <div className={style.text}>
-                  <div className={`${style.bigtext} text_night_var_gray`}>
-                    4
-                  </div>
-                  <p className="text_night_var_gray">
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="vts-6">
-              <div className={style.boxdesign2}>
-                {/* <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div> */}
-                <div className={style.text}>
-                  <div className={style.bigtext}>5</div>
-                  <p>
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="vts-6">
-              <div className={`${style.boxdesign2} bg_night-var-color5`}>
-                {/* <div className={style.image}>
-                  <img src="/svg/winner1.svg" alt="" />
-                </div> */}
-                <div className={style.text}>
-                  <div className={`${style.bigtext} text_night_var_gray`}>
-                    6
-                  </div>
-                  <p className="text_night_var_gray">
-                    The Questions of The most Test Series platform are
-                    irrelevant either Too Difficult or Too Easy{" "}
-                  </p>
+              <div className="boxdesign2">
+                <div className="image"></div>
+                <div className="contentbox">
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -908,6 +825,16 @@ function Home() {
           <h2 className="text_center  heading2 text_primary mb-50">
             Price Table
           </h2>
+
+          <div className={style.priceplan}>
+            <div className={style.text}>Monthly</div>
+            <label className={style.switch}>
+              <input type="checkbox" />
+              <span className={`${style.slider} ${style.round}`}></span>
+            </label>
+            <div className={style.text}>Yearly</div>
+          </div>
+
           <div className="row">
             <div className="vts-4">
               <div className={style.pricetable}>
@@ -946,9 +873,9 @@ function Home() {
                   </ul>
                 </div>
               </div>
-              <div className={style.callbtn}>
+              {/* <div className={style.callbtn}>
                 <Link href="index">See All Features</Link>
-              </div>
+              </div> */}
             </div>
 
             <div className="vts-4">
@@ -988,9 +915,9 @@ function Home() {
                   </ul>
                 </div>
               </div>
-              <div className={style.callbtn}>
+              {/* <div className={style.callbtn}>
                 <Link href="index">See All Features</Link>
-              </div>
+              </div> */}
             </div>
             <div className="vts-4">
               <div className={style.pricetable}>
@@ -1029,9 +956,9 @@ function Home() {
                   </ul>
                 </div>
               </div>
-              <div className={style.callbtn}>
+              {/* <div className={style.callbtn}>
                 <Link href="index">See All Features</Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

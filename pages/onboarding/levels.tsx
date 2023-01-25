@@ -9,26 +9,26 @@ import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
 
 const OnBoarding3 = () => {
-  const [selected, setSelected] = React.useState("Easy");
+  const [selected, setSelected] = React.useState("Beginner");
   const levelData = [
     {
-      name: "Easy",
+      name: "Beginner",
     },
     {
-      name: "Intermediate",
+      name: "Real Test",
     },
     {
-      name: "Hard",
+      name: "Difficult",
     },
   ];
 
   const RenderList = React.useMemo(() => {
     switch (selected) {
-      case "Easy":
+      case "Beginner":
         return Array.from(Array(5).keys());
-      case "Intermediate":
+      case "Real Test":
         return Array.from(Array(8).keys());
-      case "Hard":
+      case "Difficult":
         return Array.from(Array(13).keys());
       default:
         return [];
@@ -46,7 +46,7 @@ const OnBoarding3 = () => {
                   {item.name}
                 </h4>
               ))}
-              <a href="#">VIEW MORE</a>
+              {/* <a href="#">VIEW MORE</a> */}
             </div>
             <div className={css["subheading"]}>
               Become an inspector in Customs, Income tax, CBI
