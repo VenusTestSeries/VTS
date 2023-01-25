@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "components/button";
+import Link from "next/link";
 // ICONS
 import PerPageLayout from "layout/perpage";
 import BankIcon from "lib/icons/BankIcon";
@@ -69,6 +70,34 @@ const OnBoarding3 = () => {
                 );
               })}
             </ul>
+
+            <div className={css.testfreemocks}>
+              {Array.from({ length: 4 }).map((item, index) => (
+                <div className={css.list} key={index}>
+                  <Link href="#">
+                    <div className={css.qtname}>SSC CGL Tier 1 Mock Test 1</div>
+                    <div className={css.dateep}>Expires on 31 Jan 2023</div>
+                    <div className={css.content}>
+                      <ul>
+                        <li>
+                          <span>Questions</span>
+                          <span>100</span>
+                        </li>
+                        <li>
+                          <span>Max Marks</span>
+                          <span>200</span>
+                        </li>
+                        <li>
+                          <span>Time</span>
+                          <span>60 Mins</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className={css.maplink}>Attempt →</div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* <div className="mt-50 ">

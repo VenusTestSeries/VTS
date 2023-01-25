@@ -101,10 +101,22 @@
     }
     p {
       color: var(--night-var-color5);
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.5em;
       font-weight: 400;
       margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
     }
   }
   // .bg_image1 {
@@ -138,6 +150,15 @@
   display: block;
   padding-top: 120px;
   margin-top: 150px;
+  ul {
+    position: relative;
+    margin-left: 50px;
+    li {
+      position: relative;
+      color: #b3c5ef;
+      font-size: 14px;
+    }
+  }
   .image {
     width: 100%;
     box-sizing: border-box;
@@ -232,6 +253,7 @@
     background: var(--night-var-primary);
     padding: 30px;
     border-radius: 8px;
+    border: 1px solid transparent;
     .image {
       text-align: center;
       width: 100px;
@@ -286,6 +308,9 @@
     .content {
       color: var(--night-var-gray);
       text-align: center;
+    }
+    &:hover {
+      border: 1px solid #2b3e5c;
     }
   }
 }

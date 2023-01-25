@@ -103,7 +103,7 @@ const TestSeries = () => {
                   <div className="outtimging font_size_small">
                     Avg: <span>00:21</span>{" "}
                   </div>
-                  <div className="marking badge bg_red">
+                  <div className="marking">
                     Marks<span className=" badge bg_red">-0.5</span>{" "}
                   </div>
                   <span className="badge bg_green">27% answered correctly</span>
@@ -136,18 +136,30 @@ const TestSeries = () => {
 
                 <ul className="que_option">
                   <li>
-                    <input id="1" type="radio" name="light" checked />
-                    <label htmlFor="1"> Option 1</label>
+                    <label htmlFor="1">
+                      <input id="1" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
                   </li>
 
                   <li>
-                    <input id="2" type="radio" name="light" />
-                    <label htmlFor="2"> Option 2</label>
+                    <label htmlFor="2">
+                      <input id="2" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
                   </li>
 
                   <li>
-                    <input id="3" type="radio" name="light" />
-                    <label htmlFor="3"> Option 3</label>
+                    <label htmlFor="3">
+                      <input id="3" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="4">
+                      <input id="4" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
                   </li>
                 </ul>
               </div>
