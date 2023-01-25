@@ -46,6 +46,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         <div className="container">
           <div className={`${style.rowsection} row`}>
             <div className={`${style.bg_image1} vts-6`}>
@@ -95,6 +96,39 @@ function Home() {
                 width={545}
                 alt="Test Series"
               />
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className={`${style.rowsection} row`}>
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/build-thriving-team.webp"
+                height={335}
+                width={545}
+                alt="Test Series"
+              />
+            </div>
+            <div className={`${style.contentbox}  vts-6`}>
+              <h2>24/7 Support </h2>
+              <p>
+                Identify bottlenecks and developer friction, improve flow
+                efficiency and deployment, and build healthy development
+                patterns.
+              </p>
+              <div className={`${style.buttonsection}  button`}>
+                {/* <Link href="#">
+                  {" "}
+                  Learn more <ArrowRight />{" "}
+                </Link> */}
+                <ul>
+                  <li>List 1</li>
+                  <li>List 1</li>
+                  <li>List 1</li>
+                  <li>List 1</li>
+                  <li>List 1</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

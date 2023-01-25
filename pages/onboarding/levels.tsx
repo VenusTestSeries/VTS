@@ -7,6 +7,7 @@ import GlobeIcon from "lib/icons/GlobeIcon";
 import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
+import { useRouter } from "next/router";
 
 const OnBoarding3 = () => {
   const [selected, setSelected] = React.useState("Beginner");
@@ -35,6 +36,7 @@ const OnBoarding3 = () => {
     }
   }, [selected]);
 
+  const { push } = useRouter();
   return (
     <section className="bg_primary pt-50 pb-50">
       <div className="container">
@@ -56,7 +58,12 @@ const OnBoarding3 = () => {
               {RenderList.map((_, i) => {
                 return (
                   <li key={i}>
-                    <div className={css["pass"]}>Tier-{i} </div>
+                    <div
+                      className={css["pass"]}
+                      onClick={() => push(`/series/test-${i}`)}
+                    >
+                      Tier-{i}{" "}
+                    </div>
                     Preliminary
                   </li>
                 );

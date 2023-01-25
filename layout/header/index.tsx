@@ -84,7 +84,7 @@ const Header = () => {
                     <div className={css.login}>
                       <h4> Welcome</h4>
                       <p>To access account and manage orders</p>
-                      <button onClick={() => push("/auth/login")}>
+                      <button onClick={() => push("/auth/mobile")}>
                         LOGIN / SIGNUP
                       </button>
                     </div>
@@ -114,37 +114,37 @@ const Header = () => {
 
 export default Header;
 
-const NavigationBar = ({ state }: HeaderProps) => {
-  return (
-    <nav className={`${css["navigation"]} ${state ? css["mobile"] : ""}`}>
-      <div className={css["navbar"]}>
-        {navigationdata.map((l, i) => (
-          <Link key={i} href={l.path} className={css["links"]}>
-            {l.title}
-          </Link>
-        ))}
-      </div>
-      <div className={css["login"]}>
-        {/* <p>Hii, Simple</p> */}
-        <Link href="/login">Sign in</Link>
-      </div>
-    </nav>
-  );
-};
+// const NavigationBar = ({ state }: HeaderProps) => {
+//   return (
+//     <nav className={`${css["navigation"]} ${state ? css["mobile"] : ""}`}>
+//       <div className={css["navbar"]}>
+//         {navigationdata.map((l, i) => (
+//           <Link key={i} href={l.path} className={css["links"]}>
+//             {l.title}
+//           </Link>
+//         ))}
+//       </div>
+//       <div className={css["login"]}>
+//         {/* <p>Hii, Simple</p> */}
+//         <Link href="/login">Sign in</Link>
+//       </div>
+//     </nav>
+//   );
+// };
 
-const MenuBar = ({ state, dispatch }: HeaderProps) => {
-  return (
-    <i onClick={dispatch}>
-      <Add
-        size={20}
-        style={{
-          transform: `rotate(${state ? 45 : 0}deg)`,
-          transition: "transform 100ms ease-in-out",
-        }}
-      />
-    </i>
-  );
-};
+// const MenuBar = ({ state, dispatch }: HeaderProps) => {
+//   return (
+//     <i onClick={dispatch}>
+//       <Add
+//         size={20}
+//         style={{
+//           transform: `rotate(${state ? 45 : 0}deg)`,
+//           transition: "transform 100ms ease-in-out",
+//         }}
+//       />
+//     </i>
+//   );
+// };
 
 const navigationdata = [
   {
