@@ -14,6 +14,8 @@ import CheckmarkICloud from "lib/icons/CheckmarkICloud";
 import Checkfill from "lib/icons/Checkfill";
 import Flashlightline from "lib/icons/Flashlightline";
 import CheckLine from "lib/icons/CheckLine";
+import pricingData from "constant/pricing";
+import CloseIcon from "lib/icons/CloseIcon";
 
 function Home() {
   return (
@@ -999,7 +1001,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+      {/* Pricing Section */}
       <section className={`${style.pricetablesection}  pt-50 pb-50`}>
         <div className="container">
           <h2 className="text_center  heading2 text_primary mb-50">
@@ -1016,134 +1018,47 @@ function Home() {
           </div>
 
           <div className="row">
-            <div className="vts-4">
-              <div className={style.pricetable}>
-                <div className={style.imagewithtext}>
-                  <div className={style.image}>
-                    <Briefcaseline />
+            {pricingData.map((data, index) => (
+              <div className="vts-4" key={index}>
+                <div className={style.pricetable}>
+                  <div className={style.imagewithtext}>
+                    <div className={style.image}>
+                      <Briefcaseline />
+                    </div>
+                    <div className={style.text}>{data.planName}</div>
                   </div>
-                  <div className={style.text}>Lite</div>
-                </div>
-                <div className={style.sug}>Perfect to get Startes</div>
+                  <div className={style.sug}>Perfect to get Startes</div>
 
-                <div className={style.price}>
-                  <div className={style.plan}>
-                    <span>$</span> 11{" "}
+                  <div className={style.price}>
+                    <div className={style.plan}>
+                      <span>$</span> 11{" "}
+                    </div>
+                    <div className={style.amount}> per seat/month</div>
                   </div>
-                  <div className={style.amount}> per seat/month</div>
-                </div>
 
-                <Button theme="secondry">Try 7 days for free</Button>
+                  <Button theme="secondry">Try 7 days for free</Button>
 
-                <div className={style.content}>
-                  <h4> Lite Includes:</h4>
-                  <ul>
-                    <li>
-                      <Checkfill /> 31 full user
-                    </li>
-                    <li>
-                      <Checkfill /> 1000 Email Previews
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Contacts per Clints
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Coffee Cips
-                    </li>
-                  </ul>
+                  <div className={style.content}>
+                    <h4> Lite Includes:</h4>
+                    <ul>
+                      {data.list.map((a, i) => (
+                        <li key={i}>
+                          {a.access ? (
+                            <Checkfill />
+                          ) : (
+                            <CloseIcon color="#c0392b" />
+                          )}
+                          {a.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-              {/* <div className={style.callbtn}>
-                <Link href="index">See All Features</Link>
-              </div> */}
-            </div>
-
-            <div className="vts-4">
-              <div className={style.pricetable}>
-                <div className={style.imagewithtext}>
-                  <div className={style.image}>
-                    <Briefcaseline />
-                  </div>
-                  <div className={style.text}>Pro</div>
-                </div>
-                <div className={style.sug}>Toolset for hard players</div>
-
-                <div className={style.price}>
-                  <div className={style.plan}>
-                    <span>$</span> 19{" "}
-                  </div>
-                  <div className={style.amount}> per seat/month</div>
-                </div>
-
-                <Button theme="secondry">Set Started</Button>
-
-                <div className={style.content}>
-                  <h4>Everything in lite, plus:</h4>
-                  <ul>
-                    <li>
-                      <Checkfill /> 31 full user
-                    </li>
-                    <li>
-                      <Checkfill /> 1000 Email Previews
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Contacts per Clints
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Coffee Cips
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* <div className={style.callbtn}>
-                <Link href="index">See All Features</Link>
-              </div> */}
-            </div>
-            <div className="vts-4">
-              <div className={style.pricetable}>
-                <div className={style.imagewithtext}>
-                  <div className={style.image}>
-                    <Flashlightline />
-                  </div>
-                  <div className={style.text}>Ultimate</div>
-                </div>
-                <div className={style.sug}>Best for professionals</div>
-
-                <div className={style.price}>
-                  <div className={style.plan}>
-                    <span>$</span> 35{" "}
-                  </div>
-                  <div className={style.amount}> per seat/month</div>
-                </div>
-
-                <Button theme="secondry">Set Started</Button>
-
-                <div className={style.content}>
-                  <h4> Everything in lite, plus:</h4>
-                  <ul>
-                    <li>
-                      <Checkfill /> 31 full user
-                    </li>
-                    <li>
-                      <Checkfill /> 1000 Email Previews
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Contacts per Clints
-                    </li>
-                    <li>
-                      <Checkfill /> 5 Coffee Cips
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* <div className={style.callbtn}>
-                <Link href="index">See All Features</Link>
-              </div> */}
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
       <section className="getinquery bg_primary pt-50 pb-50 ">
         <div className="container">
           <h2 className="text_center  heading2 text_graydark mb-50">

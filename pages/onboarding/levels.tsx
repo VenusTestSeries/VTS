@@ -130,7 +130,7 @@ const Options = [
     icon: <NurseIcon fill="#fff" />,
   },
   {
-    title: "   Other",
+    title: "Other",
     icon: <GlobeIcon fill="#fff" />,
   },
 ];
