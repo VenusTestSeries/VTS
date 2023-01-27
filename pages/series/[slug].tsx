@@ -1,17 +1,14 @@
 import React from "react";
-import css from "styles/series.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import ArrowLeft from "lib/icons/ArrowLeft";
 import StarIcon from "lib/icons/star";
-import AddImage from "lib/icons/AddImage";
 import FilterFill from "lib/icons/FilterFill";
 import User2 from "lib/icons/User2";
 import Button from "components/button";
-import Input from "components/inputs";
 import EmotionUnhappy from "lib/icons/EmotionUnhappy";
 import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
+import seriesData from "constant/dummy";
 
 /**
  * Test Series Interface
@@ -19,6 +16,16 @@ import Report from "lib/icons/Report";
  */
 
 const TestSeries = () => {
+  const [language, setLanguage] = React.useState("en");
+
+  const [selected, setSelected] = React.useState(
+    seriesData.data.sections[0].questions[0]
+  );
+
+  // console.log(selected);
+
+  console.log(seriesData);
+
   return (
     <div className="seriepage">
       <div className="header">
@@ -80,11 +87,11 @@ const TestSeries = () => {
             <div className="right">
               <div>View in</div>
               <div className="dropdown">
-                <select name="" id="">
-                  <option value="English" selected>
+                <select onChange={({ target }) => setLanguage(target.value)}>
+                  <option value="en" selected>
                     English
                   </option>
-                  <option value="Hindi">Hindi</option>
+                  <option value="hn">Hindi</option>
                 </select>
               </div>
             </div>
@@ -128,39 +135,23 @@ const TestSeries = () => {
             <div className="detailed_question">
               <div className="que_ans_box">
                 <div className="que_box">
-                  {" "}
-                  The salary and allowances of leaders of opposition in
+                  {/* The salary and allowances of leaders of opposition in
                   parliament are governed by the Act passed for the first time
-                  by the parliament in the year ______.
+                  by the parliament in the year ______. */}
+                  {selected[language].value}
                 </div>
-
                 <ul className="que_option">
-                  <li>
-                    <label htmlFor="1">
-                      <input id="1" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-
-                  <li>
-                    <label htmlFor="2">
-                      <input id="2" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-
-                  <li>
-                    <label htmlFor="3">
-                      <input id="3" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="4">
-                      <input id="4" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
+                  {selected[language].options.map((item, index) => {
+                    console.log(selected.value === item.value);
+                    return (
+                      <li key={index}>
+                        <label htmlFor="1">
+                          <input id="1" type="radio" name="light" />
+                          <div className="qtytext"> {item.value}</div>
+                        </label>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -206,7 +197,19 @@ const TestSeries = () => {
               Section : <span>Test</span>
             </div>
             <ul className="Qarbox">
-              <li className="Qar bg_red">1</li>
+              {seriesData.data.sections[0].questions.map((value, index) => {
+                return (
+                  <li
+                    className="Qar "
+                    key={index}
+                    onClick={() => setSelected(value)}
+                  >
+                    {/* {value.en.value} */}
+                    {index + 1}
+                  </li>
+                );
+              })}
+              {/* <li className="Qar bg_red">1</li>
               <li className="Qar bg_red">2</li>
               <li className="Qar bg_red">3</li>
               <li className="Qar bg_green">4</li>
@@ -231,7 +234,7 @@ const TestSeries = () => {
               <li className="Qar">24</li>
               <li className="Qar">25</li>
               <li className="Qar">26</li>
-              <li className="Qar">27</li>
+              <li className="Qar">27</li> */}
             </ul>
             <div className="actionbtnresult">
               <Button>Question Paper </Button>
@@ -245,3 +248,25 @@ const TestSeries = () => {
 };
 
 export default TestSeries;
+
+{
+  /* 
+                  <li>
+                    <label htmlFor="2">
+                      <input id="2" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="3">
+                      <input id="3" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="4">
+                      <input id="4" type="radio" name="light" />
+                      <div className="qtytext"> Option 1</div>
+                    </label>
+                  </li> */
+}
