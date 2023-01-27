@@ -26,41 +26,6 @@ function Home() {
             <div className={`${style.contentbox}  vts-6`}>
               <h2>Test Series </h2>
               <p>
-                Identify bottlenecks and developer friction, improve flow
-                efficiency and deployment, and build healthy development
-                patterns.
-              </p>
-              <div className={`${style.buttonsection}  button`}>
-                <Link href="#">
-                  {" "}
-                  Learn more <ArrowRight />{" "}
-                </Link>
-              </div>
-            </div>
-            <div className={`${style.bg_image1} vts-6`}>
-              <Image
-                src="/images/increase-delivery.webp"
-                height={335}
-                width={545}
-                alt="Test Series"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="container">
-          <div className={`${style.rowsection} row`}>
-            <div className={`${style.bg_image1} vts-6`}>
-              <Image
-                src="/images/build-thriving-team.webp"
-                height={335}
-                width={545}
-                alt="Test Series"
-              />
-            </div>
-            <div className={`${style.contentbox}  vts-6`}>
-              <h2>Study Material </h2>
-              <p>
                 The Questions of The Test Series have been carefully picked by
                 toppers of respective exams with over 10,000 hours of effort put
                 into it to ensure relevancy
@@ -93,6 +58,68 @@ function Home() {
                 </Link>
               </div>
             </div>
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/increase-delivery.webp"
+                height={335}
+                width={545}
+                alt="Test Series"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className={`${style.rowsection} row`}>
+            <div className={`${style.bg_image1} vts-6`}>
+              <Image
+                src="/images/build-thriving-team.webp"
+                height={335}
+                width={545}
+                alt="Test Series"
+              />
+            </div>
+            <div className={`${style.contentbox}  vts-6`}>
+              <h2>Study Material </h2>
+              <p>
+                We value your time and money and best way to learn is take tests
+                that's why we designed a Library that includes all the resources
+                to prepare for your exam through quizzes in one place.
+                {/* 1)English( Vocab , Grammar) 2) GS(Economy, Geography, History,
+                Science ) 3) Math( Topic Wise) 4)Current Affairs 5) Notes of
+                Toppers 6) Video Classes from Best Teachers */}
+              </p>
+              <ul>
+                <li>
+                  <CheckLine size={18} /> English( Vocab , Grammar)
+                </li>
+                <li>
+                  {" "}
+                  <CheckLine size={18} /> GS(Economy, Geography, History,
+                  Science ,Polity,Current)
+                </li>
+                <li>
+                  {" "}
+                  <CheckLine size={18} /> Math( Topic Wise)
+                </li>
+
+                <li>
+                  <CheckLine size={18} /> Current Affairs
+                </li>
+                <li>
+                  <CheckLine size={18} /> Notes of Toppers
+                </li>
+                <li>
+                  <CheckLine size={18} /> Video Classes from Best Teachers
+                </li>
+              </ul>
+              <div className={`${style.buttonsection}  button`}>
+                <Link href="#">
+                  {" "}
+                  Learn more <ArrowRight />{" "}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
         <div className="container">
@@ -100,10 +127,28 @@ function Home() {
             <div className={`${style.contentbox}  vts-6`}>
               <h2>Playground</h2>
               <p>
-                Identify bottlenecks and developer friction, improve flow
-                efficiency and deployment, and build healthy development
-                patterns.
+                "Playground is a fun and engaging way to prepare for your exams
+                by letting you compete with your friends. It helps you in
+                increase your speed at the same time you can earn rewards"
+                {/* 1)Create challenges for any exams or any topics
+2) Earn rewards in form of free test series and study material.
+3) You can set limit of time and Number of questions */}
               </p>
+              <ul>
+                <li>
+                  <CheckLine size={18} /> Create challenges for any exams or any
+                  topics
+                </li>
+                <li>
+                  <CheckLine size={18} /> Create challenges for any exams or any
+                  topics
+                </li>
+                <li>
+                  <CheckLine size={18} /> You can set limit of time and Number
+                  of questions
+                </li>
+              </ul>
+
               <div className={`${style.buttonsection}  button`}>
                 <Link href="#">
                   {" "}
@@ -134,38 +179,44 @@ function Home() {
             <div className={`${style.contentbox}  vts-6`}>
               <h2>24/7 Support </h2>
               <p>
-                Identify bottlenecks and developer friction, improve flow
-                efficiency and deployment, and build healthy development
-                patterns.
+                As an Educational Platform, we understand the importance of
+                customer support. That's why we have a dedicated team of experts
+                available 24/7 to answer any questions or concerns you may have.
+                {/* 1) Ask your any  doubts
+2) Ask for better solutions
+3) Ask for a scholarship
+4) Ask for the job 
+5) Ask to Toppers of Exams about their strategy
+6) Ask for an additional feature on our platform
+ask us through WhatsApp, Telegram, Email */}
               </p>
-              <div className={`${style.buttonsection}  button`}>
-                {/* <Link href="#">
-                  {" "}
-                  Learn more <ArrowRight />{" "}
-                </Link> */}
-                <ul>
-                  <li>
-                    {" "}
-                    <CheckLine size={18} /> Donec vitae magna in libero lacinia
-                    lobortis.
-                  </li>
-                  <li>
-                    {" "}
-                    <CheckLine size={18} /> Phasellus accumsan elit ut ultrices
-                    sagittis.
-                  </li>
-                  <li>
-                    <CheckLine size={18} />
-                    Vestibulum vitae risus dictum, interdum augue eget, bibendum
-                    nisi.
-                  </li>
-                  <li>
-                    {" "}
-                    <CheckLine size={18} /> Ut gravida lacus non egestas
-                    feugiat.
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li>
+                  <CheckLine size={18} />
+                  Ask your any doubts
+                </li>
+                <li>
+                  <CheckLine size={18} />
+                  Ask for better solutions
+                </li>
+                <li>
+                  <CheckLine size={18} />
+                  Ask for a scholarship
+                </li>
+                <li>
+                  <CheckLine size={18} />
+                  Ask for the job
+                </li>
+                <li>
+                  <CheckLine size={18} />
+                  Ask the Toppers of Exams about their strategy
+                </li>
+                <li>
+                  <CheckLine size={18} />
+                  Ask for an additional feature on our platform ask us through
+                  WhatsApp, Telegram, Email
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -248,12 +299,11 @@ function Home() {
                   />
                 </div>
                 <div className="contentbox">
-                  <div className="heading">The Problem</div>
+                  <div className="heading">
+                    Irrelvant Questions In Test Series{" "}
+                  </div>
                   <p>
-                    <b>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
-                    </b>
+                    <b>.</b>
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type
                   </p>
@@ -1060,7 +1110,7 @@ function Home() {
       <section className="getinquery bg_primary pt-50 pb-50 ">
         <div className="container">
           <h2 className="text_center  heading2 text_graydark mb-50">
-            Inquiry Now
+            Enquire Now
           </h2>
 
           <div className="row justfiy_content_center">
@@ -1153,3 +1203,20 @@ function Home() {
 export default Home;
 
 Home.perpage = PerPageLayout;
+
+// const questionandanswer = [
+//   {
+//     question: `Irrelvant Questions In Test Series `,
+//     answer: ` We talked to many government job asipirants and ask them what problems they are facing in other test platforms. Almost all of them had mentioned the problem of Irrelavncy of questions in test-series. Questions were either too difficult or too easy , it made assessment of their preparation harder`,
+//   },
+//   {
+//     question: `Everone question is handpicked by Dedicated team ',
+
+//     answer: ` Having first hand experience of this problems while preparation of the government jobs. We understand the importance of quality and relvancy of questions that's we created a dedicated team just to solve this issue.
+//     Let's see how we do
+//     1) First  Our team create original question based on  frequently asked questions  in various examinatin
+//     2) Then these questions are sorted based on relevancy and importance by toppers of the respective  exam
+//     3) Afterthat it is sent to get reviewed by subject matter experts.
+//     4) once review is complete , Test is prepared.`,
+//   },
+// ];
