@@ -22,9 +22,27 @@ const TestSeries = () => {
     seriesData.data.sections[0].questions[0]
   );
 
-  // console.log(selected);
-
-  console.log(seriesData);
+  // FOR NEXT BUTTON
+  const onNext = () => {
+    const findIndex = seriesData.data.sections[0].questions.findIndex(
+      (value) => value._id === selected._id
+    );
+    const data =
+      findIndex < seriesData.data.sections[0].questions.length - 1
+        ? seriesData.data.sections[0].questions[findIndex + 1]
+        : seriesData.data.sections[0].questions[0];
+    setSelected(data);
+  };
+  const onPrevious = () => {
+    const findIndex = seriesData.data.sections[0].questions.findIndex(
+      (value) => value._id === selected._id
+    );
+    const data =
+      findIndex > 0
+        ? seriesData.data.sections[0].questions[findIndex - 1]
+        : seriesData.data.sections[0].questions[0];
+    setSelected(data);
+  };
 
   return (
     <div className="seriepage">
@@ -142,7 +160,6 @@ const TestSeries = () => {
                 </div>
                 <ul className="que_option">
                   {selected[language].options.map((item, index) => {
-                    console.log(selected.value === item.value);
                     return (
                       <li key={index}>
                         <label htmlFor="1">
@@ -156,8 +173,8 @@ const TestSeries = () => {
               </div>
             </div>
             <div className="detailed_questionfooter">
-              <Button>Previous </Button>
-              <Button>Next</Button>
+              <Button onClick={onPrevious}>Previous </Button>
+              <Button onClick={onNext}>Next</Button>
             </div>
           </div>
         </div>
@@ -198,11 +215,16 @@ const TestSeries = () => {
             </div>
             <ul className="Qarbox">
               {seriesData.data.sections[0].questions.map((value, index) => {
+                const active = value._id === selected._id;
+
                 return (
                   <li
                     className="Qar "
                     key={index}
                     onClick={() => setSelected(value)}
+                    style={{
+                      borderRadius: active ? "20px" : "0px",
+                    }}
                   >
                     {/* {value.en.value} */}
                     {index + 1}
