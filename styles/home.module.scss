@@ -101,10 +101,22 @@
     }
     p {
       color: var(--night-var-color5);
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.5em;
       font-weight: 400;
       margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
     }
   }
   // .bg_image1 {
@@ -138,6 +150,15 @@
   display: block;
   padding-top: 120px;
   margin-top: 150px;
+  ul {
+    position: relative;
+    margin-left: 50px;
+    li {
+      position: relative;
+      color: #b3c5ef;
+      font-size: 14px;
+    }
+  }
   .image {
     width: 100%;
     box-sizing: border-box;
@@ -232,6 +253,7 @@
     background: var(--night-var-primary);
     padding: 30px;
     border-radius: 8px;
+    border: 1px solid transparent;
     .image {
       text-align: center;
       width: 100px;
@@ -286,6 +308,9 @@
     .content {
       color: var(--night-var-gray);
       text-align: center;
+    }
+    &:hover {
+      border: 1px solid #2b3e5c;
     }
   }
 }
@@ -485,7 +510,7 @@ ul.problembox li.bottomround h5 {
 // price table
 .pricetable {
   background: var(--venus-var-white);
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
   padding: 30px;
 
   .imagewithtext {
@@ -531,7 +556,74 @@ ul.problembox li.bottomround h5 {
     }
   }
 }
+.priceplan {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  margin-bottom: 40px;
+  font-size: 20px;
+  gap: 15px;
+  align-items: center;
+}
+.priceplan .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
+.priceplan .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.priceplan .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.priceplan .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.priceplan input:checked + .slider {
+  background-color: #3abff8;
+}
+
+.priceplan input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.priceplan input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.priceplan .slider.round {
+  border-radius: 34px;
+}
+
+.priceplan .slider.round:before {
+  border-radius: 50%;
+}
 .pricetable .content {
   margin-top: 25px;
   ul {

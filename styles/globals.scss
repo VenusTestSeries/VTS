@@ -185,7 +185,7 @@ html {
 }
 
 .bg_skyblue {
-  background: var(--venus-skyblue);
+  background: var(--venus-skyblue) !important;
 }
 
 .bg_primary {
@@ -507,6 +507,55 @@ html {
 .mb-50 {
   margin-bottom: 50px;
 }
+.bookmarked {
+  background-color: #9b59b6 !important;
+  border-radius: 24px !important;
+  border-color: #9b59b6 !important;
+  color: #fff !important;
+  position: relative;
+}
+.attempted {
+  border-radius: 20px 20px 0 0 !important;
+  background-color: #27ae60 !important;
+  color: #fff !important;
+  border-color: #27ae60 !important;
+}
+.skipped {
+  border-radius: 0 0 20px 20px !important;
+  background-color: #c0392b !important;
+  border-color: #c0392b !important;
+  color: #fff !important;
+}
+.attempted.bookmarked {
+  background-color: #9b59b6 !important;
+  border-radius: 24px !important;
+  border-color: #9b59b6 !important;
+  color: #fff !important;
+  position: relative;
+}
+.attempted.bookmarked::after {
+  content: "";
+  position: absolute;
+  border-color: #27ae60;
+  border-style: solid;
+  border-width: 0 0.3em 0.3em 0;
+  height: 1em;
+  top: -0.375em;
+  right: 0;
+  transform: rotate(45deg);
+  width: 0.5em;
+}
+.label {
+  background: #fff;
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #333;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -550,6 +599,7 @@ html {
   color: #fff;
   padding: 12.5px 0px;
   align-items: center;
+  font-family: sans-serif;
 }
 
 .header .leftbox {
@@ -605,7 +655,13 @@ html {
 .analy a {
   background: rgba(0, 0, 0, 0.05);
   color: #fff;
-  padding: 20px 30px;
+  padding: 22px 13px !important;
+  text-align: center;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .timer {
@@ -635,6 +691,7 @@ html {
   bottom: 0;
   background-color: #fff;
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
 /* // left secton
@@ -705,13 +762,13 @@ html {
 }
 .actual_exam_ui_top .left .button a {
   background: #166a84;
-  padding: 2px 45px;
+  padding: 6px 45px;
   border-radius: 2px;
   color: #fff;
-  /* font-size: 15px; */
-  /* font-weight: 200; */
+
   font-size: 14px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 /* // ------------------------
@@ -744,6 +801,11 @@ html {
   span {
     color: #6b747c;
   }
+  .marking {
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+    margin-left: 5px;
+  }
 }
 
 .mainboxtop .right {
@@ -752,7 +814,7 @@ html {
 }
 
 .mainboxtop .left .outtimging .marking span {
-  padding: 0;
+  margin-left: 5px;
 }
 
 .mainboxtop .right a {
@@ -813,7 +875,7 @@ ul.results {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  font-size: 10px;
+
   gap: 10px;
   border-bottom: 1px solid #ececec;
   background: #d9edf7;
@@ -823,6 +885,8 @@ ul.results li {
   display: flex;
   align-items: center;
   gap: 2px;
+  font-size: 11px;
+  font-family: sans-serif;
 }
 
 ul.results span {
@@ -907,14 +971,26 @@ ul.Qarbox li {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
   font-size: 15px;
   font-weight: 300;
 }
 .detailed_question .que_ans_box .que_option li {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 15px 12px 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      background: #f9f9f9;
+      border-color: #f2f2f2;
+    }
+  }
 }
 .detailed_questionfooter {
   display: flex;
@@ -935,4 +1011,56 @@ ul.Qarbox li {
   padding: 6px 12px !important;
   font-size: 14px !important;
   font-weight: 400 !important;
+}
+
+// -----------------------------------
+.boxdesign22 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.boxdesign22 .contentbox {
+  position: relative;
+  max-width: 280px;
+  padding: 21px;
+  border-radius: 30px;
+}
+.boxdesign22 .contentbox .heading {
+  background: #b3c5ef;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: fit-content;
+  margin-bottom: 15px;
+  font-weight: 800;
+  color: #0f1729;
+}
+
+.boxdesign22 .contentbox p {
+  font-size: 13px;
+  color: #b3c5ef;
+  font-weight: 200;
+  font-family: sans-serif;
+}
+
+.boxdesign22 .contentbox p b {
+  display: block;
+  margin-top: 15px;
+}
+
+.awardsection {
+  .even {
+    position: relative;
+  }
+  .odd {
+    position: relative;
+    text-align: right;
+    margin-top: 130px;
+    .heading {
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .contentbox {
+      background: #ffffff26;
+    }
+  }
 }
