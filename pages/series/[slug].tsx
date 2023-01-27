@@ -9,6 +9,7 @@ import EmotionUnhappy from "lib/icons/EmotionUnhappy";
 import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
 import seriesData from "constant/dummy";
+import { Question } from "constant/types.";
 
 /**
  * Test Series Interface
@@ -19,7 +20,7 @@ const TestSeries = () => {
   const [language, setLanguage] = React.useState("en");
 
   const [selected, setSelected] = React.useState(
-    seriesData.data.sections[0].questions[0]
+    seriesData.data.sections[0].questions[0] as Question
   );
 
   // FOR NEXT BUTTON
@@ -43,6 +44,11 @@ const TestSeries = () => {
         : seriesData.data.sections[0].questions[0];
     setSelected(data);
   };
+
+  const dataWithMultilanguage = React.useMemo(() => {
+    // @ts-ignore
+    return selected[language] as Question["en"];
+  }, [language, selected]);
 
   return (
     <div className="seriepage">
@@ -156,10 +162,10 @@ const TestSeries = () => {
                   {/* The salary and allowances of leaders of opposition in
                   parliament are governed by the Act passed for the first time
                   by the parliament in the year ______. */}
-                  {selected[language].value}
+                  {dataWithMultilanguage.value}
                 </div>
                 <ul className="que_option">
-                  {selected[language].options.map((item, index) => {
+                  {dataWithMultilanguage.options.map((item, index) => {
                     return (
                       <li key={index}>
                         <label htmlFor="1">

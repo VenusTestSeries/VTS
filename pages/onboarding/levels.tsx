@@ -49,13 +49,12 @@ const OnBoarding3 = () => {
                   {item.name}
                 </h4>
               ))}
-              {/* <a href="#">VIEW MORE</a> */}
             </div>
             <div className={css["subheading"]}>
               Become an inspector in Customs, Income tax, CBI
             </div>
             <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-            <ul className={css["list"]}>
+            {/* <ul className={css["list"]}>
               {RenderList.map((_, i) => {
                 return (
                   <li key={i}>
@@ -69,7 +68,7 @@ const OnBoarding3 = () => {
                   </li>
                 );
               })}
-            </ul>
+            </ul> */}
 
             <div className={css.testfreemocks}>
               {Array.from({ length: 4 }).map((item, index) => (

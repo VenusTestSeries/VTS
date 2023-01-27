@@ -1,6 +1,7 @@
 const pricingData = [
     {
         planName: 'Free Forever',
+        price: '',
         list: [
             {
                 label: 'Limited Mock Tests',
@@ -34,6 +35,7 @@ const pricingData = [
     },
     {
         planName: 'Premium',
+        price: '120',
         list: [
             {
                 label: 'All Mock Tests',
@@ -72,11 +74,9 @@ const pricingData = [
     },
     {
         planName: 'Customs',
+        price: '',
         list: [
-            {
-                label: 'Pricing Model Of VTS',
-                access: true,
-            },
+
             {
                 label: 'All Mock Tests',
                 access: true,
@@ -136,4 +136,8 @@ export default pricingData
 // ✓ Free Video Tutorials
 // ✓ Doubts Solving
 // ✓ Consultation with toppers
-// ✓ Access to Private Group
+// ✓ Access to Private
+
+
+// 120 - premium
+// t

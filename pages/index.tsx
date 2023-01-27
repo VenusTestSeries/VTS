@@ -825,7 +825,7 @@ ask us through WhatsApp, Telegram, Email */}
         </div>
       </section>
 
-      <section className={`${style.problemssecton} pt-50 pb-50`}>
+      {/* <section className={`${style.problemssecton} pt-50 pb-50`}>
         <div className="container">
           <h2 className="text_center  heading2 text_primary mb-50">
             How we Solve Your problems?
@@ -888,7 +888,7 @@ ask us through WhatsApp, Telegram, Email */}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className={`${style.testimonialsone} pt-50 pb-50`}>
         <div className="container">
@@ -1079,12 +1079,13 @@ ask us through WhatsApp, Telegram, Email */}
 
                   <div className={style.price}>
                     <div className={style.plan}>
-                      <span>$</span> 11{" "}
+                      <span>₹</span> 0{""}
                     </div>
-                    <div className={style.amount}> per seat/month</div>
+                    {/* <div className={style.amount}> per seat/month</div> */}
+                    <div className={style.amount}> for lifetime</div>
                   </div>
 
-                  <Button theme="secondry">Try 7 days for free</Button>
+                  <Button theme="secondry">Try for free</Button>
 
                   <div className={style.content}>
                     <h4> Lite Includes:</h4>
