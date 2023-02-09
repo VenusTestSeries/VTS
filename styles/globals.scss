@@ -123,6 +123,13 @@ html {
   }
 }
 
+// @media (prefers-color-scheme: dark) {
+//   html,
+//   body {
+//     background: var(--night-base);
+//     color: var(--venus-base);
+//   }
+// }
 // text color
 .text_white {
   color: var(--venus-white);
@@ -729,6 +736,22 @@ html {
   z-index: 41;
 }
 
+.toogle-section {
+  position: absolute;
+  left: -19px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #00000078;
+  }
+}
+
 .actual_exam_ui_top {
   background: #f9f9f9;
   display: flex;
@@ -747,6 +770,8 @@ html {
 .actual_exam_ui_top .left .text {
   border-right: 1px solid #ddd;
   padding-right: 10px;
+  display: flex;
+  align-items: center;
 }
 .actual_exam_ui_top .right {
   display: flex;
@@ -760,15 +785,29 @@ html {
   background-color: #fff;
   /* padding: 3px; */
 }
-.actual_exam_ui_top .left .button a {
-  background: #166a84;
-  padding: 6px 45px;
-  border-radius: 2px;
-  color: #fff;
+.actual_exam_ui_top .left .button {
+  display: flex;
+  align-items: center;
 
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: capitalize;
+  a {
+    padding: 6px;
+    border-radius: 2px;
+    color: #0d1117;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: capitalize;
+    width: 110px;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    user-select: none;
+    a.active {
+      background: #166a84;
+      color: #fff;
+    }
+  }
 }
 
 /* // ------------------------
@@ -902,6 +941,7 @@ ul.results span {
   font-size: 16px;
   font-weight: 400;
 }
+
 /* Qarbox */
 ul.Qarbox {
   display: grid;
@@ -921,6 +961,57 @@ ul.Qarbox li {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.answered_badge {
+  color: #fff;
+  border-color: #27ae60;
+  background-color: #27ae60;
+  border-radius: 20px 20px 0 0;
+}
+
+.marked_badge {
+  background-color: #9b59b6;
+  border-radius: 24px;
+  border-color: #9b59b6;
+  color: #fff;
+  position: relative;
+}
+
+.not_visited_badge {
+  height: 18px;
+  margin: 2px 0 4px;
+  padding: 4px 0 0;
+  background-color: #f9f9f9;
+  border: 1px solid #000;
+  color: #000;
+}
+.not_answered_badge {
+  border-radius: 0 0 20px 20px;
+  background-color: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+.marked_and_answered_badge {
+  background-color: #9b59b6;
+  border-radius: 24px;
+  border-color: #9b59b6;
+  color: #fff;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    border-color: #27ae60;
+    border-style: solid;
+    border-width: 0 0.3em 0.3em 0;
+    height: 1em;
+    top: -0.375em;
+    right: 0;
+    transform: rotate(45deg);
+    width: 0.5em;
+  }
 }
 
 .actionbtnresult {

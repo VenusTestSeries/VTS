@@ -31,14 +31,6 @@ const OnBoarding = () => {
             router.push(`/onboarding/${value.toLowerCase()}`)
           }
         />
-        {/* <div className="mt-50 ">
-          <Button
-            theme="secondry"
-            onClick={() => router.push(`/onboarding/${selected.toLowerCase()}`)}
-          >
-            Continue
-          </Button>
-        </div> */}
       </div>
     </div>
   );
@@ -46,3 +38,14 @@ const OnBoarding = () => {
 export default OnBoarding;
 
 OnBoarding.perpage = PerPageLayout;
+
+{
+  /* <div className="mt-50 ">
+          <Button
+            theme="secondry"
+            onClick={() => router.push(`/onboarding/${selected.toLowerCase()}`)}
+          >
+            Continue
+          </Button>
+        </div> */
+}

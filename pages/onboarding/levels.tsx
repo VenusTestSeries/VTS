@@ -39,7 +39,7 @@ const OnBoarding3 = () => {
 
   const { push } = useRouter();
   return (
-    <section className="bg_primary pt-50 pb-50">
+    <section className="pt-50 pb-50">
       <div className="container">
         <div>
           <div className={css["qutbox"]}>
@@ -69,11 +69,10 @@ const OnBoarding3 = () => {
                 );
               })}
             </ul> */}
-
             <div className={css.testfreemocks}>
               {Array.from({ length: 4 }).map((item, index) => (
                 <div className={css.list} key={index}>
-                  <Link href="#">
+                  <Link href="/series/ssc">
                     <div className={css.qtname}>SSC CGL Tier 1 Mock Test 1</div>
                     <div className={css.dateep}>Expires on 31 Jan 2023</div>
                     <div className={css.content}>

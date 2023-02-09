@@ -1,115 +1,123 @@
 const pricingData = [
-    {
-        planName: 'Free Forever',
-        price: '',
-        list: [
-            {
-                label: 'Limited Mock Tests',
-                access: true
-            },
-            {
-                label: 'Limited Study Material',
-                access: true
-            },
-            {
-                label: 'Limited Access to feature of Playground',
-                access: true
-            },
-            {
-                label: 'Video Tutorial',
-                access: false
-            },
-            {
-                label: 'Asking doubts',
-                access: false
-            },
-            {
-                label: 'Consultation with toppers',
-                access: false
-            },
-            {
-                label: 'Access to Private Group',
-                access: false
-            },
-        ]
+  {
+    planName: "Free Forever",
+    price: {
+      monthly: 0,
+      yearly: 0,
     },
-    {
-        planName: 'Premium',
-        price: '120',
-        list: [
-            {
-                label: 'All Mock Tests',
-                access: true,
-            },
-            {
-                label: 'All Study Material',
-                access: true,
-            },
-            {
-                label: 'All feature of Playground',
-                access: true,
-            },
-            {
-                label: 'Free Video Tutorials',
-                access: true,
-            },
-            {
-                label: 'Doubts Solving',
-                access: true,
-            },
-            {
-                label: 'Consultation with toppers',
-                access: true,
-            },
-            {
-                label: 'Access to Private Groups',
-                access: true,
-            },
-            {
-                label: 'Opportunity to work with team',
-                access: true,
-            },
 
-        ]
+    list: [
+      {
+        label: "Limited Mock Tests",
+        access: true,
+      },
+      {
+        label: "Limited Study Material",
+        access: true,
+      },
+      {
+        label: "Limited Access to feature of Playground",
+        access: true,
+      },
+      {
+        label: "Video Tutorial",
+        access: false,
+      },
+      {
+        label: "Asking doubts",
+        access: false,
+      },
+      {
+        label: "Consultation with toppers",
+        access: false,
+      },
+      {
+        label: "Access to Private Group",
+        access: false,
+      },
+    ],
+  },
+  {
+    planName: "Premium",
+    price: {
+      monthly: 120,
+      yearly: 1000,
     },
-    {
-        planName: 'Customs',
-        price: '',
-        list: [
-
-            {
-                label: 'All Mock Tests',
-                access: true,
-            },
-            {
-                label: 'All Study Material',
-                access: true,
-            },
-            {
-                label: 'All feature of Playground',
-                access: true,
-            },
-            {
-                label: 'Free Video Tutorials',
-                access: true,
-            },
-            {
-                label: 'Doubts Solving',
-                access: true,
-            },
-            {
-                label: 'Consultation with toppers',
-                access: true,
-            },
-            {
-                label: 'Access to Private Group',
-                access: true,
-            },
-        ]
+    list: [
+      {
+        label: "All Mock Tests",
+        access: true,
+      },
+      {
+        label: "All Study Material",
+        access: true,
+      },
+      {
+        label: "All feature of Playground",
+        access: true,
+      },
+      {
+        label: "Free Video Tutorials",
+        access: true,
+      },
+      {
+        label: "Doubts Solving",
+        access: true,
+      },
+      {
+        label: "Consultation with toppers",
+        access: true,
+      },
+      {
+        label: "Access to Private Groups",
+        access: true,
+      },
+      // {
+      //     label: 'Opportunity to work with team',
+      //     access: true,
+      // },
+    ],
+  },
+  {
+    planName: "Customs",
+    price: {
+      monthly: 240,
+      yearly: 2000,
     },
-]
+    list: [
+      {
+        label: "All Mock Tests",
+        access: true,
+      },
+      {
+        label: "All Study Material",
+        access: true,
+      },
+      {
+        label: "All feature of Playground",
+        access: true,
+      },
+      {
+        label: "Free Video Tutorials",
+        access: true,
+      },
+      {
+        label: "Doubts Solving",
+        access: true,
+      },
+      {
+        label: "Consultation with toppers",
+        access: true,
+      },
+      {
+        label: "Access to Private Group",
+        access: true,
+      },
+    ],
+  },
+];
 
-export default pricingData
+export default pricingData;
 
 // Free Forever
 // ✓ Limited Mock Tests
@@ -137,7 +145,6 @@ export default pricingData
 // ✓ Doubts Solving
 // ✓ Consultation with toppers
 // ✓ Access to Private
-
 
 // 120 - premium
 // t

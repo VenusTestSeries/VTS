@@ -16,6 +16,9 @@ import { GetServerSidePropsContext } from "next";
 import useCountdown from "hooks/use-coutdown";
 import useInterval from "hooks/use-interval";
 import timeFormat from "constant/time-format";
+import ChevronForward from "lib/icons/ChevronForward";
+import { useImmer } from "use-immer";
+import { useRouter } from "next/router";
 
 interface TestSeriesProps {
   data: {
@@ -32,6 +35,10 @@ interface TestSeriesProps {
 const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   const series = seriesArray[4];
 
+  console.log({ series });
+
+  const [seriesData, updateSeriesData] = useImmer([]);
+
   const [toggleSection, setToggleSection] = React.useState(false);
   const onToggleSection = React.useCallback(() => {
     setToggleSection(!toggleSection);
@@ -43,6 +50,9 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
     series.questions[0] as QuestionTypes
   );
 
+  const questionIndex = series.questions.findIndex(
+    (value) => value._id === selected._id
+  );
   // FOR NEXT BUTTON
   const onNext = () => {
     const findIndex = series.questions.findIndex(
@@ -69,7 +79,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   }, [language, selected]);
 
   // COUNT DOWN
-  const [count, setCount] = React.useState(30);
+  const [count, setCount] = React.useState(60);
   useInterval(
     () => {
       if (count <= 0) {
@@ -82,21 +92,27 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
     count === 0 ? null : 1000
   );
 
+  const [activeSection, setActiveSection] = React.useState(
+    examSections[0].label
+  );
+
+  const router = useRouter();
   return (
     <div className="seriepage">
       <div className="header">
         <div className="leftbox">
           <ul>
             <li className="icon">
-              <Link href="#">
+              <a onClick={() => router.back()}>
                 <ArrowLeft color="#fff" />
-              </Link>
+              </a>
             </li>
             <li className="text">
               <div className="text1">Tests</div>
               <div className="text2">
-                PYST 1: SSC CGL - General Awareness (Held On : 20 April 2022
-                Shift 2)
+                {/* PYST 1: SSC CGL - General Awareness (Held On : 20 April 2022
+                Shift 2) */}
+                {series.title}
               </div>
             </li>
           </ul>
@@ -133,15 +149,30 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
       <div className="seriebox">
         <div
           className="leftsection"
-          // style={{
-          //   marginLeft: toggleSection ? "300px" : "0px",
-          // }}
+          style={{
+            marginRight: toggleSection ? "0px" : "300px",
+          }}
         >
           <div className="actual_exam_ui_top">
             <div className="left">
               <div className="text">Sections</div>
               <div className="button">
-                <Link href="#">Test</Link>
+                {examSections.map((item, index) => {
+                  return (
+                    <a
+                      key={index}
+                      onClick={() => setActiveSection(item.label)}
+                      style={{
+                        background:
+                          item.label === activeSection ? "#166a84" : "#f1f1f1",
+                        color:
+                          item.label === activeSection ? "#ffffff" : "#000000",
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div className="right">
@@ -161,28 +192,19 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
           <div className="mainbox">
             <div className="mainboxtop">
               <div className="left">
-                <div className="tp-ques-number">Question No. 1</div>
-                <span className="currentQuestion badge bg_red">Incorrect</span>
-                <div className="outtimging font_size_small">
-                  <div style={{ lineHeight: "0px" }}>
-                    <EmotionUnhappy width={14} color="#c0392b" />
-                  </div>{" "}
-                  You <span>00:38</span>
-                  <div className="outtimging font_size_small">
-                    Avg: <span>00:21</span>{" "}
-                  </div>
-                  <div className="marking">
-                    Marks<span className=" badge bg_red">-0.5</span>{" "}
-                  </div>
-                  <span className="badge bg_green">27% answered correctly</span>
+                <div className="tp-ques-number">
+                  Question No. {questionIndex + 1}
                 </div>
               </div>
               <div className="right">
-                <div className="save">
-                  <Link href="#">
-                    <Save width={12} />
-                    Save
-                  </Link>
+                <div className="outtimging font_size_small">
+                  <div className="marking">
+                    Marks
+                    <div className="row" style={{ margin: "0", gap: "4px" }}>
+                      <span className="badge bg_green">+2</span>
+                      <span className="badge bg_red">-0.5</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="Report">
                   <Link href="#">
@@ -216,16 +238,21 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             </div>
           </div>
         </div>
-
         <div
           className="rightsection"
-          // style={{
-          //   width: toggleSection ? "300px" : "0px",
-          // }}
+          style={{
+            transformOrigin: "right",
+            transition: "all 100ms ease",
+            width: toggleSection ? "0px" : "300px",
+          }}
         >
           <div className="toogle-section">
             <span onClick={onToggleSection}>
-              <ChevronBack size={18} />
+              {toggleSection ? (
+                <ChevronBack size={18} />
+              ) : (
+                <ChevronForward size={18} />
+              )}
             </span>
           </div>
           <div className="innerbox">
@@ -243,20 +270,24 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             </div>
             <ul className="results">
               <li>
-                <span className="bg_green">5</span>
-                <div className="text">Correct</div>
+                <span className="answered_badge">0</span>
+                <div className="text">Answered</div>
               </li>
               <li>
-                <span className="bg_white2">5</span>
-                <div className="text">Unattempted</div>
+                <span className="marked_badge">0</span>
+                <div className="text">Marked</div>
               </li>
               <li>
-                <span className="bg_red">5</span>
-                <div className="text">Incorrect</div>
+                <span className="not_visited_badge">5</span>
+                <div className="text">Not Visited</div>
               </li>
               <li>
-                <span className="bg_warrning">5</span>
-                <div className="text">Partially Correct</div>
+                <span className="marked_and_answered_badge">5</span>
+                <div className="text">Marked And Answered</div>
+              </li>
+              <li>
+                <span className="not_answered_badge">5</span>
+                <div className="text">Not Answered</div>
               </li>
             </ul>
             <div className="heading">
@@ -267,44 +298,23 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                 const active = value._id === selected._id;
                 return (
                   <li
-                    className="Qar"
+                    className={`Qar ${active ? "bg_red" : "bg_white"}`}
                     key={index}
                     onClick={() => setSelected(value)}
                     style={{
                       borderRadius: active ? "20px" : "0px",
                     }}
                   >
-                    {/* {value.en.value} */}
                     {index + 1}
                   </li>
                 );
               })}
-              {/* <li className="Qar bg_red">1</li>
-              <li className="Qar bg_red">2</li>
-              <li className="Qar bg_red">3</li>
-              <li className="Qar bg_green">4</li>
+              <li className="Qar answered_badge">1</li>
+              <li className="Qar marked_badge">2</li>
+              <li className="Qar not_answered_badge">3</li>
+              <li className="Qar marked_and_answered_badge">4</li>
               <li className="Qar bg_green">5</li>
               <li className="Qar bg_warrning">6</li>
-              <li className="Qar">7</li>
-              <li className="Qar">8</li>
-              <li className="Qar">9</li>
-              <li className="Qar">10</li>
-              <li className="Qar">12</li>
-              <li className="Qar">13</li>
-              <li className="Qar">14</li>
-              <li className="Qar">15</li>
-              <li className="Qar">16</li>
-              <li className="Qar">17</li>
-              <li className="Qar">18</li>
-              <li className="Qar">19</li>
-              <li className="Qar">20</li>
-              <li className="Qar">21</li>
-              <li className="Qar">22</li>
-              <li className="Qar">23</li>
-              <li className="Qar">24</li>
-              <li className="Qar">25</li>
-              <li className="Qar">26</li>
-              <li className="Qar">27</li> */}
             </ul>
             <div className="actionbtnresult">
               <Button>Question Paper </Button>
@@ -319,7 +329,6 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
 
 export default TestSeries;
 
-// getServerSideProps
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -333,79 +342,17 @@ export const getServerSideProps = async (
   };
 };
 
-{
-  /* 
-                  <li>
-                    <label htmlFor="2">
-                      <input id="2" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="3">
-                      <input id="3" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="4">
-                      <input id="4" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li> */
-}
-
-// console.log(seriesData.data.sections[0].questions);
-
-// const schema = {
-//   uid: "",
-//   title: "",
-//   slug: "",
-//   time: "",
-//   questions: seriesData.data.sections[0].questions
-//     .slice(0, 1)
-//     .map((item, index) => {
-//       return {
-//         type: "mcq",
-//         QSNo: 0,
-//         SSNo: 0,
-//         SSSNo: 0,
-//         hindi: {
-//           ...item.hn,
-//         },
-//         english: {
-//           ...item.en,
-//         },
-//         marks: {
-//           positive: 2,
-//           negative: 0.5,
-//         },
-//       };
-//     }),
-//   is_marked: "",
-//   is_saved: "",
-//   user_attempt_list: "",
-//   question_score: "",
-// };
-
-// console.log(
-//   seriesData.data.sections[0].questions.map((item) => {
-//     return {
-//       QSNo: item.QSNo,
-//       SSNo: item.SSNo,
-//       SSSNo: item.SSSNo,
-//       type: "mcq",
-//       hindi: {
-//         question: item.hn.value,
-//         options: [...item.hn.options],
-//       },
-//       english: {
-//         question: item.en.value,
-//         options: [...item.en.options],
-//       },
-//     };
-//   })
-// );
-
-// const { data, error, isLoading } = useSWR("/api/v1/series/", fetcher);
-// console.log(data);
+const examSections = [
+  {
+    label: "General Intelligence & Reasoning",
+  },
+  {
+    label: "General Awareness",
+  },
+  {
+    label: "Quantitative Aptitude",
+  },
+  {
+    label: "English Language",
+  },
+];
