@@ -15,10 +15,38 @@ import CheckLine from "lib/icons/CheckLine";
 import pricingData from "constant/pricing";
 import CloseIcon from "lib/icons/CloseIcon";
 
+import Slider from "react-slick";
+
 function Home() {
+  var settings = {
+    centerMode: true,
+    infinite: true,
+    centerPadding: "20%",
+    slidesToShow: 1,
+    speed: 500,
+    arrows: true,
+    dots: false,
+    margin: "50px",
+  };
   return (
     <div>
       <HeroSection />
+
+      <section className="bannerslider">
+        <Slider {...settings}>
+          {Array.from({ length: 6 }).map((_, i) => {
+            return (
+              <div key={i}>
+                <img
+                  src="https://static.uacdn.net/thumbnail/banner/9d1dad4098af4829b75d9beaf986a1a1.png"
+                  alt="dsfsdf"
+                  height="auto"
+                />
+              </div>
+            );
+          })}
+        </Slider>
+      </section>
 
       <section className={`${style.productbox1} pt-50 pb-50`}>
         <div className="container">

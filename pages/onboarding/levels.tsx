@@ -9,6 +9,8 @@ import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
 import { useRouter } from "next/router";
+import CircleProgress from "components/circle-progress";
+import LineProgress from "components/lineprogressbar";
 
 const OnBoarding3 = () => {
   const [selected, setSelected] = React.useState("Beginner");
@@ -41,6 +43,31 @@ const OnBoarding3 = () => {
   return (
     <section className="bg_primary pt-50 pb-50">
       <div className="container">
+        <div className="row">
+          <div className="vts-12">
+            <h4>Solved Problems</h4>
+          </div>
+          <div className="vts-12">
+            <div className="rogressbarbox">
+              <div className="roundprogressbar">
+                <CircleProgress
+                  percentage={50}
+                  background={"#000"}
+                  foreground={"#fff"}
+                  strokeWidth={"5"}
+                  size={"100"}
+                ></CircleProgress>
+              </div>
+              <LineProgress
+                percentage={0}
+                background={"grey"}
+                activeColor={""}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
         <div>
           <div className={css["qutbox"]}>
             <div className={css["heading"]}>
@@ -54,7 +81,6 @@ const OnBoarding3 = () => {
               Become an inspector in Customs, Income tax, CBI
             </div>
             <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-             
 
             <div className={css.testfreemocks}>
               {Array.from({ length: 4 }).map((item, index) => (
