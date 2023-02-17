@@ -54,21 +54,7 @@ const OnBoarding3 = () => {
               Become an inspector in Customs, Income tax, CBI
             </div>
             <div className={css["innsubheading"]}>Earn 45000 to 1,00,000</div>
-            {/* <ul className={css["list"]}>
-              {RenderList.map((_, i) => {
-                return (
-                  <li key={i}>
-                    <div
-                      className={css["pass"]}
-                      onClick={() => push(`/series/test-${i}`)}
-                    >
-                      Tier-{i}{" "}
-                    </div>
-                    Preliminary
-                  </li>
-                );
-              })}
-            </ul> */}
+
             <div className={css.testfreemocks}>
               {Array.from({ length: 4 }).map((item, index) => (
                 <div className={css.list} key={index}>
