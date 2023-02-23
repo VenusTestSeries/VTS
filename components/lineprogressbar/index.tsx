@@ -41,7 +41,7 @@ const LineProgress = ({
       </div>
 
       <div className={Style.progressbar}>
-        <div className={`${Style.bar} bar width50   `}></div>
+        <div className={`${Style.bar} ${Style.width50}   `}></div>
       </div>
     </div>
   );

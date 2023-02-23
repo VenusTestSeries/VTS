@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/button";
 import Link from "next/link";
+import Image from "next/image";
 // ICONS
 import PerPageLayout from "layout/perpage";
 import BankIcon from "lib/icons/BankIcon";
@@ -11,6 +12,12 @@ import css from "styles/onboarding.module.scss";
 import { useRouter } from "next/router";
 import CircleProgress from "components/circle-progress";
 import LineProgress from "components/lineprogressbar";
+import MappInLine from "lib/icons/MappInLine";
+import LinkedinFill from "lib/icons/LinkedinFill";
+import GithubFill from "lib/icons/GithubFill";
+import GlobalLine from "lib/icons/GlobalLine";
+import Student from "lib/icons/Student";
+import TagLine from "lib/icons/TagLine";
 
 const OnBoarding3 = () => {
   const [selected, setSelected] = React.useState("Beginner");
@@ -44,28 +51,123 @@ const OnBoarding3 = () => {
     <section className="bg_primary pt-50 pb-50">
       <div className="container">
         <div className="row">
-          <div className="vts-12">
-            <h4>Solved Problems</h4>
-          </div>
-          <div className="vts-12">
-            <div className="rogressbarbox">
-              <div className="roundprogressbar">
-                <CircleProgress
-                  percentage={50}
-                  background={"#000"}
-                  foreground={"#fff"}
-                  strokeWidth={"5"}
-                  size={"100"}
-                ></CircleProgress>
+          {/* <div className="userprifilebox"> */}
+          <div className="profilesection vts-3">
+            <div className="innerbox boxgrid">
+              <div className="profileside">
+                <div className="image">
+                  <Image
+                    src="/images/userimage.png"
+                    height={80}
+                    width={80}
+                    alt="userimage"
+                  />
+                </div>
+                <div className="namebox">
+                  <div className="text-base">Ankit pandey</div>
+                  <div className="predu">HackerOrWhat</div>
+                  <div style={{ marginTop: "20px" }}>
+                    Rank <b>65,856</b>
+                  </div>
+                </div>
               </div>
-              <LineProgress
-                percentage={0}
-                background={"grey"}
-                activeColor={""}
-              />
+
+              <div className="textblock">
+                <div>Problem solver</div>
+                <div className="">
+                  <p className="mt-15">
+                    <MappInLine size={16} color="#8492a6" />
+                    India
+                  </p>
+                  <p className="mt-15">
+                    <MappInLine size={16} color="#8492a6" />
+                    Motilal Nehru national institute of tec
+                  </p>
+                  <p className="mt-15">
+                    <GlobalLine size={16} color="#8492a6" />
+                    https://ankit-portfolio-93hxe3wfv-skpan
+                  </p>
+                  <p className="mt-15">
+                    <GithubFill size={16} color="#8492a6" />
+                    RankerO
+                  </p>
+                  <p className="mt-15">
+                    <LinkedinFill size={16} color="#8492a6" />
+                    ankit-pandey-0828bb199
+                  </p>
+
+                  <div className="d-flex gap-5 mt-15 align_items_start">
+                    <p>
+                      <TagLine color="#8492a6" size={16} />{" "}
+                    </p>{" "}
+                    <ul className="tags">
+                      <li>c++</li>
+                      <li>algorithm</li>
+                      <li>data-structue</li>
+                      <li>sql</li>
+                      <li>mongodb</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="contentsection vts-9">
+            <div className="body">
+              <div className="row">
+                <div className="vts-6">
+                  <div className="boxgrid width100">
+                    <div>Solved Problems</div>
+                    <div className="rogressbarbox">
+                      <div className="roundprogressbar">
+                        <CircleProgress
+                          percentage={50}
+                          background={"#000"}
+                          foreground={"#fff"}
+                          strokeWidth={"5"}
+                          size={"100"}
+                        ></CircleProgress>
+                      </div>
+                      <div className="LineProgress">
+                        <div>
+                          <LineProgress
+                            percentage={0}
+                            background={"grey"}
+                            activeColor={""}
+                          />
+                        </div>
+                        <div>
+                          <LineProgress
+                            percentage={0}
+                            background={"grey"}
+                            activeColor={""}
+                          />
+                        </div>
+                        <div>
+                          <LineProgress
+                            percentage={0}
+                            background={"grey"}
+                            activeColor={""}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="vts-6">
+                  <div className="boxgrid width100">
+                    <div>Badges</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* </div> */}
+          </div>
         </div>
+      </div>
+
+      <div className="container">
+        <div className="row"></div>
       </div>
       <div className="container">
         <div>
