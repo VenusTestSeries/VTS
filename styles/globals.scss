@@ -1268,3 +1268,42 @@ ul.Qarbox li {
   overflow-y: auto;
   height: 100%;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.bannerslider {
+  overflow: hidden;
+  .slick-track {
+    // gap: 30px;
+    display: flex !important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .slick-prev {
+    left: 22vw;
+    z-index: 9;
+  }
+  .slick-next {
+    right: 22vw;
+  }
+  .slick-slide {
+    margin: 0 10px;
+  }
+}
+
+// COLOMN
+// FOR GENERATE COLOMN
+$colomn: 12;
+@for $i from 1 through $colomn {
+  .col-md-#{$i} {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 (100% / $colomn) * $i;
+    flex: 0 0 (100% / $colomn) * $i;
+    max-width: (100% / $colomn) * $i;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

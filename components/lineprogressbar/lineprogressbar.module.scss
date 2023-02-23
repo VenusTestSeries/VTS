@@ -1,0 +1,40 @@
+// progressbar
+.progressbar {
+  background: #f1f1f8;
+  border-radius: 1000px;
+  width: 100%;
+  flex: 1;
+  height: 8px;
+  margin-top: 8px;
+  .bar {
+    background: var(--color-primary2);
+    height: 8px;
+    border-radius: 1000px;
+  }
+}
+
+.promodebox {
+  display: flex;
+  justify-content: space-between;
+  .promode {
+    display: flex;
+    position: relative;
+    .modetext {
+      color: #b3c5ef;
+    }
+    .modecount {
+      position: relative;
+      left: 70px;
+      color: #b3c5ef;
+      span {
+        font-size: 20px;
+        line-height: 20px;
+        color: #000000;
+        padding-right: 4px;
+      }
+    }
+    .partext {
+      color: #b3c5ef;
+    }
+  }
+}
