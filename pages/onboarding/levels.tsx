@@ -11,13 +11,15 @@ import RailIcon from "lib/icons/RailIcon";
 import css from "styles/onboarding.module.scss";
 import { useRouter } from "next/router";
 import CircleProgress from "components/circle-progress";
-import LineProgress from "components/lineprogressbar";
+import LineProgressComponent from "components/lineprogressbar";
 import MappInLine from "lib/icons/MappInLine";
 import LinkedinFill from "lib/icons/LinkedinFill";
 import GithubFill from "lib/icons/GithubFill";
 import GlobalLine from "lib/icons/GlobalLine";
 import Student from "lib/icons/Student";
 import TagLine from "lib/icons/TagLine";
+import Style from "../../styles/profile.module.scss";
+import ArrowRight from "lib/icons/ArrowRight";
 
 const OnBoarding3 = () => {
   const [selected, setSelected] = React.useState("Beginner");
@@ -54,8 +56,8 @@ const OnBoarding3 = () => {
           {/* <div className="userprifilebox"> */}
           <div className="profilesection vts-3">
             <div className="innerbox boxgrid">
-              <div className="profileside">
-                <div className="image">
+              <div className={Style.profileside}>
+                <div className={Style.image}>
                   <Image
                     src="/images/userimage.png"
                     height={80}
@@ -63,43 +65,82 @@ const OnBoarding3 = () => {
                     alt="userimage"
                   />
                 </div>
-                <div className="namebox">
-                  <div className="text-base">Ankit pandey</div>
-                  <div className="predu">HackerOrWhat</div>
-                  <div style={{ marginTop: "20px" }}>
+                <div className={Style.namebox}>
+                  <div>
+                    <div className={Style.textbase}>Ankit pandey</div>
+                    <div className={Style.predu}>HackerOrWhat</div>
+                  </div>
+                  <div className={Style.rank}>
+                    {" "}
                     Rank <b>65,856</b>
                   </div>
                 </div>
               </div>
 
-              <div className="textblock">
-                <div>Problem solver</div>
-                <div className="">
-                  <p className="mt-15">
-                    <MappInLine size={16} color="#8492a6" />
-                    India
-                  </p>
-                  <p className="mt-15">
-                    <MappInLine size={16} color="#8492a6" />
-                    Motilal Nehru national institute of tec
-                  </p>
-                  <p className="mt-15">
-                    <GlobalLine size={16} color="#8492a6" />
-                    https://ankit-portfolio-93hxe3wfv-skpan
-                  </p>
-                  <p className="mt-15">
-                    <GithubFill size={16} color="#8492a6" />
-                    RankerO
-                  </p>
-                  <p className="mt-15">
-                    <LinkedinFill size={16} color="#8492a6" />
-                    ankit-pandey-0828bb199
-                  </p>
+              <div className={Style.textblock}>
+                <div
+                  className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                >
+                  Problem solver
+                </div>
+                <div className={Style.profilelist}>
+                  <div className="mt-15 d-flex align_items_center gap-4">
+                    <div className="icon line-height-0">
+                      <MappInLine size={16} color="#b3c5ef" />
+                    </div>
+                    <div
+                      className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                    >
+                      India
+                    </div>
+                  </div>
+                  <div className="mt-15 d-flex align_items_center gap-4">
+                    <div className="icon line-height-0">
+                      <MappInLine size={16} color="#b3c5ef" />
+                    </div>
+                    <div
+                      className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                    >
+                      Motilal Nehru national institute of tec
+                    </div>
+                  </div>
+                  <div className="mt-15 d-flex align_items_center gap-4">
+                    <div className="icon line-height-0">
+                      <GlobalLine size={16} color="#b3c5ef" />
+                    </div>
+                    <div
+                      className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                    >
+                      https://ankit-portfolio-93hxe3wfv-skpan
+                    </div>
+                  </div>
+                  <div className="mt-15 d-flex align_items_center gap-4">
+                    <div className="icon line-height-0">
+                      <GithubFill size={16} color="#b3c5ef" />
+                    </div>
+                    <div
+                      className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                    >
+                      RankerO
+                    </div>
+                  </div>
+                  <div className="mt-15 d-flex align_items_center gap-4">
+                    <div className="icon line-height-0">
+                      <LinkedinFill size={16} color="#b3c5ef" />
+                    </div>
+                    <div
+                      className={`${Style.text}  line-clamp-1 font_size14 font-w300 `}
+                    >
+                      ankit-pandey-0828bb199
+                    </div>
+                  </div>
 
                   <div className="d-flex gap-5 mt-15 align_items_start">
-                    <p>
-                      <TagLine color="#8492a6" size={16} />{" "}
-                    </p>{" "}
+                    <div>
+                      <div className="icon line-height-0">
+                        <TagLine color="#b3c5ef" size={16} />{" "}
+                      </div>
+                    </div>{" "}
                     <ul className="tags">
                       <li>c++</li>
                       <li>algorithm</li>
@@ -117,7 +158,9 @@ const OnBoarding3 = () => {
               <div className="row">
                 <div className="vts-6">
                   <div className="boxgrid width100">
-                    <div>Solved Problems</div>
+                    <div className={`${Style.mindtext} mb-10`}>
+                      Solved Problems
+                    </div>
                     <div className="rogressbarbox">
                       <div className="roundprogressbar">
                         <CircleProgress
@@ -129,25 +172,23 @@ const OnBoarding3 = () => {
                         ></CircleProgress>
                       </div>
                       <div className="LineProgress">
-                        <div>
-                          <LineProgress
-                            percentage={0}
-                            background={"grey"}
-                            activeColor={""}
+                        <div className="mb-16">
+                          <LineProgressComponent
+                            percentage={10}
+                            variant="success"
                           />
                         </div>
-                        <div>
-                          <LineProgress
-                            percentage={0}
-                            background={"grey"}
-                            activeColor={""}
+
+                        <div className="mb-16">
+                          <LineProgressComponent
+                            percentage={40}
+                            variant="warning"
                           />
                         </div>
-                        <div>
-                          <LineProgress
-                            percentage={0}
-                            background={"grey"}
-                            activeColor={""}
+                        <div className="mb-16">
+                          <LineProgressComponent
+                            percentage={50}
+                            variant="danger"
                           />
                         </div>
                       </div>
@@ -156,7 +197,42 @@ const OnBoarding3 = () => {
                 </div>
                 <div className="vts-6">
                   <div className="boxgrid width100">
-                    <div>Badges</div>
+                    <div className="d-flex justify-content-spacebetween">
+                      <div className={`${Style.mindtext} mb-10`}>Badges</div>
+                      <div className="icon">
+                        <ArrowRight fill="#b3c5ef" size={22} />
+                      </div>
+                    </div>
+                    <div className="d-flex align_items_center justfiy_content_center gap-20 mb-20 ">
+                      <div className="items">
+                        <Image
+                          src="/images/dcc-2023-1.png"
+                          height={56}
+                          width={56}
+                          alt="dcc"
+                        />
+                      </div>
+                      <div className="items">
+                        <Image
+                          src="/images/2022-annual-100.png"
+                          height={72}
+                          width={72}
+                          alt="dcc"
+                        />
+                      </div>
+                      <div className="items">
+                        <Image
+                          src="/images/dcc-2022-12.png"
+                          height={56}
+                          width={56}
+                          alt="dcc"
+                        />
+                      </div>
+                    </div>
+                    <div className={`${Style.mindtext}  `}>
+                      Most Recent Badge
+                    </div>
+                    <div>100 Days Badge 2022</div>
                   </div>
                 </div>
               </div>
@@ -171,7 +247,7 @@ const OnBoarding3 = () => {
       </div>
       <div className="container">
         <div>
-          <div className={css["qutbox"]}>
+          {/* <div className={css["qutbox"]}>
             <div className={css["heading"]}>
               {levelData.map((item, index) => (
                 <h4 key={index} onClick={() => setSelected(item.name)}>
@@ -211,7 +287,7 @@ const OnBoarding3 = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="mt-50 ">
             <Button theme="secondry">Continue</Button>

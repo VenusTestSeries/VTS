@@ -1,0 +1,149 @@
+// FOR GENRATE FONT SIZE
+:root {
+  @for $i from 1 through 100 {
+    --font_size#{$i}: #{$i}px;
+  }
+  // FOR GENERATE font-weight
+  @for $i from 100 through 900 {
+    --font-weight-#{$i}: #{$i} !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .font_size#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .line-height-#{$i} {
+    line-height: #{$i}px;
+  }
+}
+
+// @for $i from 1 through 64 {
+//   .font_rem#{$i/8} {
+//     font-size: #{$i/8}rem;
+//   }
+// }
+
+// FOR GENERATE font-weight
+@for $i from 100 through 900 {
+  .font-w#{$i} {
+    font-weight: var(--font-weight-#{$i});
+  }
+}
+
+// FOR GENRATE GAP
+@for $i from 1 through 64 {
+  .gap-#{$i} {
+    grid-gap: #{$i}px;
+    gap: #{$i}px;
+  }
+}
+
+// FOR GENERATE MARGIN TOP
+@for $i from 1 through 100 {
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+}
+// FOR GENERATE MARGIN BOTTOm
+@for $i from 1 through 100 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+}
+// FOR GENERATE MARGIN RIGHT
+@for $i from 1 through 100 {
+  .mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+}
+// FOR GENERATE MARGIN LEFT
+@for $i from 1 through 100 {
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+}
+
+// FOR GENERATE PADDING TOP
+@for $i from 1 through 100 {
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+}
+// FOR GENERATE PADDING BOTTOm
+@for $i from 1 through 100 {
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+// FOR GENERATE PADDING RIGHT
+@for $i from 1 through 100 {
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+}
+// FOR GENERATE PADDING LEFT
+@for $i from 1 through 100 {
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+}
+// FOR GENERATE Progress Bar
+@for $i from 0 through 100 {
+  .width-#{$i} {
+    width: #{1% * $i};
+  }
+}
+
+// COLOMN
+// FOR GENERATE COLOMN
+$colomn: 12;
+@for $i from 1 through $colomn {
+  .vts-#{$i} {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 (100% / $colomn) * $i;
+    flex: 0 0 (100% / $colomn) * $i;
+    max-width: (100% / $colomn) * $i;
+  }
+}
+
+@media (min-width: 576px) {
+  $colomn: 12;
+  @for $i from 1 through $colomn {
+    .vts-col-md-#{$i} {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 (100% / $colomn) * $i !important;
+      flex: 0 0 (100% / $colomn) * $i !important;
+      max-width: (100% / $colomn) * $i !important;
+    }
+  }
+}
+@media (max-width: 576px) {
+  $colomn: 12;
+  @for $i from 1 through $colomn {
+    .vts-col-sm-#{$i} {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 (100% / $colomn) * $i !important;
+      flex: 0 0 (100% / $colomn) * $i !important;
+      max-width: (100% / $colomn) * $i !important;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .line-clamp-#{$i} {
+    // display: -webkit-box;
+    // -webkit-line-clamp: $i;
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: $i; /* number of lines to show */
+    line-clamp: $i;
+    -webkit-box-orient: vertical;
+  }
+}
