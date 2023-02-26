@@ -1,3 +1,10 @@
+// FOR GENERATE Progress Bar
+@for $i from 0 through 100 {
+  .width#{$i} {
+    width: #{1% * $i};
+  }
+}
+
 // progressbar
 .progressbar {
   background: #f1f1f8;
