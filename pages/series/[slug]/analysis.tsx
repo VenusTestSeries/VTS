@@ -124,28 +124,28 @@ const Analysis = () => {
               </div>
             </div>
 
-            <div className="vts-10">
+            <div className="vts-10 mb-48">
               <h4 className="mb-16">Sectional Summary</h4>
 
               <div className={`${styles.sectional}`}>
-                <div className="table">
+                <div className={styles.tabledesign}>
                   <table>
                     <thead>
                       <tr>
                         <th>
-                          <div className="font_sm">Section Name</div>
+                          <div className="font_sm text_left">Section Name</div>
                         </th>
                         <th>
-                          <div className="font_sm">Score</div>
+                          <div className="font_sm text_left">Score</div>
                         </th>
                         <th>
-                          <div className="font_sm">Attempted</div>{" "}
+                          <div className="font_sm text_left">Attempted</div>{" "}
                         </th>
                         <th>
-                          <div className="font_sm">Accuracy</div>{" "}
+                          <div className="font_sm text_left">Accuracy</div>{" "}
                         </th>
                         <th>
-                          <div className="font_sm">Time</div>{" "}
+                          <div className="font_sm text_left">Time</div>{" "}
                         </th>
                       </tr>
                     </thead>
@@ -153,17 +153,224 @@ const Analysis = () => {
                       <tr>
                         <td>Test</td>
                         <td>
-                          <div className="pros">
-                            <div className="bar"></div>
+                          <div className={styles.pros}>
+                            <div
+                              className={`${styles.bar} ${styles.bgcolor_an2} width-0`}
+                            ></div>
                           </div>
-                          0 / 50
+                          <h4 className={styles.binding}>
+                            3.32 <span>/ 0%</span>
+                          </h4>
                         </td>
-                        <td>0 / 25</td>
-                        <td>0%</td>
-                        <td>3.32%</td>
+                        <td>
+                          <div className={styles.pros}>
+                            <div
+                              className={`${styles.bar} ${styles.bgcolor_an3} width-10`}
+                            ></div>
+                          </div>
+                          <h4 className={styles.binding}>
+                            0 <span>/ 25</span>
+                          </h4>
+                        </td>
+                        <td>
+                          <div className={styles.pros}>
+                            <div
+                              className={`${styles.bar} ${styles.bgcolor_an4} width-20`}
+                            ></div>
+                          </div>
+                          <h4 className={styles.binding}>
+                            0 <span>/%</span>
+                          </h4>
+                        </td>
+                        <td>
+                          <div className={styles.pros}>
+                            <div
+                              className={`${styles.bar} ${styles.bgcolor_an5} width-30`}
+                            ></div>
+                          </div>
+                          <h4 className={styles.binding}>
+                            3.32<span>/%</span>
+                          </h4>{" "}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+
+            <div className="vts-10">
+              <div className="row">
+                <div className="vts-9">
+                  <div className="row">
+                    <div className="vts-12 mb-48">
+                      <h4 className="mb-16">Compare with topper</h4>
+
+                      <div className={`${styles.sectional}`}>
+                        <div className={styles.tabledesign}>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>
+                                  <div className="font_sm text_left">
+                                    Section Name
+                                  </div>
+                                </th>
+                                <th>
+                                  <div className="font_sm text_left">Score</div>
+                                </th>
+                                <th>
+                                  <div className="font_sm text_left">
+                                    Attempted
+                                  </div>{" "}
+                                </th>
+                                <th>
+                                  <div className="font_sm text_left">
+                                    Accuracy
+                                  </div>{" "}
+                                </th>
+                                <th>
+                                  <div className="font_sm text_left">Time</div>{" "}
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Test</td>
+                                <td>
+                                  <div className={styles.pros}>
+                                    <div
+                                      className={`${styles.bar} ${styles.bgcolor_an2} width-0`}
+                                    ></div>
+                                  </div>
+                                  <h4 className={styles.binding}>
+                                    3.32 <span>/ 0%</span>
+                                  </h4>
+                                </td>
+                                <td>
+                                  <div className={styles.pros}>
+                                    <div
+                                      className={`${styles.bar} ${styles.bgcolor_an3} width-10`}
+                                    ></div>
+                                  </div>
+                                  <h4 className={styles.binding}>
+                                    0 <span>/ 25</span>
+                                  </h4>
+                                </td>
+                                <td>
+                                  <div className={styles.pros}>
+                                    <div
+                                      className={`${styles.bar} ${styles.bgcolor_an4} width-20`}
+                                    ></div>
+                                  </div>
+                                  <h4 className={styles.binding}>
+                                    0 <span>/%</span>
+                                  </h4>
+                                </td>
+                                <td>
+                                  <div className={styles.pros}>
+                                    <div
+                                      className={`${styles.bar} ${styles.bgcolor_an5} width-30`}
+                                    ></div>
+                                  </div>
+                                  <h4 className={styles.binding}>
+                                    3.32<span>/%</span>
+                                  </h4>{" "}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="vts-3">
+                  <div className="row">
+                    <div className="vts-12 mb-48">
+                      <h4 className="mb-16">Top Rankers</h4>
+
+                      <div className={styles.toprank}>
+                        <ul className={styles.topname}>
+                          <li>
+                            <div className="font_size15">1</div>
+                            <div className={styles.topimage}>
+                              <Image
+                                src="/images/userimage.png"
+                                alt={""}
+                                width={40}
+                                height={40}
+                              ></Image>
+                            </div>
+                            <div>
+                              <div className="font_size15">Rakesh Sinha</div>
+                              <div className={styles.help}>50/50</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="font_size15">1</div>
+                            <div className={styles.topimage}>
+                              <Image
+                                src="/images/userimage.png"
+                                alt={""}
+                                width={40}
+                                height={40}
+                              ></Image>
+                            </div>
+                            <div>
+                              <div className="font_size15">Rakesh Sinha</div>
+                              <div className={styles.help}>50/50</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="font_size15">1</div>
+                            <div className={styles.topimage}>
+                              <Image
+                                src="/images/userimage.png"
+                                alt={""}
+                                width={40}
+                                height={40}
+                              ></Image>
+                            </div>
+                            <div>
+                              <div className="font_size15">Rakesh Sinha</div>
+                              <div className={styles.help}>50/50</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="font_size15">1</div>
+                            <div className={styles.topimage}>
+                              <Image
+                                src="/images/userimage.png"
+                                alt={""}
+                                width={40}
+                                height={40}
+                              ></Image>
+                            </div>
+                            <div>
+                              <div className="font_size15">Rakesh Sinha</div>
+                              <div className={styles.help}>50/50</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="font_size15">1</div>
+                            <div className={styles.topimage}>
+                              <Image
+                                src="/images/userimage.png"
+                                alt={""}
+                                width={40}
+                                height={40}
+                              ></Image>
+                            </div>
+                            <div>
+                              <div className="font_size15">Rakesh Sinha</div>
+                              <div className={styles.help}>50/50</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
