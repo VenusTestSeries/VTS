@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "color";
 @import "mixins";
+@import "heading";
+@import "cardbox";
+@import "display";
+@import "flex";
 
 *,
 *::before,
@@ -158,6 +162,10 @@ html {
   background: var(--night-var-color5) !important;
 }
 
+.bgcolor3 {
+  background: var(--venus-bgcolor3);
+}
+
 .container,
 .container-fluid {
   width: 100%;
@@ -194,23 +202,6 @@ html {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-}
-
-// display
-.d-flex {
-  display: flex;
-}
-.justfiy_content_center {
-  justify-content: center;
-}
-.justify-content-spacebetween {
-  justify-content: space-between;
-}
-.align_items_center {
-  align-items: center;
-}
-.align_items_start {
-  align-items: flex-start;
 }
 
 // button style
