@@ -1,24 +1,32 @@
 import { useEffect, useRef } from "react";
-import useIsoEffect from "./useIsoEffect";
 
-function useInterval(callback: () => void, delay: number | null) {
-  const savedCallback = useRef(callback);
+/* istanbul ignore next */
+/** keep typescript happy */
+const noop = () => {};
 
-  // Remember the latest callback if it changes.
-  useIsoEffect(() => {
+export function useInterval(
+  callback: () => void,
+  delay: number | null | false,
+  immediate?: boolean
+) {
+  const savedCallback = useRef(noop);
+
+  // Remember the latest callback.
+  useEffect(() => {
     savedCallback.current = callback;
-  }, [callback]);
+  });
+
+  // Execute callback if immediate is set.
+  useEffect(() => {
+    if (!immediate || delay === null || delay === false) return;
+    savedCallback.current();
+  }, [immediate]);
 
   // Set up the interval.
   useEffect(() => {
-    // Don't schedule if no delay is specified.
-    // Note: 0 is a valid value for delay.
-    if (!delay && delay !== 0) {
-      return;
-    }
-
-    const id = setInterval(() => savedCallback.current(), delay);
-
+    if (delay === null || delay === false) return;
+    const tick = () => savedCallback.current();
+    const id = setInterval(tick, delay);
     return () => clearInterval(id);
   }, [delay]);
 }

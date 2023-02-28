@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 4px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 1rem;
+}
+.success {
+  background: #2db55d26;
+}
+.info {
+  background: rgb(0 175 155);
+}
+.warning {
+  background: #ffb80026;
+}
+.danger {
+  background: #ef474326;
+}
+
+.line-info {
+  background: rgb(0 175 155);
+}
+.line-warning {
+  background: rgb(255 184 0);
+}
+.line-danger {
+  background: rgb(239 71 67);
+}
+.line-success {
+  background: rgb(0 175 155);
+}

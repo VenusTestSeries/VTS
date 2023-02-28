@@ -279,32 +279,6 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                   </li>
                 );
               })}
-              {/* <li className="Qar bg_red">1</li>
-              <li className="Qar bg_red">2</li>
-              <li className="Qar bg_red">3</li>
-              <li className="Qar bg_green">4</li>
-              <li className="Qar bg_green">5</li>
-              <li className="Qar bg_warrning">6</li>
-              <li className="Qar">7</li>
-              <li className="Qar">8</li>
-              <li className="Qar">9</li>
-              <li className="Qar">10</li>
-              <li className="Qar">12</li>
-              <li className="Qar">13</li>
-              <li className="Qar">14</li>
-              <li className="Qar">15</li>
-              <li className="Qar">16</li>
-              <li className="Qar">17</li>
-              <li className="Qar">18</li>
-              <li className="Qar">19</li>
-              <li className="Qar">20</li>
-              <li className="Qar">21</li>
-              <li className="Qar">22</li>
-              <li className="Qar">23</li>
-              <li className="Qar">24</li>
-              <li className="Qar">25</li>
-              <li className="Qar">26</li>
-              <li className="Qar">27</li> */}
             </ul>
             <div className="actionbtnresult">
               <Button>Question Paper </Button>
@@ -319,7 +293,6 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
 
 export default TestSeries;
 
-// getServerSideProps
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -332,80 +305,3 @@ export const getServerSideProps = async (
     },
   };
 };
-
-{
-  /* 
-                  <li>
-                    <label htmlFor="2">
-                      <input id="2" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="3">
-                      <input id="3" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="4">
-                      <input id="4" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li> */
-}
-
-// console.log(seriesData.data.sections[0].questions);
-
-// const schema = {
-//   uid: "",
-//   title: "",
-//   slug: "",
-//   time: "",
-//   questions: seriesData.data.sections[0].questions
-//     .slice(0, 1)
-//     .map((item, index) => {
-//       return {
-//         type: "mcq",
-//         QSNo: 0,
-//         SSNo: 0,
-//         SSSNo: 0,
-//         hindi: {
-//           ...item.hn,
-//         },
-//         english: {
-//           ...item.en,
-//         },
-//         marks: {
-//           positive: 2,
-//           negative: 0.5,
-//         },
-//       };
-//     }),
-//   is_marked: "",
-//   is_saved: "",
-//   user_attempt_list: "",
-//   question_score: "",
-// };
-
-// console.log(
-//   seriesData.data.sections[0].questions.map((item) => {
-//     return {
-//       QSNo: item.QSNo,
-//       SSNo: item.SSNo,
-//       SSSNo: item.SSSNo,
-//       type: "mcq",
-//       hindi: {
-//         question: item.hn.value,
-//         options: [...item.hn.options],
-//       },
-//       english: {
-//         question: item.en.value,
-//         options: [...item.en.options],
-//       },
-//     };
-//   })
-// );
-
-// const { data, error, isLoading } = useSWR("/api/v1/series/", fetcher);
-// console.log(data);

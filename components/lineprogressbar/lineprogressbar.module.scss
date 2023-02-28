@@ -6,42 +6,50 @@
 }
 
 // progressbar
-.progressbar {
-  background: #f1f1f8;
-  border-radius: 1000px;
-  width: 100%;
-  flex: 1;
-  height: 8px;
-  margin-top: 8px;
-  .bar {
-    background: var(--color-primary2);
-    height: 8px;
-    border-radius: 1000px;
-  }
-}
+// .progressbar {
+//   background: #f1f1f8;
+//   border-radius: 1000px;
+//   width: 100%;
+//   flex: 1;
+//   height: 8px;
+//   margin-top: 8px;
+//   .bar {
+//     background: var(--color-primary2);
+//     height: 8px;
+//     border-radius: 1000px;
+//   }
+// }
 
 .promodebox {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4px;
+  margin-top: 16px px;
   .promode {
     display: flex;
     position: relative;
     .modetext {
-      color: #b3c5ef;
+      color: var(--night-var-gray);
+      font-size: 12px;
     }
     .modecount {
       position: relative;
       left: 70px;
-      color: #b3c5ef;
+      color: var(--night-var-gray);
+      font-size: 12px;
       span {
-        font-size: 20px;
-        line-height: 20px;
-        color: #000000;
+        font-size: 16px;
+        color: #fffdfd;
         padding-right: 4px;
       }
     }
-    .partext {
-      color: #b3c5ef;
+  }
+  .partext {
+    color: var(--night-var-gray);
+    font-size: 12px;
+    span {
+      color: #838181;
+      font-size: 14px;
     }
   }
 }

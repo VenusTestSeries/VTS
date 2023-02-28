@@ -1,0 +1,42 @@
+.profileside {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .image {
+    line-height: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .namebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .textbase {
+      color: var(--venus-gray3);
+    }
+    .predu {
+      color: var(--night-var-gray);
+      font-size: var(--font_size12);
+      font-weight: var(--font-weight300);
+    }
+    .rank {
+      color: var(--night-var-gray);
+      font-size: var(--font_size14);
+      font-weight: var(--font-weight300);
+    }
+  }
+}
+
+.textblock {
+  .text {
+    color: var(--night-var-gray);
+  }
+}
+
+.mindtext {
+  color: var(--night-var-gray);
+  font-size: var(--font_size12);
+  font-weight: var(--font-weight300);
+}

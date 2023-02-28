@@ -1,0 +1,39 @@
+:root {
+  --venus-white: #fff;
+  --venus-primary: #181a2a;
+  --venus-secondary: #67cba0;
+  --venus-accent: #7b92b2;
+  --venus-neutral: #4b6bfb;
+  --venus-base: #fff;
+  --venus-color3: #3abff8;
+  --night-base: #1d283a;
+  --venus-primary-color: var(--venus-primary);
+  --venus-color3-color: var(--venus-color3);
+  --venus-white-color: var(--venus-white);
+  --night-base-color: var(--night-base);
+
+  // night color ;
+  --venus-primary2: #0f1729;
+  --venus-white: #fff;
+  --night-gray: #b3c5ef;
+  --venus-gray3: #ececec;
+  --venus-secondary: #181a2a;
+  --venus-green: #67cba0;
+  --venus-graydark: #7b92b2;
+  --venus-blue: #4b6bfb;
+  --venus-skyblue: #3abff8;
+  --night-primary: #1d283a;
+  --night-color5: #0f1729;
+
+  --venus-var-white: var(--venus-white);
+  --night-var-gray: var(--night-gray);
+  --night-gray3: var(--venus-gray3);
+  --venus-var-secondary: var(--venus-secondary);
+  --venus-var-green: var(--venus-green);
+  --venus-var-graydark: var(--venus-graydark);
+  --venus-var-blue: var(--venus-blue);
+  --venus-var-skyblue: var(--venus-skyblue);
+  --night-var-primary: var(--night-primary);
+  --night-var-primary2: var(--night-primary2);
+  --night-var-color5: var(--night-color5);
+}

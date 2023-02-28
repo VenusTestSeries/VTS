@@ -1,35 +1,14 @@
 import React from "react";
 import Style from "../lineprogressbar/lineprogressbar.module.scss";
+import LineProgress from "./line";
 
-type LineProgress = {
-  percentage: number;
-  background: string;
-  activeColor: string;
-  variant?: "success" | "info" | "warning" | "danger";
-};
+type LineProgressProps = React.ComponentProps<typeof LineProgress>;
 
-{
-  /* <ProgressBar variant="success" now={40} />
-<ProgressBar variant="info" now={20} />
-<ProgressBar variant="warning" now={60} />
-<ProgressBar variant="danger" now={80} /> */
-}
-const LineProgress = ({
-  activeColor,
-  background,
-  percentage,
-  variant,
-}: LineProgress) => {
-  const VarientThemes = React.useMemo(() => {
-    switch (variant) {
-      case "success":
-        return ``;
-      default:
-        return "lineprogressbar";
-    }
-  }, [variant]);
+type LineProgress = {} & LineProgressProps;
+
+const LineProgressComponent = ({ percentage, variant }: LineProgress) => {
   return (
-    <div className={`${VarientThemes}`}>
+    <div>
       <div className={Style.promodebox}>
         <div className={Style.promode}>
           <div className={Style.modetext}>Easy</div>
@@ -37,14 +16,13 @@ const LineProgress = ({
             <span>143</span>/623
           </div>
         </div>
-        <div className={Style.partext}>960.5%</div>
+        <div className={Style.partext}>
+          Beats <span> 960.5%</span>
+        </div>
       </div>
-
-      <div className={Style.progressbar}>
-        <div className={`${Style.bar} ${Style.width50}   `}></div>
-      </div>
+      <LineProgress variant={variant} percentage={percentage} />
     </div>
   );
 };
 
-export default LineProgress;
+export default LineProgressComponent;

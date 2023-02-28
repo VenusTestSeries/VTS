@@ -5,36 +5,22 @@ import StarIcon from "lib/icons/star";
 import FilterFill from "lib/icons/FilterFill";
 import User2 from "lib/icons/User2";
 import Button from "components/button";
-import EmotionUnhappy from "lib/icons/EmotionUnhappy";
-import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
-// import seriesData from "constant/dummy";
 import { QuestionTypes } from "constant/types";
 import ChevronBack from "lib/icons/ChevronBack";
-// import useSWR from "swr";
 import { GetServerSidePropsContext } from "next";
-import useCountdown from "hooks/use-coutdown";
-import useInterval from "hooks/use-interval";
 import timeFormat from "constant/time-format";
 import { useRouter } from "next/router";
 import ChevronForward from "lib/icons/ChevronForward";
+import useInterval from "hooks/use-interval";
+import { TestSectionResponseType } from "typings/series";
 
 interface TestSeriesProps {
-  data: {
-    questions: QuestionTypes[];
-  }[];
+  data: TestSectionResponseType;
 }
-
-// const fetcher = (...args) => fetch(...args).then((res) => res.json());
-/**
- * Test Series Interface
- * @returns
- */
 
 const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   const series = seriesArray;
-
-  // console.log(series.sections);
 
   const [toggleSection, setToggleSection] = React.useState(false);
   const onToggleSection = React.useCallback(() => {
@@ -44,7 +30,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   const [language, setLanguage] = React.useState("english");
 
   const [selected, setSelected] = React.useState(
-    series.sections[0].questions[0] as QuestionTypes
+    series.sections[0].questions[0]
   );
 
   const questionIndex = series.sections[0]?.questions.findIndex(
@@ -65,29 +51,32 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
     return series.sections.find((data) => data.title === activeSection);
   }, [activeSection, series.sections]);
 
-  console.log(actualData);
-
   // FOR NEXT BUTTON
-  const onNext = () => {
-    const findIndex = actualData.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex < actualData.questions.length - 1
-        ? actualData.questions[findIndex + 1]
-        : actualData.questions[0];
-    setSelected(data);
-  };
-  const onPrevious = () => {
-    const findIndex = actualData.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex > 0
-        ? actualData.questions[findIndex - 1]
-        : actualData.questions[0];
-    setSelected(data);
-  };
+  const onNext = React.useCallback(() => {
+    if (actualData) {
+      const findIndex = actualData.questions.findIndex(
+        (value) => value._id === selected._id
+      );
+      const data =
+        findIndex < actualData?.questions?.length - 1
+          ? actualData.questions[findIndex + 1]
+          : actualData.questions[0];
+      setSelected(data);
+    }
+  }, [actualData, selected?._id]);
+  // FOR PREVIOUS BUTTON
+  const onPrevious = React.useCallback(() => {
+    if (actualData) {
+      const findIndex = actualData.questions.findIndex(
+        (value) => value._id === selected._id
+      );
+      const data =
+        findIndex > 0
+          ? actualData.questions[findIndex - 1]
+          : actualData.questions[0];
+      setSelected(data);
+    }
+  }, [actualData, selected?._id]);
 
   const dataWithMultilanguage = React.useMemo(() => {
     // @ts-ignore
@@ -95,18 +84,23 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   }, [language, selected]);
 
   // COUNT DOWN
-  const [count, setCount] = React.useState(60);
-  // useInterval(
-  //   () => {
-  //     if (count <= 0) {
-  //       alert("Time Up");
-  //       setCount(0);
-  //     } else {
-  //       setCount((i) => i - 1);
-  //     }
-  //   },
-  //   count === 0 ? null : 1000
-  // );
+  // 3600 ()
+  const [count, setCount] = React.useState(series.duration);
+  // 60 -> 1 Min
+  // 3000 second = 3000 * 60 =>
+
+  useInterval(
+    () => {
+      if (count <= 0) {
+        alert("Time Up");
+        setCount(0);
+      } else {
+        setCount((i) => i - 1);
+      }
+    },
+    count === 0 ? null : 1000,
+    true
+  );
 
   return (
     <div className="seriepage">
@@ -120,13 +114,13 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             </li>
             <li className="text">
               <div className="text1">Tests</div>
-              <div className="text2">{`series.title`}</div>
+              <div className="text2">{series.title}</div>
             </li>
           </ul>
         </div>
         <div className="rightbox">
           <div className="box">
-            <div className="timer">{timeFormat(count)}</div>
+            <div className="timer">{timeFormat(count).formated}</div>
             <div className="inline-feedback">
               <div className="inline-feedbacktext">Rate the Test</div>
               <ul>
@@ -208,14 +202,17 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                   <div className="marking">
                     Marks
                     <div className="row" style={{ margin: "0", gap: "4px" }}>
-                      <span className="badge bg_green">+2</span>
-                      <span className="badge bg_red">-0.5</span>
+                      <span className="badge bg_green">
+                        {/* {series.sections[selected as any].marks.positive} */}
+                      </span>
+                      <span className="badge bg_red">
+                        {/* {series.sections[selected as any].marks.negative} */}
+                      </span>
                     </div>
                   </div>
                 </div>
                 <div className="Report">
                   <Link href="#">
-                    {" "}
                     <Report width={12} />
                     Report
                   </Link>
@@ -340,7 +337,7 @@ export default TestSeries;
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const seriesId = context.query && context.query?.slug[1];
+  const seriesId = context.query?.slug && context.query.slug[1];
   const response = await fetch(
     `http://localhost:3000/api/v1/series/sections/${seriesId}`
   );
