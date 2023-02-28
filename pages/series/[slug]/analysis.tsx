@@ -9,8 +9,10 @@ import Trophy from "lib/icons/Trophy";
 import NewspaperLine from "lib/icons/NewspaperLine";
 import FocusLine from "lib/icons/FocusLine";
 import TeamLine from "lib/icons/TeamLine";
+import { useRouter } from "next/router";
 
 const Analysis = () => {
+  const router = useRouter();
   return (
     <div>
       <div
@@ -49,7 +51,7 @@ const Analysis = () => {
           </div>
           Or
           <div className="">
-            <Button>Solutions</Button>
+            <Button onClick={() => router.push(``)}>Solutions</Button>
           </div>
         </div>
       </div>

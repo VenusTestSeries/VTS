@@ -5,32 +5,22 @@ import StarIcon from "lib/icons/star";
 import FilterFill from "lib/icons/FilterFill";
 import User2 from "lib/icons/User2";
 import Button from "components/button";
-import EmotionUnhappy from "lib/icons/EmotionUnhappy";
-import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
-// import seriesData from "constant/dummy";
 import { QuestionTypes } from "constant/types";
 import ChevronBack from "lib/icons/ChevronBack";
-// import useSWR from "swr";
 import { GetServerSidePropsContext } from "next";
-import useCountdown from "hooks/use-coutdown";
-import useInterval from "hooks/use-interval";
 import timeFormat from "constant/time-format";
+import { useRouter } from "next/router";
+import ChevronForward from "lib/icons/ChevronForward";
+import useInterval from "hooks/use-interval";
+import { TestSectionResponseType } from "typings/series";
 
 interface TestSeriesProps {
-  data: {
-    questions: QuestionTypes[];
-  }[];
+  data: TestSectionResponseType;
 }
 
-// const fetcher = (...args) => fetch(...args).then((res) => res.json());
-/**
- * Test Series Interface
- * @returns
- */
-
 const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
-  const series = seriesArray[4];
+  const series = seriesArray;
 
   const [toggleSection, setToggleSection] = React.useState(false);
   const onToggleSection = React.useCallback(() => {
@@ -40,28 +30,56 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   const [language, setLanguage] = React.useState("english");
 
   const [selected, setSelected] = React.useState(
-    series.questions[0] as QuestionTypes
+    series.sections[0].questions[0]
+  );
+  const marks = React.useMemo(() => {
+    return series.sections[0].marks;
+  }, [series.sections]);
+
+  const questionIndex = series.sections[0]?.questions.findIndex(
+    (value) => value._id === selected._id
+  );
+  const router = useRouter();
+  const examSections = series.sections.map((item) => {
+    return {
+      label: item.title,
+    };
+  });
+
+  const [activeSection, setActiveSection] = React.useState(
+    examSections[0].label
   );
 
+  const actualData = React.useMemo(() => {
+    return series.sections.find((data) => data.title === activeSection);
+  }, [activeSection, series.sections]);
+
   // FOR NEXT BUTTON
-  const onNext = () => {
-    const findIndex = series.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex < series.questions.length - 1
-        ? series.questions[findIndex + 1]
-        : series.questions[0];
-    setSelected(data);
-  };
-  const onPrevious = () => {
-    const findIndex = series.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex > 0 ? series.questions[findIndex - 1] : series.questions[0];
-    setSelected(data);
-  };
+  const onNext = React.useCallback(() => {
+    if (actualData) {
+      const findIndex = actualData.questions.findIndex(
+        (value) => value._id === selected._id
+      );
+      const data =
+        findIndex < actualData?.questions?.length - 1
+          ? actualData.questions[findIndex + 1]
+          : actualData.questions[0];
+      setSelected(data);
+    }
+  }, [actualData, selected?._id]);
+  // FOR PREVIOUS BUTTON
+  const onPrevious = React.useCallback(() => {
+    if (actualData) {
+      const findIndex = actualData.questions.findIndex(
+        (value) => value._id === selected._id
+      );
+      const data =
+        findIndex > 0
+          ? actualData.questions[findIndex - 1]
+          : actualData.questions[0];
+      setSelected(data);
+    }
+  }, [actualData, selected?._id]);
 
   const dataWithMultilanguage = React.useMemo(() => {
     // @ts-ignore
@@ -69,7 +87,11 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   }, [language, selected]);
 
   // COUNT DOWN
-  const [count, setCount] = React.useState(30);
+  // 3600 ()
+  const [count, setCount] = React.useState(series.duration);
+  // 60 -> 1 Min
+  // 3000 second = 3000 * 60 =>
+
   useInterval(
     () => {
       if (count <= 0) {
@@ -79,31 +101,32 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
         setCount((i) => i - 1);
       }
     },
-    count === 0 ? null : 1000
+    count === 0 ? null : 1000,
+    true
   );
 
+  const __id = router?.query?.slug as string;
+
+  console.log(router?.query?.slug);
   return (
     <div className="seriepage">
       <div className="header">
         <div className="leftbox">
           <ul>
             <li className="icon">
-              <Link href="#">
+              <a onClick={() => router.back()}>
                 <ArrowLeft color="#fff" />
-              </Link>
+              </a>
             </li>
             <li className="text">
               <div className="text1">Tests</div>
-              <div className="text2">
-                PYST 1: SSC CGL - General Awareness (Held On : 20 April 2022
-                Shift 2)
-              </div>
+              <div className="text2">{series.title}</div>
             </li>
           </ul>
         </div>
         <div className="rightbox">
           <div className="box">
-            <div className="timer">{timeFormat(count)}</div>
+            <div className="timer">{timeFormat(count).formated}</div>
             <div className="inline-feedback">
               <div className="inline-feedbacktext">Rate the Test</div>
               <ul>
@@ -133,15 +156,30 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
       <div className="seriebox">
         <div
           className="leftsection"
-          // style={{
-          //   marginLeft: toggleSection ? "300px" : "0px",
-          // }}
+          style={{
+            marginRight: toggleSection ? "0px" : "300px",
+          }}
         >
           <div className="actual_exam_ui_top">
             <div className="left">
               <div className="text">Sections</div>
               <div className="button">
-                <Link href="#">Test</Link>
+                {examSections.map((item, index) => {
+                  return (
+                    <a
+                      key={index}
+                      onClick={() => setActiveSection(item.label)}
+                      style={{
+                        background:
+                          item.label === activeSection ? "#166a84" : "#f1f1f1",
+                        color:
+                          item.label === activeSection ? "#ffffff" : "#000000",
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div className="right">
@@ -161,32 +199,22 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
           <div className="mainbox">
             <div className="mainboxtop">
               <div className="left">
-                <div className="tp-ques-number">Question No. 1</div>
-                <span className="currentQuestion badge bg_red">Incorrect</span>
-                <div className="outtimging font_size_small">
-                  <div style={{ lineHeight: "0px" }}>
-                    <EmotionUnhappy width={14} color="#c0392b" />
-                  </div>{" "}
-                  You <span>00:38</span>
-                  <div className="outtimging font_size_small">
-                    Avg: <span>00:21</span>{" "}
-                  </div>
-                  <div className="marking">
-                    Marks<span className=" badge bg_red">-0.5</span>{" "}
-                  </div>
-                  <span className="badge bg_green">27% answered correctly</span>
+                <div className="tp-ques-number">
+                  Question No. {questionIndex + 1}
                 </div>
               </div>
               <div className="right">
-                <div className="save">
-                  <Link href="#">
-                    <Save width={12} />
-                    Save
-                  </Link>
+                <div className="outtimging font_size_small">
+                  <div className="marking">
+                    Marks
+                    <div className="row" style={{ margin: "0", gap: "4px" }}>
+                      <span className="badge bg_green">{marks.positive}</span>
+                      <span className="badge bg_red">{marks.negative}</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="Report">
                   <Link href="#">
-                    {" "}
                     <Report width={12} />
                     Report
                   </Link>
@@ -211,21 +239,26 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
               </div>
             </div>
             <div className="detailed_questionfooter">
-              <Button onClick={onPrevious}>Previous </Button>
+              <Button onClick={onPrevious}>Previous</Button>
               <Button onClick={onNext}>Next</Button>
             </div>
           </div>
         </div>
-
         <div
           className="rightsection"
-          // style={{
-          //   width: toggleSection ? "300px" : "0px",
-          // }}
+          style={{
+            transformOrigin: "right",
+            transition: "all 100ms ease",
+            width: toggleSection ? "0px" : "300px",
+          }}
         >
           <div className="toogle-section">
             <span onClick={onToggleSection}>
-              <ChevronBack size={18} />
+              {toggleSection ? (
+                <ChevronBack size={18} />
+              ) : (
+                <ChevronForward size={18} />
+              )}
             </span>
           </div>
           <div className="innerbox">
@@ -243,46 +276,62 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             </div>
             <ul className="results">
               <li>
-                <span className="bg_green">5</span>
-                <div className="text">Correct</div>
+                <span className="answered_badge">0</span>
+                <div className="text">Answered</div>
               </li>
               <li>
-                <span className="bg_white2">5</span>
-                <div className="text">Unattempted</div>
+                <span className="marked_badge">0</span>
+                <div className="text">Marked</div>
               </li>
               <li>
-                <span className="bg_red">5</span>
-                <div className="text">Incorrect</div>
+                <span className="not_visited_badge">5</span>
+                <div className="text">Not Visited</div>
               </li>
               <li>
-                <span className="bg_warrning">5</span>
-                <div className="text">Partially Correct</div>
+                <span className="marked_and_answered_badge">5</span>
+                <div className="text">Marked And Answered</div>
+              </li>
+              <li>
+                <span className="not_answered_badge">5</span>
+                <div className="text">Not Answered</div>
               </li>
             </ul>
             <div className="heading">
               Section : <span>Test</span>
             </div>
             <ul className="Qarbox">
-              {series.questions.map((value, index) => {
+              {actualData?.questions.map((value, index) => {
                 const active = value._id === selected._id;
                 return (
                   <li
-                    className="Qar"
+                    className={`Qar ${active ? "bg_red" : "bg_white"}`}
                     key={index}
                     onClick={() => setSelected(value)}
                     style={{
                       borderRadius: active ? "20px" : "0px",
                     }}
                   >
-                    {/* {value.en.value} */}
                     {index + 1}
                   </li>
                 );
               })}
+              <li className="Qar answered_badge">1</li>
+              <li className="Qar marked_badge">2</li>
+              <li className="Qar not_answered_badge">3</li>
+              <li className="Qar marked_and_answered_badge">4</li>
+              <li className="Qar bg_green">5</li>
+              <li className="Qar bg_warrning">6</li>
             </ul>
             <div className="actionbtnresult">
-              <Button>Question Paper </Button>
-              <Button>Summary</Button>
+              <div>
+                <Button>Question Paper</Button>
+                <Button>Summary</Button>
+              </div>
+              <div>
+                <Button onClick={() => router.push(`/series/${__id}/analysis`)}>
+                  Submit
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -293,11 +342,14 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
 
 export default TestSeries;
 
+// getServerSideProps
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  console.log(context.query);
-  const response = await fetch(`http://localhost:3000/api/v1/series`);
+  const seriesId = context.query?.slug && context.query.slug;
+  const response = await fetch(
+    `http://localhost:3000/api/v1/series/sections/${seriesId}`
+  );
   const _data = await response.json();
   return {
     props: {
