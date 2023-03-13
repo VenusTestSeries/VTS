@@ -40,23 +40,13 @@ const SignUp = () => {
               <input placeholder="Enter Email" type={"text"} />
               <input placeholder="Password" type={"password"} />
               <input placeholder="Confirm Password" type={"password"} />
-              {/* <div className={css["forget-password"]}>
-                <div className={css["checkbox"]}>
-                  <input id="remember" type="checkbox" />
-                  <label htmlFor="remember">Remember Me</label>
-                </div>
-                <div className={css["link"]}>
-                  <Link href="/auth/forget-password">Forget Password</Link>
-                </div>
-              </div> */}
-              <button>Create Account</button>
+              <button type="submit">Create Account</button>
             </form>
           </div>
         </div>
         <div className={css["image"]}>
           <div className={css["glass-box"]}>
             <button>🎁 Top Notch Stock Resources</button>
-
             <p>
               Today, we create innovative solutions to the challenges that
               consumers face in both their everyday lives and events.

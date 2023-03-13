@@ -13,6 +13,9 @@ import { useRouter } from "next/router";
 
 const Analysis = () => {
   const router = useRouter();
+
+  const __id = router?.query?.slug as string;
+
   return (
     <div>
       <div
@@ -51,7 +54,9 @@ const Analysis = () => {
           </div>
           Or
           <div className="">
-            <Button onClick={() => router.push(``)}>Solutions</Button>
+            <Button onClick={() => router.push(`/series/${__id}/solutions`)}>
+              Solutions
+            </Button>
           </div>
         </div>
       </div>
