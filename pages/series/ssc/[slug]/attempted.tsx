@@ -8,47 +8,79 @@ import Button from "components/button";
 import EmotionUnhappy from "lib/icons/EmotionUnhappy";
 import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
-import seriesData from "constant/dummy";
-import { Question } from "constant/types.";
+// import seriesData from "constant/dummy";
+import { QuestionTypes } from "constant/types";
+import ChevronBack from "lib/icons/ChevronBack";
+// import useSWR from "swr";
+import { GetServerSidePropsContext } from "next";
+import useCountdown from "hooks/use-coutdown";
+import useInterval from "hooks/use-interval";
+import timeFormat from "constant/time-format";
 
+interface TestSeriesProps {
+  data: {
+    questions: QuestionTypes[];
+  }[];
+}
+
+// const fetcher = (...args) => fetch(...args).then((res) => res.json());
 /**
  * Test Series Interface
  * @returns
  */
 
-const TestSeries = () => {
-  const [language, setLanguage] = React.useState("en");
+const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
+  const series = seriesArray[4];
+
+  const [toggleSection, setToggleSection] = React.useState(false);
+  const onToggleSection = React.useCallback(() => {
+    setToggleSection(!toggleSection);
+  }, [toggleSection]);
+
+  const [language, setLanguage] = React.useState("english");
 
   const [selected, setSelected] = React.useState(
-    seriesData.data.sections[0].questions[0] as Question
+    series.questions[0] as QuestionTypes
   );
 
   // FOR NEXT BUTTON
   const onNext = () => {
-    const findIndex = seriesData.data.sections[0].questions.findIndex(
+    const findIndex = series.questions.findIndex(
       (value) => value._id === selected._id
     );
     const data =
-      findIndex < seriesData.data.sections[0].questions.length - 1
-        ? seriesData.data.sections[0].questions[findIndex + 1]
-        : seriesData.data.sections[0].questions[0];
+      findIndex < series.questions.length - 1
+        ? series.questions[findIndex + 1]
+        : series.questions[0];
     setSelected(data);
   };
   const onPrevious = () => {
-    const findIndex = seriesData.data.sections[0].questions.findIndex(
+    const findIndex = series.questions.findIndex(
       (value) => value._id === selected._id
     );
     const data =
-      findIndex > 0
-        ? seriesData.data.sections[0].questions[findIndex - 1]
-        : seriesData.data.sections[0].questions[0];
+      findIndex > 0 ? series.questions[findIndex - 1] : series.questions[0];
     setSelected(data);
   };
 
   const dataWithMultilanguage = React.useMemo(() => {
     // @ts-ignore
-    return selected[language] as Question["en"];
+    return selected[language] as QuestionTypes["english"];
   }, [language, selected]);
+
+  // COUNT DOWN
+  const [count, setCount] = React.useState(30);
+  useInterval(
+    () => {
+      if (count <= 0) {
+        alert("Time Up");
+        setCount(0);
+      } else {
+        setCount((i) => i - 1);
+      }
+    },
+    count === 0 ? null : 1000
+  );
 
   return (
     <div className="seriepage">
@@ -71,7 +103,7 @@ const TestSeries = () => {
         </div>
         <div className="rightbox">
           <div className="box">
-            <div className="timer">2:30</div>
+            <div className="timer">{timeFormat(count).formated}</div>
             <div className="inline-feedback">
               <div className="inline-feedbacktext">Rate the Test</div>
               <ul>
@@ -92,7 +124,6 @@ const TestSeries = () => {
                 </li>
               </ul>
             </div>
-
             <div className="analy">
               <Link href="#">ANALYTICS</Link>
             </div>
@@ -100,7 +131,12 @@ const TestSeries = () => {
         </div>
       </div>
       <div className="seriebox">
-        <div className="leftsection">
+        <div
+          className="leftsection"
+          // style={{
+          //   marginLeft: toggleSection ? "300px" : "0px",
+          // }}
+        >
           <div className="actual_exam_ui_top">
             <div className="left">
               <div className="text">Sections</div>
@@ -111,11 +147,12 @@ const TestSeries = () => {
             <div className="right">
               <div>View in</div>
               <div className="dropdown">
-                <select onChange={({ target }) => setLanguage(target.value)}>
-                  <option value="en" selected>
-                    English
-                  </option>
-                  <option value="hn">Hindi</option>
+                <select
+                  defaultValue={language}
+                  onChange={({ target }) => setLanguage(target.value)}
+                >
+                  <option value="english">English</option>
+                  <option value="hindi">Hindi</option>
                 </select>
               </div>
             </div>
@@ -158,12 +195,7 @@ const TestSeries = () => {
             </div>
             <div className="detailed_question">
               <div className="que_ans_box">
-                <div className="que_box">
-                  {/* The salary and allowances of leaders of opposition in
-                  parliament are governed by the Act passed for the first time
-                  by the parliament in the year ______. */}
-                  {dataWithMultilanguage.value}
-                </div>
+                <div className="que_box">{dataWithMultilanguage.question}</div>
                 <ul className="que_option">
                   {dataWithMultilanguage.options.map((item, index) => {
                     return (
@@ -184,7 +216,18 @@ const TestSeries = () => {
             </div>
           </div>
         </div>
-        <div className="rightsection">
+
+        <div
+          className="rightsection"
+          // style={{
+          //   width: toggleSection ? "300px" : "0px",
+          // }}
+        >
+          <div className="toogle-section">
+            <span onClick={onToggleSection}>
+              <ChevronBack size={18} />
+            </span>
+          </div>
           <div className="innerbox">
             <div className="userandfillter">
               <ul className="user">
@@ -220,12 +263,11 @@ const TestSeries = () => {
               Section : <span>Test</span>
             </div>
             <ul className="Qarbox">
-              {seriesData.data.sections[0].questions.map((value, index) => {
+              {series.questions.map((value, index) => {
                 const active = value._id === selected._id;
-
                 return (
                   <li
-                    className="Qar "
+                    className="Qar"
                     key={index}
                     onClick={() => setSelected(value)}
                     style={{
@@ -237,32 +279,6 @@ const TestSeries = () => {
                   </li>
                 );
               })}
-              {/* <li className="Qar bg_red">1</li>
-              <li className="Qar bg_red">2</li>
-              <li className="Qar bg_red">3</li>
-              <li className="Qar bg_green">4</li>
-              <li className="Qar bg_green">5</li>
-              <li className="Qar bg_warrning">6</li>
-              <li className="Qar">7</li>
-              <li className="Qar">8</li>
-              <li className="Qar">9</li>
-              <li className="Qar">10</li>
-              <li className="Qar">12</li>
-              <li className="Qar">13</li>
-              <li className="Qar">14</li>
-              <li className="Qar">15</li>
-              <li className="Qar">16</li>
-              <li className="Qar">17</li>
-              <li className="Qar">18</li>
-              <li className="Qar">19</li>
-              <li className="Qar">20</li>
-              <li className="Qar">21</li>
-              <li className="Qar">22</li>
-              <li className="Qar">23</li>
-              <li className="Qar">24</li>
-              <li className="Qar">25</li>
-              <li className="Qar">26</li>
-              <li className="Qar">27</li> */}
             </ul>
             <div className="actionbtnresult">
               <Button>Question Paper </Button>
@@ -277,24 +293,15 @@ const TestSeries = () => {
 
 export default TestSeries;
 
-{
-  /* 
-                  <li>
-                    <label htmlFor="2">
-                      <input id="2" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="3">
-                      <input id="3" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="4">
-                      <input id="4" type="radio" name="light" />
-                      <div className="qtytext"> Option 1</div>
-                    </label>
-                  </li> */
-}
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  console.log(context.query);
+  const response = await fetch(`http://localhost:3000/api/v1/series`);
+  const _data = await response.json();
+  return {
+    props: {
+      data: _data,
+    },
+  };
+};

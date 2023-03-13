@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "components/button";
-import Link from "next/link";
 import Image from "next/image";
 // ICONS
 import PerPageLayout from "layout/perpage";
@@ -8,7 +6,6 @@ import BankIcon from "lib/icons/BankIcon";
 import GlobeIcon from "lib/icons/GlobeIcon";
 import NurseIcon from "lib/icons/NurseIcon";
 import RailIcon from "lib/icons/RailIcon";
-import css from "styles/onboarding.module.scss";
 import { useRouter } from "next/router";
 import CircleProgress from "components/circle-progress";
 import LineProgressComponent from "components/lineprogressbar";
@@ -16,41 +13,16 @@ import MappInLine from "lib/icons/MappInLine";
 import LinkedinFill from "lib/icons/LinkedinFill";
 import GithubFill from "lib/icons/GithubFill";
 import GlobalLine from "lib/icons/GlobalLine";
-import Student from "lib/icons/Student";
 import TagLine from "lib/icons/TagLine";
 import Style from "../../styles/profile.module.scss";
 import ArrowRight from "lib/icons/ArrowRight";
 
 const OnBoarding3 = () => {
   const [selected, setSelected] = React.useState("Beginner");
-  const levelData = [
-    {
-      name: "Beginner",
-    },
-    {
-      name: "Real Test",
-    },
-    {
-      name: "Difficult",
-    },
-  ];
-
-  const RenderList = React.useMemo(() => {
-    switch (selected) {
-      case "Beginner":
-        return Array.from(Array(5).keys());
-      case "Real Test":
-        return Array.from(Array(8).keys());
-      case "Difficult":
-        return Array.from(Array(13).keys());
-      default:
-        return [];
-    }
-  }, [selected]);
 
   const { push } = useRouter();
   return (
-    <section className="bg_primary pt-50 pb-50">
+    <section className="pt-50 pb-50">
       <div className="container">
         <div className="row">
           {/* <div className="userprifilebox"> */}
@@ -263,7 +235,7 @@ const OnBoarding3 = () => {
             <div className={css.testfreemocks}>
               {Array.from({ length: 4 }).map((item, index) => (
                 <div className={css.list} key={index}>
-                  <Link href="#">
+                  <Link href="/series/ssc">
                     <div className={css.qtname}>SSC CGL Tier 1 Mock Test 1</div>
                     <div className={css.dateep}>Expires on 31 Jan 2023</div>
                     <div className={css.content}>
@@ -300,26 +272,3 @@ const OnBoarding3 = () => {
 export default OnBoarding3;
 
 OnBoarding3.perpage = PerPageLayout;
-
-const Options = [
-  {
-    title: "CGL",
-    icon: <GlobeIcon fill="#fff" />,
-  },
-  {
-    title: "CHSL",
-    icon: <RailIcon fill="#fff" />,
-  },
-  {
-    title: "MTS ",
-    icon: <BankIcon fill="#fff" />,
-  },
-  {
-    title: "CPO ",
-    icon: <NurseIcon fill="#fff" />,
-  },
-  {
-    title: "Other",
-    icon: <GlobeIcon fill="#fff" />,
-  },
-];

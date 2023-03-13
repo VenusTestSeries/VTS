@@ -11,7 +11,7 @@ const LineProgressComponent = ({ percentage, variant }: LineProgress) => {
     <div>
       <div className={Style.promodebox}>
         <div className={Style.promode}>
-          <div className={Style.modetext}>East</div>
+          <div className={Style.modetext}>Easy</div>
           <div className={Style.modecount}>
             <span>143</span>/623
           </div>

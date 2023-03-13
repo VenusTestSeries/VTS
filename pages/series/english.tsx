@@ -1,16 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ArrowLeft from "lib/icons/ArrowLeft";
-import StarIcon from "lib/icons/star";
-import FilterFill from "lib/icons/FilterFill";
 import User2 from "lib/icons/User2";
 import Button from "components/button";
-import EmotionUnhappy from "lib/icons/EmotionUnhappy";
-import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
 import seriesData from "constant/dummy";
-import { Question } from "constant/types.";
 
 /**
  * Test Series Interface
@@ -21,7 +15,7 @@ const TestSeries = () => {
   const [language, setLanguage] = React.useState("en");
 
   const [selected, setSelected] = React.useState(
-    seriesData.data.sections[0].questions[0] as Question
+    seriesData.data.sections[0].questions[0]
   );
 
   // FOR NEXT BUTTON

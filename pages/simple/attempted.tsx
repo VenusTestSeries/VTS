@@ -9,7 +9,7 @@ import EmotionUnhappy from "lib/icons/EmotionUnhappy";
 import Save from "lib/icons/Save";
 import Report from "lib/icons/Report";
 import seriesData from "constant/dummy";
-import { Question } from "constant/types.";
+import { Question } from "constant/types";
 
 /**
  * Test Series Interface
