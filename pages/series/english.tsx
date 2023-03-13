@@ -114,8 +114,8 @@ const TestSeries = () => {
                 <div className="marking newmarking font_size13">
                   Marks{" "}
                   <div className="d-flex gap-5">
-                    <span className=" badge bg_red">-0.5</span>{" "}
                     <span className="badge bg_green">+1</span>
+                    <span className=" badge bg_red">-0.5</span>{" "}
                   </div>
                 </div>
 
@@ -125,16 +125,21 @@ const TestSeries = () => {
                 </div>
 
                 <div className="dropdown d-flex">
-                  <div className="d-flex align_items_center">
+                  <div className="d-flex align-items-center">
                     {" "}
                     <p className="font_size13">View in</p>
                   </div>
-                  <select onChange={({ target }) => setLanguage(target.value)}>
-                    <option value="en" selected>
-                      English
-                    </option>
-                    <option value="hn">Hindi</option>
-                  </select>
+                  <div className="d-flex align-items-center pl-5 pr-5">
+                    <select
+                      className="selectopt"
+                      onChange={({ target }) => setLanguage(target.value)}
+                    >
+                      <option value="en" selected>
+                        English
+                      </option>
+                      <option value="hn">Hindi</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="Report">
@@ -275,8 +280,11 @@ const TestSeries = () => {
               </div>
             </div>
             <div className="detailed_questionfooter">
-              <Button onClick={onPrevious}>Previous </Button>
-              <Button onClick={onNext}>Next</Button>
+              <div className="d-flex gap-8">
+                <Button onClick={onPrevious}>Mark For Review & Next</Button>
+                <Button onClick={onPrevious}>Clear Response </Button>
+              </div>
+              <Button onClick={onNext}>Save & Next</Button>
             </div>
           </div>
         </div>
@@ -335,8 +343,13 @@ const TestSeries = () => {
               })}
             </ul>
             <div className="actionbtnresult">
-              <Button>Question Paper </Button>
-              <Button>Summary</Button>
+              <div className="d-flex gap-10">
+                <Button>Question Paper </Button>
+                <Button>Summary</Button>
+              </div>
+              <div className="d-flex">
+                <Button>Submit Test </Button>
+              </div>
             </div>
           </div>
         </div>

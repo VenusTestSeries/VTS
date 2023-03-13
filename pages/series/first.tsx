@@ -30,69 +30,6 @@ interface TestSeriesProps {
  */
 
 const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
-  const series = seriesArray[4];
-
-  console.log({ series });
-
-  const [seriesData, updateSeriesData] = useImmer([]);
-
-  const [toggleSection, setToggleSection] = React.useState(false);
-  const onToggleSection = React.useCallback(() => {
-    setToggleSection(!toggleSection);
-  }, [toggleSection]);
-
-  const [language, setLanguage] = React.useState("english");
-
-  const [selected, setSelected] = React.useState(
-    series.questions[0] as QuestionTypes
-  );
-
-  const questionIndex = series.questions.findIndex(
-    (value) => value._id === selected._id
-  );
-  // FOR NEXT BUTTON
-  const onNext = () => {
-    const findIndex = series.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex < series.questions.length - 1
-        ? series.questions[findIndex + 1]
-        : series.questions[0];
-    setSelected(data);
-  };
-  const onPrevious = () => {
-    const findIndex = series.questions.findIndex(
-      (value) => value._id === selected._id
-    );
-    const data =
-      findIndex > 0 ? series.questions[findIndex - 1] : series.questions[0];
-    setSelected(data);
-  };
-
-  const dataWithMultilanguage = React.useMemo(() => {
-    // @ts-ignore
-    return selected[language] as QuestionTypes["english"];
-  }, [language, selected]);
-
-  // COUNT DOWN
-  const [count, setCount] = React.useState(60);
-  useInterval(
-    () => {
-      if (count <= 0) {
-        alert("Time Up");
-        setCount(0);
-      } else {
-        setCount((i) => i - 1);
-      }
-    },
-    count === 0 ? null : 1000
-  );
-
-  const [activeSection, setActiveSection] = React.useState(
-    examSections[0].label
-  );
-
   const router = useRouter();
   return (
     <div className="seriepage">
@@ -107,16 +44,15 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             <li className="text">
               <div className="text1">Tests</div>
               <div className="text2">
-                {/* PYST 1: SSC CGL - General Awareness (Held On : 20 April 2022
-                Shift 2) */}
-                {series.title}
+                PYST 1: SSC CGL - General Awareness (Held On : 20 April 2022
+                Shift 2)
               </div>
             </li>
           </ul>
         </div>
         <div className="rightbox">
           <div className="box">
-            <div className="timer">{timeFormat(count)}</div>
+            {/* <div className="timer">{timeFormat(count)}</div> */}
             <div className="inline-feedback">
               <div className="inline-feedbacktext">Rate the Test</div>
               <ul>
@@ -146,14 +82,14 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
       <div className="seriebox">
         <div
           className="leftsection"
-          style={{
-            marginRight: toggleSection ? "0px" : "300px",
-          }}
+          // style={{
+          //   marginRight: toggleSection ? "0px" : "300px",
+          // }}
         >
           <div className="actual_exam_ui_top">
             <div className="left">
               <div className="text">Sections</div>
-              <div className="button">
+              {/* <div className="button">
                 {examSections.map((item, index) => {
                   return (
                     <a
@@ -170,14 +106,14 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                     </a>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
             <div className="right">
               <div>View in</div>
               <div className="dropdown">
                 <select
-                  defaultValue={language}
-                  onChange={({ target }) => setLanguage(target.value)}
+                // defaultValue={language}
+                // onChange={({ target }) => setLanguage(target.value)}
                 >
                   <option value="english">English</option>
                   <option value="hindi">Hindi</option>
@@ -189,9 +125,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
           <div className="mainbox">
             <div className="mainboxtop">
               <div className="left">
-                <div className="tp-ques-number">
-                  Question No. {questionIndex + 1}
-                </div>
+                <div className="tp-ques-number">Question No.</div>
               </div>
               <div className="right">
                 <div className="outtimging font_size_small">
@@ -214,7 +148,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
             </div>
             <div className="detailed_question">
               <div className="que_ans_box">
-                <div className="que_box">{dataWithMultilanguage.question}</div>
+                {/* <div className="que_box">{dataWithMultilanguage.question}</div>
                 <ul className="que_option">
                   {dataWithMultilanguage.options.map((item, index) => {
                     return (
@@ -226,12 +160,12 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                       </li>
                     );
                   })}
-                </ul>
+                </ul> */}
               </div>
             </div>
             <div className="detailed_questionfooter">
-              <Button onClick={onPrevious}>Previous </Button>
-              <Button onClick={onNext}>Next</Button>
+              <Button>Previous </Button>
+              <Button>Next</Button>
             </div>
           </div>
         </div>
@@ -240,16 +174,12 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
           style={{
             transformOrigin: "right",
             transition: "all 100ms ease",
-            width: toggleSection ? "0px" : "300px",
+            // width: toggleSection ? "0px" : "300px",
           }}
         >
           <div className="toogle-section">
-            <span onClick={onToggleSection}>
-              {toggleSection ? (
-                <ChevronBack size={18} />
-              ) : (
-                <ChevronForward size={18} />
-              )}
+            <span>
+              {true ? <ChevronBack size={18} /> : <ChevronForward size={18} />}
             </span>
           </div>
           <div className="innerbox">
@@ -291,7 +221,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
               Section : <span>Test</span>
             </div>
             <ul className="Qarbox">
-              {series.questions.map((value, index) => {
+              {/* {series.questions.map((value, index) => {
                 const active = value._id === selected._id;
                 return (
                   <li
@@ -305,7 +235,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                     {index + 1}
                   </li>
                 );
-              })}
+              })} */}
               <li className="Qar answered_badge">1</li>
               <li className="Qar marked_badge">2</li>
               <li className="Qar not_answered_badge">3</li>
@@ -326,18 +256,18 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
 
 export default TestSeries;
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  console.log(context.query);
-  const response = await fetch(`http://localhost:3000/api/v1/series`);
-  const _data = await response.json();
-  return {
-    props: {
-      data: _data,
-    },
-  };
-};
+// export const getServerSideProps = async (
+//   context: GetServerSidePropsContext
+// ) => {
+//   console.log(context.query);
+//   const response = await fetch(`http://localhost:3000/api/v1/series`);
+//   const _data = await response.json();
+//   return {
+//     props: {
+//       data: _data,
+//     },
+//   };
+// };
 
 const examSections = [
   {

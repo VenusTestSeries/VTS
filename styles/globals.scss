@@ -742,6 +742,7 @@ ul.Qarbox li {
   width: 100%;
   bottom: 0;
   background: #fff;
+  flex-wrap: wrap;
 }
 
 .actionbtnresult button {
@@ -821,6 +822,12 @@ ul.Qarbox li {
   padding: 6px 12px !important;
   font-size: 14px !important;
   font-weight: 400 !important;
+}
+
+.selectopt {
+  background: #f1f1f1;
+  border-radius: 4px;
+  color: #555;
 }
 
 // -----------------------------------
@@ -1088,4 +1095,68 @@ ul.tags li {
   border-radius: 8px;
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+// -----------------------
+.reattemt {
+  max-width: 300px;
+  background-color: #fdf3e4;
+  border-color: #fbe0cd;
+  color: #ec971f;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #fbe0cd;
+  border-radius: 3px;
+}
+
+.reattemt h3 {
+  font-size: 16px;
+  color: #495563 !important;
+  font-weight: 500;
+}
+
+.reattemt h4 {
+  color: #6b747c !important;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.buttontext {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttontext button {
+  color: #1fbad6;
+  background-color: transparent;
+  border-color: #1fbad6;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 6px 12px;
+  font-size: 10px;
+  line-height: 1.42857143;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #1fbad6;
+}
+
+.buttontext p {
+  color: #6b747c !important;
+  font-size: 12px;
 }

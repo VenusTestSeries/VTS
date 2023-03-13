@@ -46,7 +46,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
   // FOR NEXT BUTTON
   const onNext = () => {
     const findIndex = series.questions.findIndex(
-      (value) => value._id === selected._id
+      (value) => value?._id === selected._id
     );
     const data =
       findIndex < series.questions.length - 1
@@ -296,7 +296,6 @@ export default TestSeries;
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  console.log(context.query);
   const response = await fetch(`http://localhost:3000/api/v1/series`);
   const _data = await response.json();
   return {

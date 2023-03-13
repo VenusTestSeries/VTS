@@ -14,6 +14,9 @@ import { useRouter } from "next/router";
 import ChevronForward from "lib/icons/ChevronForward";
 import useInterval from "hooks/use-interval";
 import { TestSectionResponseType } from "typings/series";
+import EmotionUnhappy from "lib/icons/EmotionUnhappy";
+import Save from "lib/icons/Save";
+import ToggleButton from "components/toggle";
 
 interface TestSeriesProps {
   data: TestSectionResponseType;
@@ -197,7 +200,7 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
           </div>
 
           <div className="mainbox">
-            <div className="mainboxtop">
+            {/* <div className="mainboxtop">
               <div className="left">
                 <div className="tp-ques-number">
                   Question No. {questionIndex + 1}
@@ -220,6 +223,40 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                   </Link>
                 </div>
               </div>
+            </div> */}
+            <div className="mainboxtop">
+              <div className="left">
+                <div className="tp-ques-number">Question No. 1</div>
+                <span className="currentQuestion badge bg_red">Incorrect</span>
+                <div className="outtimging font_size_small">
+                  <div style={{ lineHeight: "0px" }}>
+                    <EmotionUnhappy width={14} color="#c0392b" />
+                  </div>{" "}
+                  You <span>00:38</span>
+                  <div className="outtimging font_size_small">
+                    Avg: <span>00:21</span>{" "}
+                  </div>
+                  <div className="marking">
+                    Marks<span className=" badge bg_red">-0.5</span>{" "}
+                  </div>
+                  <span className="badge bg_green">27% answered correctly</span>
+                </div>
+              </div>
+              <div className="right">
+                <div className="save">
+                  <Link href="#">
+                    <Save width={12} />
+                    Save
+                  </Link>
+                </div>
+                <div className="Report">
+                  <Link href="#">
+                    {" "}
+                    <Report width={12} />
+                    Report
+                  </Link>
+                </div>
+              </div>
             </div>
             <div className="detailed_question">
               <div className="que_ans_box">
@@ -236,10 +273,25 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
                     );
                   })}
                 </ul>
+
+                <div className="que_box">
+                  <div className="reattemt">
+                    <h3>Re-attempt mode: ON </h3>
+                    <h4> Now You can re-attempt the question</h4>
+                  </div>
+
+                  <div className="buttontext">
+                    <button>View Solution</button>
+                    <p>Click here to see the answer now</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="detailed_questionfooter">
               <Button onClick={onPrevious}>Previous</Button>
+              <div>
+                <ToggleButton />
+              </div>
               <Button onClick={onNext}>Next</Button>
             </div>
           </div>
@@ -323,14 +375,9 @@ const TestSeries = ({ data: seriesArray }: TestSeriesProps) => {
               <li className="Qar bg_warrning">6</li>
             </ul>
             <div className="actionbtnresult">
-              <div>
+              <div className="d-flex gap-10">
                 <Button>Question Paper</Button>
                 <Button>Summary</Button>
-              </div>
-              <div>
-                <Button onClick={() => router.push(`/series/${__id}/analysis`)}>
-                  Submit
-                </Button>
               </div>
             </div>
           </div>
