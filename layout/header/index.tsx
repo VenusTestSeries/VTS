@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <header className={css.midheader}>
       <div className="container">
-        <div className="d-flex justify-content-spacebetween">
+        <div className="d-flex justify-content-between">
           <div className={css.logowithnav}>
             <div className={css.logo}>
               <Image

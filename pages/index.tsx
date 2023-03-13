@@ -842,7 +842,7 @@ ask us through WhatsApp, Telegram, Email */}
             ]}
           />
           <div className="container mt-50">
-            <div className="row justfiy_content_center">
+            <div className="row justify-content-center">
               <div className="vts-3">
                 <div className={style.callbtn}>
                   <Button theme="secondry">Call To Action</Button>
@@ -908,7 +908,7 @@ ask us through WhatsApp, Telegram, Email */}
         </div>
 
         <div className="container">
-          <div className="row justfiy_content_center">
+          <div className="row justify-content-center">
             <div className="vts-3">
               <div className={style.callbtn}>
                 <Button theme="secondry">Call To Action</Button>
@@ -928,7 +928,7 @@ ask us through WhatsApp, Telegram, Email */}
             items={[
               {
                 element: (
-                  <div className="row justfiy_content_center">
+                  <div className="row justify-content-center">
                     <div className="vts-10">
                       <div className={style.testimonialsoneslider}>
                         <p>
@@ -961,7 +961,7 @@ ask us through WhatsApp, Telegram, Email */}
               },
               {
                 element: (
-                  <div className="row justfiy_content_center">
+                  <div className="row justify-content-center">
                     <div className="vts-10">
                       <div className={style.testimonialsoneslider}>
                         <p>
@@ -994,7 +994,7 @@ ask us through WhatsApp, Telegram, Email */}
               },
               {
                 element: (
-                  <div className="row justfiy_content_center">
+                  <div className="row justify-content-center">
                     <div className="vts-10">
                       <div className={style.testimonialsoneslider}>
                         <p>
@@ -1029,7 +1029,7 @@ ask us through WhatsApp, Telegram, Email */}
           />
         </div>
         <div className="container">
-          <div className="row justfiy_content_center">
+          <div className="row justify-content-center">
             <div className="vts-3">
               <div className={style.callbtn}>
                 <Button theme="secondry">Call To Action</Button>
@@ -1142,7 +1142,7 @@ ask us through WhatsApp, Telegram, Email */}
             Enquire Now
           </h2>
 
-          <div className="row justfiy_content_center">
+          <div className="row justify-content-center">
             <div className="vts-8 ">
               <div className={style.getinquerybox}>
                 <div className="row">
@@ -1215,7 +1215,7 @@ ask us through WhatsApp, Telegram, Email */}
                     </div>
                   </div>
                 </div>
-                <div className="row justfiy_content_center">
+                <div className="row justify-content-center">
                   <div className="vts-6">
                     <Button theme="secondry">BUY NOW</Button>
                   </div>

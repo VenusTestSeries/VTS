@@ -203,7 +203,7 @@ const OnBoarding3 = () => {
                         <ArrowRight fill="#b3c5ef" size={22} />
                       </div>
                     </div>
-                    <div className="d-flex align_items_center justfiy_content_center gap-20 mb-20 ">
+                    <div className="d-flex align_items_center justify-content-center gap-20 mb-20 ">
                       <div className="items">
                         <Image
                           src="/images/dcc-2023-1.png"
