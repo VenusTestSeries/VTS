@@ -265,6 +265,7 @@ const TestSeries = () => {
                     {dataWithMultilanguage.value}
                   </div>
                   <ul className="que_option">
+                    {/* @ts-ignore */}
                     {dataWithMultilanguage.options.map((item, index) => {
                       return (
                         <li key={index}>

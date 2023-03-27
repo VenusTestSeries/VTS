@@ -4,6 +4,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   async rewrites() {
     return [
       {

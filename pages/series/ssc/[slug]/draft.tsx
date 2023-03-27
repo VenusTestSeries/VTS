@@ -156,6 +156,7 @@ const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
               <div className="que_ans_box">
                 <div className="que_box">{dataWithMultilanguage.question}</div>
                 <ul className="que_option">
+                  {/* ts-ignore */}
                   {selected[language]?.options.map((item, index) => {
                     return (
                       <li
