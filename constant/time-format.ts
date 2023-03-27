@@ -24,10 +24,10 @@ const timeFormat = (countDown: number) => {
     }
   };
   return {
-    // days,
-    // hours,
-    // minutes,
-    // seconds,
+    days,
+    hours,
+    minutes,
+    seconds,
     formated: formated(),
   };
 };

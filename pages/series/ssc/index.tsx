@@ -17,6 +17,7 @@ const SSCSeries = ({ data }: any) => {
         }}
       >
         {data?.map((item: any, index: number) => {
+          console.log(item.sections);
           return (
             <li
               key={index}
@@ -28,10 +29,10 @@ const SSCSeries = ({ data }: any) => {
               <Link
                 href={`/series/ssc/${item?._id}`}
                 style={{
-                  color: "#9c27b0",
+                  color: "#fffff1",
                 }}
               >
-                {item?.title}
+                {item?.title} {`(${item.sections.length})`}
               </Link>
             </li>
           );

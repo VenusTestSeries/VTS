@@ -16,6 +16,10 @@ const Analysis = () => {
 
   const __id = router?.query?.slug as string;
 
+  const onSubmitTest = () => {
+    router.push(`/series/ssc/${router?.query?.slug}/solutions`);
+  };
+
   return (
     <div>
       <div
@@ -54,9 +58,7 @@ const Analysis = () => {
           </div>
           Or
           <div className="">
-            <Button onClick={() => router.push(`/series/${__id}/solutions`)}>
-              Solutions
-            </Button>
+            <Button onClick={onSubmitTest}>Solutions</Button>
           </div>
         </div>
       </div>

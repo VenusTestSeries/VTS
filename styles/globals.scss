@@ -87,12 +87,14 @@ html {
   html,
   body {
     background: var(--night-base);
-    // color: var(--venus-base);
   }
 }
 // text color
 .text_white {
   color: var(--venus-white);
+}
+.text_black {
+  color: var(--venus-primary);
 }
 
 .text_gray {
@@ -816,7 +818,7 @@ ul.Qarbox li {
 .detailed_questionfooter button {
   padding-left: 20px !important;
   padding-right: 20px !important;
-  background: #a9d0f5 !important;
+  background: #a9d0f5;
   border: 1px solid #92c4f2;
   color: #333;
   padding: 6px 12px !important;

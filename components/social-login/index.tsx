@@ -7,11 +7,11 @@ const SocialLogin = () => {
   return (
     <div className={css["social"]}>
       <div className={css["icons"]}>
-        <Link href={"/api/auth/google"} className={css["item"]}>
+        <Link href={"/api/v1/auth/google"} className={css["item"]}>
           <img src="/svg/google.svg" alt="google" />
           <p>Google</p>
         </Link>
-        <Link href={"/api/auth/facebook"} className={css["item"]}>
+        <Link href={"/api/v1/auth/facebook"} className={css["item"]}>
           <img src="/svg/facebook.svg" alt="google" />
           <p>Facebook</p>
         </Link>
