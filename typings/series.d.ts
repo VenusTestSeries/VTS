@@ -5,6 +5,7 @@ interface MarksTypes {
   negative: number;
 }
 interface Section {
+  _id: any;
   title: string;
   marks: MarksTypes;
   questionsCount: number;

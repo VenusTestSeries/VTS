@@ -14,12 +14,14 @@ import useInterval from "hooks/use-interval";
 import { TestSectionResponseType } from "typings/series";
 import Image from "next/image";
 import { useImmer } from "use-immer";
+import axios from "axios";
 
 interface TestSeriesProps {
   _data_: TestSectionResponseType;
+  seriesId: string;
 }
 
-const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
+const TestSeries = ({ _data_, seriesId }: TestSeriesProps) => {
   // const series = seriesArray;
   const {
     count,
@@ -42,6 +44,39 @@ const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
     setSelected,
   } = useTestSeries(_data_);
 
+  const [answer, setAnswer] = useImmer({
+    questionIndex: 0,
+    answerIndex: 0,
+  });
+  const [answers, setAnswers] = useImmer([]);
+
+  // React.useMemo(() => {
+  //   setAnswers((draft) => {
+  //     draft.push(answer);
+  //   });
+  // }, [answer, setAnswers]);
+
+  const onSaveAndNext = React.useCallback(async () => {
+    // onNext();
+    const newInstance = {
+      seriesId: seriesId,
+      userId: "63f067002a51a5544688b900",
+      sectionId: activeSection.sectionId,
+      answers: answers,
+    };
+
+    const { data } = await axios({
+      url: `http://localhost:3000/api/v1/series/new-user-instance`,
+      method: "put",
+      data: newInstance,
+    });
+    // console.log(data);
+    // setAnswers((draft) => {
+    //   draft.push(answer);
+    // });
+  }, [activeSection.sectionId, answers, seriesId]);
+
+  console.log({ answers: Array.from(new Set(answers)) });
   return (
     <div className="seriepage">
       <div className="header newheader">
@@ -100,9 +135,13 @@ const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
                       onClick={() => onActiveSection(item.label)}
                       style={{
                         background:
-                          item.label === activeSection ? "#166a84" : "#f1f1f1",
+                          item.label === activeSection.label
+                            ? "#166a84"
+                            : "#f1f1f1",
                         color:
-                          item.label === activeSection ? "#ffffff" : "#000000",
+                          item.label === activeSection.label
+                            ? "#ffffff"
+                            : "#000000",
                       }}
                     >
                       {item.label}
@@ -157,9 +196,17 @@ const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
                   {/* @ts-ignore */}
                   {selected[language]?.options.map((item, index) => {
                     return (
-                      <li key={index}>
+                      <li
+                        key={index}
+                        onClick={() =>
+                          setAnswer((draft) => {
+                            draft.questionIndex = questionIndex;
+                            draft.answerIndex = index;
+                          })
+                        }
+                      >
                         <label id={`${index}`}>
-                          <input id={`${index}`} type="radio" name="light" />
+                          {/* <input id={`${index}`} type="radio" name="light" /> */}
                           <div className="qtytext"> {item.value}</div>
                         </label>
                       </li>
@@ -175,7 +222,7 @@ const TestSeries = ({ _data_: _data_ }: TestSeriesProps) => {
               </div>
               <div>
                 <Button
-                  onClick={onNext}
+                  onClick={() => onSaveAndNext()}
                   style={{
                     color: "#fff",
                     backgroundColor: "#1fbad6",
@@ -304,6 +351,7 @@ export const getServerSideProps = async (
   return {
     props: {
       _data_,
+      seriesId,
     },
   };
 };
@@ -342,19 +390,24 @@ const useTestSeries = (seriesArray: TestSectionResponseType) => {
   const router = useRouter();
   const examSections = series.sections.map((item) => {
     return {
+      sectionId: item._id,
       label: item.title,
     };
   });
 
-  const [activeSection, setActiveSection] = React.useState(
-    examSections[0].label
-  );
+  const [activeSection, setActiveSection] = React.useState(examSections[0]);
 
-  const onActiveSection = React.useCallback((value: string) => {
+  React.useMemo(() => {
+    if (examSections) {
+      setActiveSection(examSections[0]);
+    }
+  }, []);
+
+  const onActiveSection = React.useCallback((value: any) => {
     setActiveSection(value);
   }, []);
   const actualData = React.useMemo(() => {
-    return series.sections.find((data) => data.title === activeSection);
+    return series.sections.find((data) => data.title === activeSection.label);
   }, [activeSection, series.sections]);
 
   // FOR NEXT BUTTON
